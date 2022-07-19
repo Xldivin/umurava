@@ -36,13 +36,13 @@ bazar-react/
 |   └── assets/
 |       └── images/
 ├── pages/
-    ├── address
+    ├── how-it-work
     ├── admin
-    ├── orders
-    ├── payment-methods
-    ├── product
-    ├── profile
-    ├── shops
+    ├── talent
+    ├── login
+    ├── platform
+    ├── signup
+    ├── categories
     ├── support
     ├── 50+ Other pages
 ├── src/
@@ -50,8 +50,8 @@ bazar-react/
 |   ├── components/
 |   |   ├── layouts
 |   |   |   ├── customer-dashboard
-|   |   |   ├── vendor-dashboard
-|   |   |   └── And shop layouts
+|   |   |   ├── admin-dashboard
+|   |   |   └── And talent layouts
 |   |   └── Includes reusable atomic components
 |   ├── contexts
 |   ├── data
@@ -66,7 +66,7 @@ bazar-react/
 
 ## Pages/Routing
 
-Bazar react follows [Next.js routing standard](https://nextjs.org/docs/routing/introduction).
+Umurava Frontend follows [Next.js routing standard](https://nextjs.org/docs/routing/introduction).
 All the routes/pages are inside `pages` folder.
 
 ## Compnents
@@ -77,24 +77,24 @@ Component structure are straight forward.
 - Bigger static components are located in `src/page-sections`
   - Static component means, these components has static data which you may want to modify
 
-## Shop Layouts
+##  Layouts
 
-All the shop layouts are inside `src/components/layouts`
+All the business layouts are inside `src/components/layouts`
 Layout headers are located in `src/components/header`
 
-## Shop Navigation
+## business Navigation
 
-- Shop horizontal navbar navigation data is stored in `src/data/navbarNavigations.ts`
+- business horizontal navbar navigation data is stored in `src/data/navbarNavigations.ts`
 - Category dropdown navigation data is stored in `src/data/navigations.ts`
 
 ## Admin Dashboard
 
 - Admin dashboard pages are inside `pages/admin`.
-- Admin dashboard layout components are inside `src/components/layouts/vendor-dashboard`
+- Admin dashboard layout components are inside `src/components/layouts/admin-dashboard`
 
 ### Admin Navigaiton
 
-- Admin navigation data is stored in `src/components/layouts/vendor-dashboard/NavigationList.tsx`.
+- Admin navigation data is stored in `src/components/layouts/admin-dashboard/NavigationList.tsx`.
 
 ### Theme
 
@@ -105,7 +105,7 @@ Layout headers are located in `src/components/header`
 
 #### Existing color themes
 
-We have multiple color theme for different shops. E.G. Default, Grocery, Health & etc.
+We have multiple color theme for different businesss. E.G. Default, Grocery, Health & etc.
 `themeOptions.ts` file returns one color theme based on currently displayed demo on browser(by detecting url path)
 
 Of course you don't need this.
@@ -136,29 +136,15 @@ const navbarNavigations = [
     megaMenu: false,
     megaMenuWithSub: false,
     child: [
-      { title: "Super Store", url: "/superstore-shop" },
-      { title: "Furniture", url: "/furniture-shop" },
-      { title: "Grocery-v1", url: "/grocery1" },
-      { title: "Grocery-v2", url: "/grocery2" },
-      { title: "Grocery-v3", url: "/grocery3" },
-      { title: "Health and Beauty", url: "/healthbeauty-shop" },
-      { title: "Fashion", url: "/fashion-shop" },
-      { title: "Gift Store", url: "/gift-shop" },
-      { title: "Gadget", url: "/gadget-shop" },
+      { title: "Any thing", url: "/any-thing" }
     ],
   },
 
   {
     megaMenu: true,
     megaMenuWithSub: false,
-    title: "All Demos",
+    title: "Admin",
     child: megaMenus,
-  },
-  {
-    megaMenu: false,
-    megaMenuWithSub: true,
-    title: "Categories",
-    child: categoriesMegaMenu,
   },
 ];
 ```
@@ -169,22 +155,11 @@ const navbarNavigations = [
 const megaMenus = [
   [
     {
-      title: "Grocery",
+      title: "Admin",
       child: [
-        { title: "Grocery-v1", url: "/grocery1" },
-        { title: "Grocery-v2", url: "/grocery2" },
-        { title: "Grocery-v3", url: "/grocery3" },
+        { title: "Talent", url: "/talent" }
       ],
-    },
-    {
-      title: "Others",
-      child: [
-        { title: "Health and Beauty", url: "/healthbeauty-shop" },
-        { title: "Fashion", url: "/fashion-shop" },
-        { title: "Gift Store", url: "/gift-shop" },
-        { title: "Gadget", url: "/gadget-shop" },
-      ],
-    },
+    }
   ],
 ];
 ```
@@ -194,45 +169,20 @@ const megaMenus = [
 ```ts
 const categoriesMegaMenu = [
   {
-    title: "Fashion",
+    title: "Business",
     child: [
       {
-        title: "Men's Fashion",
+        title: "Talent",
         child: [
-          { title: "T-Shirt", url: "#", Icon: Icons.Shirt },
-          { title: "Shirt", url: "#", Icon: Icons.Shirt },
-          { title: "Shoes", url: "#", Icon: Icons.Shirt },
-          { title: "Jeans Pant", url: "#", Icon: Icons.Shirt },
-          { title: "Gabardin Pant", url: "#", Icon: Icons.Shirt },
-          { title: "Formal Pant", url: "#", Icon: Icons.Shirt },
-          { title: "Formal Shirt", url: "#", Icon: Icons.Shirt },
-          { title: "Sunglass", url: "#", Icon: Icons.Shirt },
-        ],
+          { title: "Veted", url: "#", Icon: Icons.Shirt },
       },
       {
-        title: "Women's Fashion",
+        title: "Jobs",
         child: [
-          { title: "Clothing", url: "#" },
-          { title: "Shoes", url: "#" },
-          { title: "Jewelry", url: "#" },
-          { title: "Watches", url: "#" },
-          { title: "Hand Bags", url: "#" },
-          { title: "Accessories", url: "#" },
-          { title: "Makeup", url: "#" },
+          { title: "Published", url: "#" }
         ],
       },
 
-      {
-        title: "Girls' Fashion",
-        child: [
-          { title: "Clothing", url: "#" },
-          { title: "Shoes", url: "#" },
-          { title: "Jewelry", url: "#" },
-          { title: "Watches", url: "#" },
-          { title: "Hand Bags", url: "#" },
-          { title: "Gadget", url: "#" },
-        ],
-      },
     ],
   },
 ];
@@ -240,75 +190,19 @@ const categoriesMegaMenu = [
 
 ## Support
 
-Need Support? Create a ticket [HERE](https://support.ui-lib.com/help-center/tickets/new) Or Send us an email at [support@ui-lib.com](mailto:support@ui-lib.com).
+Need Support? Creat issue
 
 ### changelog
 
-## v3.0.0
-
-###### June 16, 2022
-
-- Add Admin/Vendor dashboard (25+ pages)
-- Add RTL Support
-- Update npm packages
-
-## v2.3.0
-
-###### April 18, 2022
-
-- Fix Build issue (added resolutions &amp; overrides in package.json)
-
-## v2.2.0
-
-###### March 21, 2022
-
-- Fix Eslint errors
-
-## v2.1.0
-
-###### Dec 28, 2021
-
-- Add 5 new store front variations
-- Fix small UI issues
-
-## v2.0.0
-
-###### Oct 28, 2021
-
-- Add JavaScript version
-- Add REST API to Grocery shop
-- Update to Next.js v12 and MUI v5.
-
-## v1.2.0
-
-###### Aug 25, 2021
-
-- Migrate makeStyles API to v5
-- Fix next/image issues
-- Add new page &quot;Shop v4&quot;
-
-## v1.1.0
-
-###### Aug 12, 2021
-
-- Add new page &quot;Shop v3&quot;
-
-## v1.0.1
-
-###### Aug 1, 2021
-
-- Fix dashboard mobile navigation
-
 ## v1.0.0
 
-###### Jul 1, 2021
+###### July 20, 2022
 
 Initial release
 
 ### Roadmap
 
-1. More funcional cart, cookie
-2. List of all APIs/Functions
+1. 
 
 ```
 
