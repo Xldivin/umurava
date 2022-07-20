@@ -8,31 +8,32 @@ import Scrollbar from "components/Scrollbar";
 import { H3 } from "components/Typography";
 import useMuiTable from "hooks/useMuiTable";
 import { GetStaticProps } from "next";
-import { CategoryRow } from "pages-sections/admin";
+import { OrderRow } from "pages-sections/admin";
 import React, { ReactElement } from "react";
 import api from "utils/api/dashboard";
 
+// table column list
 const tableHeading = [
-  { id: "name", label: "Name", align: "left" },
-  { id: "service", label: "Service", align: "left" },
-  { id: "description", label: "Description", align: "left" },
-  { id: "isActive", label: " Active", align: "center" },
-  { id: "isDeleted", label: "Deleted", align: "center" },
+  { id: "id", label: "Order ID", align: "left" },
+  { id: "qty", label: "Qty", align: "left" },
+  { id: "purchaseDate", label: "Purchase Date", align: "left" },
+  { id: "billingAddress", label: "Billing Address", align: "left" },
+  { id: "amount", label: "Amount", align: "left" },
+  { id: "status", label: "Status", align: "left" },
   { id: "action", label: "Action", align: "center" },
 ];
 
 // =============================================================================
-CategoryList.getLayout = function getLayout(page: ReactElement) {
+OrderList.getLayout = function getLayout(page: ReactElement) {
   return <VendorDashboardLayout>{page}</VendorDashboardLayout>;
 };
 // =============================================================================
 
-type CategoryListProps = { categories: any[] };
+type OrderListProps = { orders: any[] };
+
 // =============================================================================
 
-export default function CategoryList(props: CategoryListProps) {
-  const { categories } = props;
-
+export default function OrderList({ orders }: OrderListProps) {
   const {
     order,
     orderBy,
@@ -41,17 +42,21 @@ export default function CategoryList(props: CategoryListProps) {
     filteredList,
     handleChangePage,
     handleRequestSort,
-  } = useMuiTable({ listData: categories });
+  } = useMuiTable({
+    listData: orders,
+    defaultSort: "purchaseDate",
+    defaultOrder: "desc",
+  });
 
   return (
     <Box py={4}>
-      <H3 mb={2}>Category List</H3>
+      <H3 mb={2}>Orders</H3>
 
       <SearchArea
         handleSearch={() => {}}
-        buttonText="Add Category"
+        buttonText="Create Order"
         handleBtnClick={() => {}}
-        searchPlaceholder="Search Category..."
+        searchPlaceholder="Search Order..."
       />
 
       <Card>
@@ -63,14 +68,14 @@ export default function CategoryList(props: CategoryListProps) {
                 hideSelectBtn
                 orderBy={orderBy}
                 heading={tableHeading}
-                rowCount={categories.length}
+                rowCount={orders.length}
                 numSelected={selected.length}
                 onRequestSort={handleRequestSort}
               />
 
               <TableBody>
-                {filteredList.map((category, index) => (
-                  <CategoryRow category={category} key={index} />
+                {filteredList.map((order, index) => (
+                  <OrderRow order={order} key={index} />
                 ))}
               </TableBody>
             </Table>
@@ -80,7 +85,7 @@ export default function CategoryList(props: CategoryListProps) {
         <Stack alignItems="center" my={4}>
           <TablePagination
             onChange={handleChangePage}
-            count={Math.ceil(categories.length / rowsPerPage)}
+            count={Math.ceil(orders.length / rowsPerPage)}
           />
         </Stack>
       </Card>
@@ -89,7 +94,7 @@ export default function CategoryList(props: CategoryListProps) {
 }
 
 export const getStaticProps: GetStaticProps = async () => {
-  const categories = await api.category();
+  const orders = await api.orders();
 
-  return { props: { categories } };
+  return { props: { orders } };
 };

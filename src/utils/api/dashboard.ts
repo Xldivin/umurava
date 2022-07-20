@@ -20,6 +20,56 @@ const products = async () => {
   return response.data;
 };
 
+const categories = async () => {
+  const response = await axios.get("/api/categories");
+  return response.data;
+};
+
+const services = async () => {
+  const response = await axios.get("/api/services");
+  return response.data;
+};
+
+const companies = async () => {
+  const response = await axios.get("/api/companies");
+  return response.data;
+};
+
+const jobs = async () => {
+  const response = await axios.get("/api/jobs");
+  return response.data;
+};
+
+const applications = async () => {
+  const response = await axios.get("/api/applications");
+  return response.data;
+};
+
+const talents = async () => {
+  const response = await axios.get("/api/talents");
+  return response.data;
+};
+
+const skills = async () => {
+  const response = await axios.get("/api/skills");
+  return response.data;
+};
+
+const titles = async () => {
+  const response = await axios.get("/api/titles");
+  return response.data;
+};
+
+const userTitles = async () => {
+  const response = await axios.get("/api/userTitles");
+  return response.data;
+};
+
+const userSkills = async () => {
+  const response = await axios.get("/api/userSkills");
+  return response.data;
+};
+
 const category = async () => {
   const response = await axios.get("/api/category");
   return response.data;
@@ -92,4 +142,15 @@ export default {
   earningHistory,
   packagePayments,
   stockOutProducts,
+  services,
+  companies,
+  jobs,
+  applications,
+  talents,
+  skills,
+  titles,
+  userTitles,
+  userSkills,
+  
+  
 };

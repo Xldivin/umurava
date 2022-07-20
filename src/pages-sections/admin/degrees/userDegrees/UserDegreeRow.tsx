@@ -1,8 +1,9 @@
 import { Delete, Edit, RemoveRedEye } from "@mui/icons-material";
-import { Box } from "@mui/material";
+import { Avatar, Box } from "@mui/material";
 import BazarSwitch from "components/BazarSwitch";
 import { FlexBox } from "components/flex-box";
 import { Paragraph, Small } from "components/Typography";
+import currency from "currency.js";
 import { useRouter } from "next/router";
 import React, { FC, useState } from "react";
 import {
@@ -10,23 +11,24 @@ import {
   StyledIconButton,
   StyledTableCell,
   StyledTableRow,
-} from "./StyledComponents";
+} from "../../StyledComponents";
 
 // ========================================================================
-type CategoryRowProps = { category: any };
+type UserDegreeRowProps = { userDegree: any };
 // ========================================================================
 
-const CategoryRow: FC<CategoryRowProps> = ({ category }) => {
-  const { service, name, description, id, isActive, isDeleted } = category;
+const UserDegreeRow: FC<UserDegreeRowProps> = ({ userDegree }) => {
+  const { category, name, price, image, brand, id, published } = userDegree;
 
   // state
   const router = useRouter();
-  const [categoryActive, setCategoryActive] = useState(isActive);
+  const [userDegreePulish, setUserDegreePublish] = useState(published);
 
   return (
     <StyledTableRow tabIndex={-1} role="checkbox">
       <StyledTableCell align="left">
         <FlexBox alignItems="center" gap={1.5}>
+          <Avatar src={image} sx={{ borderRadius: "8px" }} />
           <Box>
             <Paragraph>{name}</Paragraph>
             <Small color="grey.600">#{id}</Small>
@@ -35,36 +37,30 @@ const CategoryRow: FC<CategoryRowProps> = ({ category }) => {
       </StyledTableCell>
 
       <StyledTableCell align="left">
-        <CategoryWrapper>{service?.name}</CategoryWrapper>
+        <CategoryWrapper>{category}</CategoryWrapper>
       </StyledTableCell>
 
       <StyledTableCell align="left">
-      <FlexBox alignItems="center" gap={1.5}>
-          <Box>
-            <Small color="grey.600">{description}</Small>
-          </Box>
-        </FlexBox>
+        <Avatar
+          src={brand}
+          sx={{ width: 55, height: "auto", borderRadius: 0 }}
+        />
       </StyledTableCell>
-      
-      <StyledTableCell align="center">
+
+      <StyledTableCell align="left">
+        {currency(price, { separator: "," }).format()}
+      </StyledTableCell>
+
+      <StyledTableCell align="left">
         <BazarSwitch
           color="info"
-          checked={categoryActive}
-          onChange={() => setCategoryActive((state) => !state)}
+          checked={userDegreePulish}
+          onChange={() => setUserDegreePublish((state) => !state)}
         />
       </StyledTableCell>
 
       <StyledTableCell align="center">
-        <BazarSwitch
-          color="info"
-          checked={isDeleted}
-        />
-      </StyledTableCell>
-
-      
-
-      <StyledTableCell align="center">
-        <StyledIconButton onClick={() => router.push(`/admin/categories/${id}`)}>
+        <StyledIconButton onClick={() => router.push(`/admin/userDegrees/${id}`)}>
           <Edit />
         </StyledIconButton>
 
@@ -80,4 +76,4 @@ const CategoryRow: FC<CategoryRowProps> = ({ category }) => {
   );
 };
 
-export default CategoryRow;
+export default UserDegreeRow;

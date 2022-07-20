@@ -6,22 +6,21 @@ import { Paragraph, Small } from "components/Typography";
 import { useRouter } from "next/router";
 import React, { FC, useState } from "react";
 import {
-  CategoryWrapper,
   StyledIconButton,
   StyledTableCell,
   StyledTableRow,
-} from "./StyledComponents";
+} from "../StyledComponents";
 
 // ========================================================================
-type CategoryRowProps = { category: any };
+type SkillRowProps = { skill: any };
 // ========================================================================
 
-const CategoryRow: FC<CategoryRowProps> = ({ category }) => {
-  const { service, name, description, id, isActive, isDeleted } = category;
+const SkillRow: FC<SkillRowProps> = ({ skill }) => {
+  const { description, name, id, isActive, isDeleted } = skill;
 
   // state
   const router = useRouter();
-  const [categoryActive, setCategoryActive] = useState(isActive);
+  const [skillActive, setSkillActive] = useState(isActive);
 
   return (
     <StyledTableRow tabIndex={-1} role="checkbox">
@@ -33,38 +32,33 @@ const CategoryRow: FC<CategoryRowProps> = ({ category }) => {
           </Box>
         </FlexBox>
       </StyledTableCell>
-
       <StyledTableCell align="left">
-        <CategoryWrapper>{service?.name}</CategoryWrapper>
-      </StyledTableCell>
-
-      <StyledTableCell align="left">
-      <FlexBox alignItems="center" gap={1.5}>
+        <FlexBox alignItems="center" gap={1.5}>
           <Box>
             <Small color="grey.600">{description}</Small>
           </Box>
         </FlexBox>
       </StyledTableCell>
-      
-      <StyledTableCell align="center">
+
+
+
+      <StyledTableCell align="left">
         <BazarSwitch
           color="info"
-          checked={categoryActive}
-          onChange={() => setCategoryActive((state) => !state)}
+          checked={skillActive}
+          onChange={() => setSkillActive((state) => !state)}
         />
       </StyledTableCell>
 
-      <StyledTableCell align="center">
+      <StyledTableCell align="left">
         <BazarSwitch
           color="info"
           checked={isDeleted}
         />
       </StyledTableCell>
 
-      
-
       <StyledTableCell align="center">
-        <StyledIconButton onClick={() => router.push(`/admin/categories/${id}`)}>
+        <StyledIconButton onClick={() => router.push(`/admin/skills/${id}`)}>
           <Edit />
         </StyledIconButton>
 
@@ -80,4 +74,4 @@ const CategoryRow: FC<CategoryRowProps> = ({ category }) => {
   );
 };
 
-export default CategoryRow;
+export default SkillRow;

@@ -1,4 +1,5 @@
 import Mock from "fake-db/mock";
+import { banks } from "./banks";
 import { brands } from "./brand";
 import { categories } from "./categories";
 import { customers } from "./customers";
@@ -12,6 +13,11 @@ import { products } from "./products";
 import { refundRequest } from "./refundRequests";
 import { reviews } from "./reviews";
 import { sellers } from "./sellers";
+import { services } from "./services";
+import { skills } from "./skills";
+import { titles } from "./titles";
+import { user_skills } from "./user-skills";
+import { user_titles } from "./user-titles";
 
 Mock.onGet("/api/dashboard-cards").reply(() => {
   try {
@@ -43,6 +49,60 @@ Mock.onGet("/api/stock-out-products").reply(() => {
 Mock.onGet("/api/products").reply(() => {
   try {
     return [200, products];
+  } catch (err) {
+    console.error(err);
+    return [500, { message: "Internal server error" }];
+  }
+});
+
+Mock.onGet("/api/titles").reply(() => {
+  try {
+    return [200, titles];
+  } catch (err) {
+    console.error(err);
+    return [500, { message: "Internal server error" }];
+  }
+});
+
+Mock.onGet("/api/skills").reply(() => {
+  try {
+    return [200, skills];
+  } catch (err) {
+    console.error(err);
+    return [500, { message: "Internal server error" }];
+  }
+});
+
+Mock.onGet("/api/user-skills").reply(() => {
+  try {
+    return [200, user_skills];
+  } catch (err) {
+    console.error(err);
+    return [500, { message: "Internal server error" }];
+  }
+});
+
+Mock.onGet("/api/user-titless").reply(() => {
+  try {
+    return [200, user_titles];
+  } catch (err) {
+    console.error(err);
+    return [500, { message: "Internal server error" }];
+  }
+});
+
+Mock.onGet("/api/services").reply(() => {
+  try {
+    return [200, services];
+  } catch (err) {
+    console.error(err);
+    return [500, { message: "Internal server error" }];
+  }
+});
+
+Mock.onGet("/api/banks").reply(() => {
+  try {
+    return [200, banks];
   } catch (err) {
     console.error(err);
     return [500, { message: "Internal server error" }];

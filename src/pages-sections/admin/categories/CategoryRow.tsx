@@ -10,7 +10,7 @@ import {
   StyledIconButton,
   StyledTableCell,
   StyledTableRow,
-} from "./StyledComponents";
+} from "../StyledComponents";
 
 // ========================================================================
 type CategoryRowProps = { category: any };
@@ -45,23 +45,21 @@ const CategoryRow: FC<CategoryRowProps> = ({ category }) => {
           </Box>
         </FlexBox>
       </StyledTableCell>
-      
-      <StyledTableCell align="center">
-        <BazarSwitch
-          color="info"
-          checked={categoryActive}
-          onChange={() => setCategoryActive((state) => !state)}
-        />
-      </StyledTableCell>
 
-      <StyledTableCell align="center">
+      <StyledTableCell align="left">
         <BazarSwitch
           color="info"
           checked={isDeleted}
         />
       </StyledTableCell>
 
-      
+      <StyledTableCell align="left">
+        <BazarSwitch
+          color="info"
+          checked={categoryActive}
+          onChange={() => setCategoryActive((state) => !state)}
+        />
+      </StyledTableCell>
 
       <StyledTableCell align="center">
         <StyledIconButton onClick={() => router.push(`/admin/categories/${id}`)}>

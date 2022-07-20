@@ -6,22 +6,21 @@ import { Paragraph, Small } from "components/Typography";
 import { useRouter } from "next/router";
 import React, { FC, useState } from "react";
 import {
-  CategoryWrapper,
   StyledIconButton,
   StyledTableCell,
   StyledTableRow,
-} from "./StyledComponents";
+} from "../StyledComponents";
 
 // ========================================================================
-type CategoryRowProps = { category: any };
+type ServiceRowProps = { service: any };
 // ========================================================================
 
-const CategoryRow: FC<CategoryRowProps> = ({ category }) => {
-  const { service, name, description, id, isActive, isDeleted } = category;
+const ServiceRow: FC<ServiceRowProps> = ({ service }) => {
+  const {  name,description,isActive,isDeleted, price, image, brand, id } = service;
 
   // state
   const router = useRouter();
-  const [categoryActive, setCategoryActive] = useState(isActive);
+  const [serviceActive, setServiceActive] = useState(isActive);
 
   return (
     <StyledTableRow tabIndex={-1} role="checkbox">
@@ -32,25 +31,22 @@ const CategoryRow: FC<CategoryRowProps> = ({ category }) => {
             <Small color="grey.600">#{id}</Small>
           </Box>
         </FlexBox>
+        
       </StyledTableCell>
 
       <StyledTableCell align="left">
-        <CategoryWrapper>{service?.name}</CategoryWrapper>
-      </StyledTableCell>
-
-      <StyledTableCell align="left">
-      <FlexBox alignItems="center" gap={1.5}>
+      <FlexBox alignItems="left" gap={1.5}>
           <Box>
             <Small color="grey.600">{description}</Small>
           </Box>
         </FlexBox>
       </StyledTableCell>
-      
+
       <StyledTableCell align="center">
         <BazarSwitch
           color="info"
-          checked={categoryActive}
-          onChange={() => setCategoryActive((state) => !state)}
+          checked={serviceActive}
+          onChange={() => setServiceActive((state) => !state)}
         />
       </StyledTableCell>
 
@@ -61,10 +57,8 @@ const CategoryRow: FC<CategoryRowProps> = ({ category }) => {
         />
       </StyledTableCell>
 
-      
-
       <StyledTableCell align="center">
-        <StyledIconButton onClick={() => router.push(`/admin/categories/${id}`)}>
+        <StyledIconButton onClick={() => router.push(`/admin/services/${id}`)}>
           <Edit />
         </StyledIconButton>
 
@@ -80,4 +74,4 @@ const CategoryRow: FC<CategoryRowProps> = ({ category }) => {
   );
 };
 
-export default CategoryRow;
+export default ServiceRow;

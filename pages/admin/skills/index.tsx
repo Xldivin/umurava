@@ -8,13 +8,12 @@ import Scrollbar from "components/Scrollbar";
 import { H3 } from "components/Typography";
 import useMuiTable from "hooks/useMuiTable";
 import { GetStaticProps } from "next";
-import { CategoryRow } from "pages-sections/admin";
+import { SkillRow } from "pages-sections/admin";
 import React, { ReactElement } from "react";
 import api from "utils/api/dashboard";
 
 const tableHeading = [
   { id: "name", label: "Name", align: "left" },
-  { id: "service", label: "Service", align: "left" },
   { id: "description", label: "Description", align: "left" },
   { id: "isActive", label: " Active", align: "center" },
   { id: "isDeleted", label: "Deleted", align: "center" },
@@ -22,16 +21,16 @@ const tableHeading = [
 ];
 
 // =============================================================================
-CategoryList.getLayout = function getLayout(page: ReactElement) {
+SkillList.getLayout = function getLayout(page: ReactElement) {
   return <VendorDashboardLayout>{page}</VendorDashboardLayout>;
 };
 // =============================================================================
 
-type CategoryListProps = { categories: any[] };
+type SkillListProps = { skills: any[] };
 // =============================================================================
 
-export default function CategoryList(props: CategoryListProps) {
-  const { categories } = props;
+export default function SkillList(props: SkillListProps) {
+  const { skills } = props;
 
   const {
     order,
@@ -41,17 +40,17 @@ export default function CategoryList(props: CategoryListProps) {
     filteredList,
     handleChangePage,
     handleRequestSort,
-  } = useMuiTable({ listData: categories });
+  } = useMuiTable({ listData: skills });
 
   return (
     <Box py={4}>
-      <H3 mb={2}>Category List</H3>
+      <H3 mb={2}>Skill List</H3>
 
       <SearchArea
         handleSearch={() => {}}
-        buttonText="Add Category"
+        buttonText="Add Skill"
         handleBtnClick={() => {}}
-        searchPlaceholder="Search Category..."
+        searchPlaceholder="Search Skill..."
       />
 
       <Card>
@@ -63,14 +62,14 @@ export default function CategoryList(props: CategoryListProps) {
                 hideSelectBtn
                 orderBy={orderBy}
                 heading={tableHeading}
-                rowCount={categories.length}
+                rowCount={skills.length}
                 numSelected={selected.length}
                 onRequestSort={handleRequestSort}
               />
 
               <TableBody>
-                {filteredList.map((category, index) => (
-                  <CategoryRow category={category} key={index} />
+                {filteredList.map((skill, index) => (
+                  <SkillRow skill={skill} key={index} />
                 ))}
               </TableBody>
             </Table>
@@ -80,7 +79,7 @@ export default function CategoryList(props: CategoryListProps) {
         <Stack alignItems="center" my={4}>
           <TablePagination
             onChange={handleChangePage}
-            count={Math.ceil(categories.length / rowsPerPage)}
+            count={Math.ceil(skills.length / rowsPerPage)}
           />
         </Stack>
       </Card>
@@ -89,7 +88,7 @@ export default function CategoryList(props: CategoryListProps) {
 }
 
 export const getStaticProps: GetStaticProps = async () => {
-  const categories = await api.category();
+  const skills = await api.skills();
 
-  return { props: { categories } };
+  return { props: { skills } };
 };
