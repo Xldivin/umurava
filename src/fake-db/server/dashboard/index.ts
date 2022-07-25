@@ -4,6 +4,7 @@ import { brands } from "./brand";
 import { categories } from "./categories";
 import { customers } from "./customers";
 import { cardList, recentPurchase, stockOutProducts } from "./data";
+import { degrees } from "./degrees";
 import { earningHistory } from "./earning-history";
 import { orders } from "./orders";
 import { packagePayments } from "./package-payments";
@@ -16,6 +17,7 @@ import { sellers } from "./sellers";
 import { services } from "./services";
 import { skills } from "./skills";
 import { titles } from "./titles";
+import { user_degrees } from "./user-degree";
 import { user_skills } from "./user-skills";
 import { user_titles } from "./user-titles";
 
@@ -63,6 +65,14 @@ Mock.onGet("/api/titles").reply(() => {
     return [500, { message: "Internal server error" }];
   }
 });
+Mock.onGet("/api/degrees").reply(() => {
+  try {
+    return [200, degrees];
+  } catch (err) {
+    console.error(err);
+    return [500, { message: "Internal server error" }];
+  }
+});
 
 Mock.onGet("/api/skills").reply(() => {
   try {
@@ -82,7 +92,16 @@ Mock.onGet("/api/user-skills").reply(() => {
   }
 });
 
-Mock.onGet("/api/user-titless").reply(() => {
+Mock.onGet("/api/user-degrees").reply(() => {
+  try {
+    return [200, user_degrees];
+  } catch (err) {
+    console.error(err);
+    return [500, { message: "Internal server error" }];
+  }
+});
+
+Mock.onGet("/api/user-titles").reply(() => {
   try {
     return [200, user_titles];
   } catch (err) {

@@ -8,32 +8,32 @@ import Scrollbar from "components/Scrollbar";
 import { H3 } from "components/Typography";
 import useMuiTable from "hooks/useMuiTable";
 import { GetStaticProps } from "next";
-import { OrderRow } from "pages-sections/admin";
+import { UserTitleRow } from "pages-sections/admin";
 import React, { ReactElement } from "react";
 import api from "utils/api/dashboard";
 
 // table column list
 const tableHeading = [
-  { id: "id", label: "Order ID", align: "left" },
-  { id: "qty", label: "Qty", align: "left" },
-  { id: "purchaseDate", label: "Purchase Date", align: "left" },
-  { id: "billingAddress", label: "Billing Address", align: "left" },
-  { id: "amount", label: "Amount", align: "left" },
-  { id: "status", label: "Status", align: "left" },
-  { id: "action", label: "Action", align: "center" },
+  { id: "user", label: "User", align: "left" },
+  { id: "name", label: "Title Name", align: "left" },
+  { id: "level", label: "Title Level", align: "left" },
+  { id: "backgroundChecked", label: "Background Checked", align: "left" },
+  { id: "isDeleted", label: "Is Deleted", align: "left" },
+  { id: "approved", label: "Approved", align: "left" },
+  { id: "actions", label: "Actions", align: "left" }
 ];
 
 // =============================================================================
-OrderList.getLayout = function getLayout(page: ReactElement) {
+UserTitleList.getLayout = function getLayout(page: ReactElement) {
   return <VendorDashboardLayout>{page}</VendorDashboardLayout>;
 };
 // =============================================================================
 
-type OrderListProps = { orders: any[] };
+type UserTitleListProps = { userTitles: any[] };
 
 // =============================================================================
 
-export default function OrderList({ orders }: OrderListProps) {
+export default function UserTitleList({ userTitles }: UserTitleListProps) {
   const {
     order,
     orderBy,
@@ -43,20 +43,20 @@ export default function OrderList({ orders }: OrderListProps) {
     handleChangePage,
     handleRequestSort,
   } = useMuiTable({
-    listData: orders,
-    defaultSort: "purchaseDate",
+    listData: userTitles,
+    defaultSort: "createdAt",
     defaultOrder: "desc",
   });
 
   return (
     <Box py={4}>
-      <H3 mb={2}>Orders</H3>
+      <H3 mb={2}>User Titles</H3>
 
       <SearchArea
         handleSearch={() => {}}
-        buttonText="Create Order"
+        buttonText="Create User Title"
         handleBtnClick={() => {}}
-        searchPlaceholder="Search Order..."
+        searchPlaceholder="Search User Title..."
       />
 
       <Card>
@@ -68,14 +68,14 @@ export default function OrderList({ orders }: OrderListProps) {
                 hideSelectBtn
                 orderBy={orderBy}
                 heading={tableHeading}
-                rowCount={orders.length}
+                rowCount={userTitles.length}
                 numSelected={selected.length}
                 onRequestSort={handleRequestSort}
               />
 
               <TableBody>
-                {filteredList.map((order, index) => (
-                  <OrderRow order={order} key={index} />
+                {filteredList.map((userTitle, index) => (
+                  <UserTitleRow userTitle={userTitle} key={index} />
                 ))}
               </TableBody>
             </Table>
@@ -85,7 +85,7 @@ export default function OrderList({ orders }: OrderListProps) {
         <Stack alignItems="center" my={4}>
           <TablePagination
             onChange={handleChangePage}
-            count={Math.ceil(orders.length / rowsPerPage)}
+            count={Math.ceil(userTitles.length / rowsPerPage)}
           />
         </Stack>
       </Card>
@@ -94,7 +94,7 @@ export default function OrderList({ orders }: OrderListProps) {
 }
 
 export const getStaticProps: GetStaticProps = async () => {
-  const orders = await api.orders();
+  const userTitles = await api.userTitles();
 
-  return { props: { orders } };
+  return { props: { userTitles } };
 };

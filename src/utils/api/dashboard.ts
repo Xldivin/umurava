@@ -54,6 +54,10 @@ const skills = async () => {
   const response = await axios.get("/api/skills");
   return response.data;
 };
+const degrees = async () => {
+  const response = await axios.get("/api/degrees");
+  return response.data;
+};
 
 const titles = async () => {
   const response = await axios.get("/api/titles");
@@ -61,12 +65,17 @@ const titles = async () => {
 };
 
 const userTitles = async () => {
-  const response = await axios.get("/api/userTitles");
+  const response = await axios.get("/api/user-titles");
   return response.data;
 };
 
 const userSkills = async () => {
-  const response = await axios.get("/api/userSkills");
+  const response = await axios.get("/api/user-skills");
+  return response.data;
+};
+
+const userDegrees = async () => {
+  const response = await axios.get("/api/user-degrees");
   return response.data;
 };
 
@@ -151,6 +160,7 @@ export default {
   titles,
   userTitles,
   userSkills,
-  
+  degrees,
+  userDegrees,
   
 };

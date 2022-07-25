@@ -8,32 +8,30 @@ import Scrollbar from "components/Scrollbar";
 import { H3 } from "components/Typography";
 import useMuiTable from "hooks/useMuiTable";
 import { GetStaticProps } from "next";
-import { UserSkillRow } from "pages-sections/admin";
+import { DegreeRow } from "pages-sections/admin";
 import React, { ReactElement } from "react";
 import api from "utils/api/dashboard";
 
-// table column list
 const tableHeading = [
-  { id: "user", label: "User", align: "left" },
-  { id: "name", label: "Skill Name", align: "left" },
-  { id: "level", label: "Skill Level", align: "left" },
-  { id: "backgroundChecked", label: "Background Checked", align: "left" },
-  { id: "isDeleted", label: "Is Deleted", align: "left" },
-  { id: "approved", label: "Approved", align: "left" },
-  { id: "actions", label: "Actions", align: "left" }
+  { id: "name", label: "Name", align: "left" },
+  { id: "description", label: "Description", align: "left" },
+  { id: "isActive", label: " Active", align: "center" },
+  { id: "isDeleted", label: "Deleted", align: "center" },
+  { id: "action", label: "Action", align: "center" },
 ];
 
 // =============================================================================
-UserSkillList.getLayout = function getLayout(page: ReactElement) {
+DegreeList.getLayout = function getLayout(page: ReactElement) {
   return <VendorDashboardLayout>{page}</VendorDashboardLayout>;
 };
 // =============================================================================
 
-type UserSkillListProps = { userSkills: any[] };
-
+type DegreeListProps = { degrees: any[] };
 // =============================================================================
 
-export default function UserSkillList({ userSkills }: UserSkillListProps) {
+export default function DegreeList(props: DegreeListProps) {
+  const { degrees } = props;
+
   const {
     order,
     orderBy,
@@ -42,21 +40,17 @@ export default function UserSkillList({ userSkills }: UserSkillListProps) {
     filteredList,
     handleChangePage,
     handleRequestSort,
-  } = useMuiTable({
-    listData: userSkills,
-    defaultSort: "createdAt",
-    defaultOrder: "desc",
-  });
+  } = useMuiTable({ listData: degrees });
 
   return (
     <Box py={4}>
-      <H3 mb={2}>User Skills</H3>
+      <H3 mb={2}>Degree List</H3>
 
       <SearchArea
         handleSearch={() => {}}
-        buttonText="Create User Skill"
+        buttonText="Add Degree"
         handleBtnClick={() => {}}
-        searchPlaceholder="Search User Skill..."
+        searchPlaceholder="Search Degree..."
       />
 
       <Card>
@@ -68,14 +62,14 @@ export default function UserSkillList({ userSkills }: UserSkillListProps) {
                 hideSelectBtn
                 orderBy={orderBy}
                 heading={tableHeading}
-                rowCount={userSkills.length}
+                rowCount={degrees.length}
                 numSelected={selected.length}
                 onRequestSort={handleRequestSort}
               />
 
               <TableBody>
-                {filteredList.map((userSkill, index) => (
-                  <UserSkillRow userSkill={userSkill} key={index} />
+                {filteredList.map((degree, index) => (
+                  <DegreeRow degree={degree} key={index} />
                 ))}
               </TableBody>
             </Table>
@@ -85,7 +79,7 @@ export default function UserSkillList({ userSkills }: UserSkillListProps) {
         <Stack alignItems="center" my={4}>
           <TablePagination
             onChange={handleChangePage}
-            count={Math.ceil(userSkills.length / rowsPerPage)}
+            count={Math.ceil(degrees.length / rowsPerPage)}
           />
         </Stack>
       </Card>
@@ -94,7 +88,7 @@ export default function UserSkillList({ userSkills }: UserSkillListProps) {
 }
 
 export const getStaticProps: GetStaticProps = async () => {
-  const userSkills = await api.userSkills();
+  const degrees = await api.degrees();
 
-  return { props: { userSkills } };
+  return { props: { degrees } };
 };
