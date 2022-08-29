@@ -15,10 +15,12 @@ import LoginForm from './LoginForm';
 
 function Login() {
   const [open, setOpen] = useState(false);
-  const toggleSidenav = () => setOpen((open) => !open);
+  const toggleForm = () => setOpen((open) => !open);
   return (
     <div>
-        {open && <LoginForm /> }
+        {open && <LoginForm 
+        toggleForm = {toggleForm}
+        /> }
         <FlexBox sx={{ml:40, mt:20,zIndex: 'modal'}}>
         <div>
         <Paragraph fontSize={30} maxWidth="500px" sx={{fontWeight: 'bold'}}>
@@ -53,7 +55,7 @@ function Login() {
               </FlexBox>
               <Button variant="contained"color='inherit' sx={{mt:6, width:350, ml:5, borderRadius: 28}}
               onClick={() =>{
-                toggleSidenav()
+                toggleForm()
               }}
               > 
               Sign in with email address

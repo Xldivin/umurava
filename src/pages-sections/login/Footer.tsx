@@ -1,11 +1,8 @@
 import React from 'react';
-import Container  from '@mui/material/Container';
-import Grid from '@mui/material/Grid';
 import Box from '@mui/material/Box';
 import { Toolbar } from "@mui/material"
-import { FlexBox, FlexBetween,FlexRowCenter } from "components/flex-box";
-import { Link as Scroll } from "react-scroll";
-import {  Button, IconButton, Typography, useMediaQuery } from "@mui/material";
+import { FlexBox,FlexRowCenter } from "components/flex-box";
+import { Typography, useMediaQuery } from "@mui/material";
 import { H3 } from 'components/Typography';
 import  ListItemText  from "@mui/material/List";
 
@@ -48,5 +45,4 @@ function Footer() {
     </Toolbar>
   )
 }
-
 export default Footer

@@ -5,15 +5,17 @@ import BazarTextField from "components/BazarTextField";
 import { H3, Small } from "components/Typography";
 import { Box, BoxProps, TextField, TextFieldProps } from "@mui/material";
 import { useFormik } from "formik";
-import React, { useCallback, useState } from "react";
+import React, { FC, useCallback, useState } from "react";
 import * as yup from "yup";
 import Button from '@mui/material/Button';
 import Login from "./Login";
 import  { Paragraph, H5 } from 'components/Typography';
-function LoginForm() {
-  const [open, setOpen] = useState(false);
-  const toggleSidenav = () => setOpen((open) => !open);
 
+type SidenavProps = {
+  toggleForm?: () => void;
+};
+const LoginForm: FC<SidenavProps> = (props) => {
+  const { toggleForm } = props;
   return (
     <Box sx={{border:1,width:500, position: 'absolute', top:70,ml:70,mt:15, borderRadius:10,backgroundColor:"grey.500",  zIndex: 'tooltip'}}>
     <form>
@@ -52,7 +54,7 @@ function LoginForm() {
         Submit
       </Button>
       <Button variant="contained" sx={{mt:5, width:250, ml:2, borderRadius: 28}} onClick={()=>{
-         toggleSidenav()
+         toggleForm()
       }}> 
         Cancel
       </Button>
@@ -63,5 +65,4 @@ function LoginForm() {
   </Box>
   )
 }
-
 export default LoginForm
