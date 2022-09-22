@@ -15,7 +15,31 @@ declare module '@mui/material/styles' {
     md: true;
     lg: true;
     xl: true;
+  }  
+  interface Theme {
+    status: {
+      danger: React.CSSProperties['color'];
+    };
   }
+  interface Palette {
+    neutral: Palette['primary'];
+  }
+  interface PaletteOptions {
+    neutral: PaletteOptions['primary'];
+  }
+
+  interface PaletteColor {
+    darker?: string;
+  }
+  interface SimplePaletteColorOptions {
+    darker?: string;
+  }
+  interface ThemeOptions {
+    status: {
+      danger: React.CSSProperties['color'];
+    };
+  }
+
 }
 
 function newsroom() {
@@ -29,7 +53,20 @@ function newsroom() {
         lg: 1300,
         xl: 1536,
       }
-    }
+    },
+    status: {
+      danger: '#e53e3e',
+    },
+    // palette: {
+    //   primary: {
+    //     main: '#0971f1',
+    //     darker: '#053e85',
+    //   },
+    //   neutral: {
+    //     main: '#64748B',
+    //     contrastText: '#fff',
+    //   },
+    // },
   })
   return (
     <ThemeProvider theme={theme}>

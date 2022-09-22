@@ -14,10 +14,10 @@ interface CustomPaletteColor {
 }
 
 declare module "@mui/material/styles" {
-  // interface Palette {
-  //   paste: CustomPaletteColor;
-  //   marron: CustomPaletteColor;
-  // }
+  interface Palette {
+    paste: CustomPaletteColor;
+    marron: CustomPaletteColor;
+  }
 
   interface PaletteOptions {
     paste: CustomPaletteColor;

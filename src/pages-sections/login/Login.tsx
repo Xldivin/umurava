@@ -12,6 +12,7 @@ import AppleIcon from '@mui/icons-material/Apple';
 import { Span } from 'components/Typography';
 import { useState } from "react";
 import LoginForm from './LoginForm';
+import { blue,grey } from '../../theme/themeColors';
 
 function Login() {
   const [open, setOpen] = useState(false);

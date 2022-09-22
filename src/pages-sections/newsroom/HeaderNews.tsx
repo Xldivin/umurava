@@ -5,6 +5,7 @@ import { H3 } from "components/Typography";
 import { TextField,IconButton } from "@mui/material";
 import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
 import SearchIcon from '@mui/icons-material/Search';
+import { blue,grey } from '../../theme/themeColors';
 function HeaderNews() {
   return (
     <div>
