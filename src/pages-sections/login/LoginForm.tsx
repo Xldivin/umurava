@@ -52,7 +52,7 @@ const LoginForm: FC<SidenavProps> = (props) => {
     <Box sx={{display:'flex' , flexDirection: 'column',ml:15}}>
     <Button variant="contained" sx={{width:250, ml:2, borderRadius: 28, mt:4}}> 
         Submit
-      </Button>
+    </Button>
       <Button variant="contained" sx={{mt:5, width:250, ml:2, borderRadius: 28}} onClick={()=>{
          toggleForm()
       }}> 
