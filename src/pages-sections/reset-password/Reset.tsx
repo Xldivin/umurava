@@ -1,18 +1,13 @@
 import { Card, CardProps } from "@mui/material";
 import { styled } from "@mui/material/styles";
-import BazarButton from "components/BazarButton";
-import BazarTextField from "components/BazarTextField";
-import { FlexBox, FlexRowCenter } from "components/flex-box";
-import { Box, Divider } from "@mui/material";
-import { H6 } from "components/Typography";
-import Link from "next/link";
+import { FlexBox } from "components/flex-box";
+import { Box, } from "@mui/material";
 import { H3, Small } from "components/Typography";
 import { useFormik } from "formik";
-import React, { useCallback, useState } from "react";
-import {TextField, TextFieldProps } from "@mui/material";
+import React from "react";
+import {TextField } from "@mui/material";
 import * as yup from "yup";
 import Button from '@mui/material/Button';
-import Router from 'next/router'
 
 const fbStyle = { background: "#3B5998", color: "white" };
 const googleStyle = { background: "#4285F4", color: "white" };
@@ -31,13 +26,20 @@ export const Wrapper = styled<React.FC<WrapperProps & CardProps>>(
 
 const Reset = () => {
 
+  const initialValues = {
+    email: "",
+    password: "",
+    confirm_password: "",
+  };
+  
+  const formSchema = yup.object().shape({
+    email: yup.string().email("invalid email").required("Email is required"),
+    password: yup.string().min(6, "Minimum of 6 characters").required("Password is Required"),
+    confirm_password: yup.string().min(6, "Minimum of 6 characters").required("Password is Required"),
+  });
+
   const handleFormSubmit = async (values: any) => {
     console.log(values);
-    // NextResponse.redirect("/confirm_email")
-    const reset_token = "token values"
-    localStorage.setItem("token",reset_token)
-    localStorage.setItem("email",values.email)
-    Router.push('/confirm_email')
     return values;
   };
 
@@ -46,13 +48,13 @@ const Reset = () => {
       initialValues,
       onSubmit: handleFormSubmit,
       validationSchema: formSchema,
-    });
+  });
 
   return (
-    <Box  sx={{mt:30,width:500,bgcolor:"white", zIndex:5, mb:20}}>
+    <Box  sx={{mt:30,width:{xs:300,sm:500},bgcolor:"white", zIndex:5, mb:20,ml:{xs:5,sd:8,sm:15,md:70} }}>
       <form onSubmit={handleSubmit}>
         <H3 textAlign="center" mb={1}>
-          Forgot password
+          Pick a new password
         </H3>
         <Small
           mb={4.5}
@@ -62,33 +64,40 @@ const Reset = () => {
           color="grey.800"
           textAlign="center"
         >
-          Enter your email to reset your password
+          Reset your password
         </Small>
-
-        <TextField
-          sx={{mb:1.5,width:300,ml:14}}
-          name="email"
+          <TextField
+          sx={{mb:1.5,width:{xs:200,sm:300},ml:{xs:5,sm:14}}}
+          name="password"
           size="small"
-          type="email"
+          type="password"
           variant="outlined"
           onBlur={handleBlur}
-          value={values.email}
+          value={values.password}
           onChange={handleChange}
-          label="Email"
+          label="Password"
           placeholder="Enter your email address"
-          error={!!touched.email && !!errors.email}
-          helperText={touched.email && errors.email}
+          error={!!touched.password && !!errors.password}
+          helperText={touched.password && errors.password}
+        />
+          <TextField
+          sx={{mb:1.5,width:{xs:200,sm:300},ml:{xs:5,sm:14}}}
+          name="confirm_password"
+          size="small"
+          type="password"
+          variant="outlined"
+          onBlur={handleBlur}
+          value={values.confirm_password}
+          onChange={handleChange}
+          label="Confirm-password"
+          placeholder="Enter your email address"
+          error={!!touched.confirm_password && !!errors.confirm_password}
+          helperText={touched.confirm_password && errors.confirm_password}
         />
         <FlexBox
           justifyContent="center"
           alignItems="center"
         >
-          <Button
-            variant="outlined"
-            sx={{ mb: "1.65rem", borderRadius: "1rem",borderColor: 'info.main', mr: "1rem"}}
-          >
-            Cancel
-          </Button>
           <Button
             type="submit"
             color="info"
@@ -99,26 +108,9 @@ const Reset = () => {
           </Button>
         </FlexBox>
       </form>
-      <FlexRowCenter my="1.25rem">
-        <Box>Go back to</Box>
-        <Link href={"/login"}>
-          <a>
-            <H6 ml={1} borderBottom="1px solid" borderColor="grey.900">
-                Login
-            </H6>
-          </a>
-        </Link>
-      </FlexRowCenter>
     </Box>
   );
 };
 
-const initialValues = {
-  email: "",
-};
-
-const formSchema = yup.object().shape({
-  email: yup.string().email("invalid email").required("Email is required"),
-});
 
 export default Reset;
