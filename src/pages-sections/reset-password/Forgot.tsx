@@ -29,6 +29,14 @@ export const Wrapper = styled<React.FC<WrapperProps & CardProps>>(
 
 const Reset = () => {
 
+const initialValues = {
+  email: "",
+};
+
+const formSchema = yup.object().shape({
+  email: yup.string().email("invalid email").required("Email is required"),
+});
+
   const handleFormSubmit = async (values: any) => {
     console.log(values);
     // NextResponse.redirect("/confirm_email")
@@ -110,13 +118,5 @@ const Reset = () => {
     </Box>
   );
 };
-
-const initialValues = {
-  email: "",
-};
-
-const formSchema = yup.object().shape({
-  email: yup.string().email("invalid email").required("Email is required"),
-});
 
 export default Reset;

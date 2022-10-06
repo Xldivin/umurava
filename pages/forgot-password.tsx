@@ -36,7 +36,7 @@ const ResetPage = () => {
 })
   return (
     <ThemeProvider theme={theme}>
-    <Box>
+    <Box sx={{overflowX:{xs:"hidden",sm:"hidden",lg:"hidden"},}}>
       <Header />
       <Forget />
       <Footer />

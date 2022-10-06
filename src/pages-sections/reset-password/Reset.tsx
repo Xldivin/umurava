@@ -27,13 +27,11 @@ export const Wrapper = styled<React.FC<WrapperProps & CardProps>>(
 const Reset = () => {
 
   const initialValues = {
-    email: "",
     password: "",
     confirm_password: "",
   };
   
   const formSchema = yup.object().shape({
-    email: yup.string().email("invalid email").required("Email is required"),
     password: yup.string().min(6, "Minimum of 6 characters").required("Password is Required"),
     confirm_password: yup.string().min(6, "Minimum of 6 characters").required("Password is Required"),
   });
