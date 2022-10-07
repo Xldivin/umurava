@@ -106,7 +106,7 @@ function Experience() {
                         </Box>
                     </Container>
                     <Box sx={{display:"flex", flexDirection:"column"}}>
-                    <FormControlLabel control={<Checkbox {...label} defaultChecked color="secondary" />}label="I'm currently working here" sx={{ml:15}} />
+                    <FormControlLabel control={<Checkbox {...label} color="secondary" />}label="I'm currently working here" sx={{ml:15}} />
                     <TextareaAutosize
                         style={{ width: 850, marginLeft: "110px", marginTop: "20px" }}
                         name="Summary"
