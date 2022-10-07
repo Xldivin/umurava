@@ -106,7 +106,7 @@ function Experience() {
                         </Box>
                     </Container>
                     <Box sx={{display:"flex", flexDirection:"column"}}>
-                    <FormControlLabel control={<Checkbox {...label} color="secondary" />}label="I'm currently working here" sx={{ml:15}} />
+                    <FormControlLabel control={<Checkbox {...label} color="primary" />}label="I'm currently working here" sx={{ml:15}} />
                     <TextareaAutosize
                         style={{ width: 850, marginLeft: "110px", marginTop: "20px" }}
                         name="Summary"
@@ -121,7 +121,7 @@ function Experience() {
                 <Button
                     type="submit"
                     variant="contained"
-                    sx={{ background: '#DBDBDB', }}
+                    sx={{ background: '#DBDBDB',color:'#000000' }}
                 >
                     Cancel
                 </Button>

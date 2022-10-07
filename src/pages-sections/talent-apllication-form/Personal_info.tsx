@@ -88,7 +88,7 @@ function application_form() {
           <Button
             type="submit"
             variant="contained"
-            sx={{background: '#DBDBDB',}}
+            sx={{background: '#DBDBDB',color:'#000000'}}
           >
             Cancel
           </Button>
