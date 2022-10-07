@@ -4,14 +4,15 @@ import { useFormik } from "formik";
 import React, { FC, useCallback, useState } from "react";
 import * as yup from "yup";
 import Button from '@mui/material/Button';
-import Login from "./Login";
 import { Span } from 'components/Typography';
 import  { Paragraph, H5 } from 'components/Typography';
+import { FormControlLabel } from '@mui/material';
+import { Checkbox } from '@mui/material';
 
 type SidenavProps = {
   toggleForm?: () => void;
 };
-const LoginForm: FC<SidenavProps> = (props) => {
+const SignupForm: FC<SidenavProps> = (props) => {
   const initialValues = {
     email: "",
     password: "",
@@ -35,11 +36,12 @@ const LoginForm: FC<SidenavProps> = (props) => {
   });
 
   const { toggleForm } = props;
+  const label = { inputProps: { 'aria-label': 'Checkbox demo' } };
   return (
     <Box sx={{border:1,width:{xs:350,sd:395,sm:500,md:500}, position: 'absolute', top:{xs:450,sd:450,sm:300,md:70},ml:{xs:2,sd:2,sm:20,md:70},mt:15, borderRadius:10,zIndex: 'tooltip',background: '#F2F2F2'}}>
     <form onSubmit={handleSubmit}>
       <H3 textAlign="center" mb={1}>
-        Login with email
+        Sign up with email
       </H3>
       <TextField
         name="email"
@@ -80,9 +82,10 @@ const LoginForm: FC<SidenavProps> = (props) => {
       Forget Password?
     </Paragraph>
     </form>
+    <FormControlLabel control={<Checkbox {...label} color="secondary" />}label="I accept general terms & conditions & privacy policy of Umurava" sx={{ml:2,mt:5}} />
     <Box sx={{display:'flex' , flexDirection: 'column',ml:15}}>
     <Button variant="contained" sx={{width:250,ml:{xs:-10,sd:-6,sm:2},borderRadius: 28,mt:4}}>
-        Login
+        Sign Up
     </Button>
       <Button variant="contained" sx={{mt:5, width:250,ml:{xs:-10,sd:-6,sm:2},borderRadius: 28}} onClick={()=>{
          toggleForm()
@@ -97,4 +100,4 @@ const LoginForm: FC<SidenavProps> = (props) => {
   </Box>
   )
 }
-export default LoginForm
+export default SignupForm
