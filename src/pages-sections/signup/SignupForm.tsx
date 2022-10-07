@@ -83,7 +83,7 @@ const SignupForm: FC<SidenavProps> = (props) => {
       Forget Password?
     </Paragraph>
     </form>
-    <FormControlLabel control={<Checkbox {...label} color="secondary" />}label="I accept general terms & conditions & privacy policy of Umurava" sx={{ml:2,mt:5}} />
+    <FormControlLabel control={<Checkbox {...label} color="primary" />}label="I accept general terms & conditions & privacy policy of Umurava" sx={{ml:2,mt:5}} />
     <Box sx={{display:'flex' , flexDirection: 'column',ml:15}}>
     <Button variant="contained" sx={{width:250,ml:{xs:-10,sd:-6,sm:2},borderRadius: 28,mt:4}}>
         Sign Up
