@@ -7,6 +7,7 @@ import Button from '@mui/material/Button';
 import Login from "./Login";
 import { Span } from 'components/Typography';
 import  { Paragraph, H5 } from 'components/Typography';
+import Router from 'next/router'
 
 type SidenavProps = {
   toggleForm?: () => void;
@@ -76,7 +77,7 @@ const LoginForm: FC<SidenavProps> = (props) => {
           ml:{xs:3,sd:6,sm:9,md:10},
         }}
       />
-    <Paragraph sx={{ml:{xs:27,sd:29,sm:25,md:33}}}>
+    <Paragraph sx={{ml:{xs:27,sd:29,sm:25,md:33}}} onClick={() =>{ Router.push('/forgot-password')}}>
       Forget Password?
     </Paragraph>
     </form>
@@ -92,7 +93,7 @@ const LoginForm: FC<SidenavProps> = (props) => {
     </Box>
     <Paragraph sx={{mt:4, ml:{xs:8,sd:10,sm:18,md:18}}}>
     Don't have an account?
-    <Span sx={{fontWeight: 'bold'}}>Sign Up</Span>
+    <Span sx={{fontWeight: 'bold'}} onClick={() =>{ Router.push('/register')}}>Sign Up</Span>
     </Paragraph>
   </Box>
   )

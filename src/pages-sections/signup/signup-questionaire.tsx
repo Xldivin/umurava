@@ -8,6 +8,7 @@ import FacebookIcon from '@mui/icons-material/Facebook';
 import AppleIcon from '@mui/icons-material/Apple';
 import { Span } from 'components/Typography';
 import { useState } from "react";
+import Router from 'next/router'
 
 function Register() {
   return (
@@ -29,14 +30,14 @@ function Register() {
               </H5>
               </Box>
               <Box sx={{ display: 'flex',flexDirection: 'column'}}>
-              <Button variant="contained" color='inherit' sx={{mt:2, width:{xs:300,sd:300,sm:350}, ml:{xs:2,sd:2,sm:5}, borderRadius: 28}}> 
+              <Button variant="contained" color='inherit' sx={{mt:2, width:{xs:300,sd:300,sm:350}, ml:{xs:2,sd:2,sm:5}, borderRadius: 28}} onClick={() =>{ Router.push('/register/signup')}}> 
                 Sign up as a talent
               </Button>
               <Button variant="contained" color='inherit' sx={{mt:2, width:{xs:300,sd:300,sm:350}, ml:{xs:2,sd:2,sm:5}, borderRadius: 28}}> 
                 Find a Talent
               </Button>
               </Box>
-              <Paragraph sx={{mt:5, ml:{xs:7,sd:7,sm:13}}}>Already have an account <Span sx={{fontWeight: 'bold'}}>Login here</Span></Paragraph>
+              <Paragraph sx={{mt:5, ml:{xs:7,sd:7,sm:13}}}>Already have an account <Span sx={{fontWeight: 'bold'}} onClick={() =>{ Router.push('/login2')}}>Login here</Span></Paragraph>
               <Paragraph sx={{ ml:{xs:7,sd:7,sm:13}, mt:5}}>© 2022 All rights reserved by umurava</Paragraph>
             </Box>
         </div>

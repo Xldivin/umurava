@@ -9,6 +9,7 @@ import AppleIcon from '@mui/icons-material/Apple';
 import { Span } from 'components/Typography';
 import { useState } from "react";
 import SignupForm from './SignupForm';
+import Router from 'next/router'
 
 function SignUp() {
   const [open, setOpen] = useState(false);
@@ -57,7 +58,7 @@ function SignUp() {
               > 
               Sign up with email address
               </Button>
-              <Paragraph sx={{mt:5, ml:{xs:7,sd:7,sm:13}}}>Already have account? <Span sx={{fontWeight: 'bold'}}>Login Here</Span></Paragraph>
+              <Paragraph sx={{mt:5, ml:{xs:7,sd:7,sm:13}}}>Already have account? <Span sx={{fontWeight: 'bold'}} onClick={() =>{ Router.push('/login2')}}>Login Here</Span></Paragraph>
               <Paragraph sx={{ ml:{xs:7,sd:7,sm:13}, mt:5}}>© 2022 All rights reserved by umurava</Paragraph>
             </Box>
         </div>

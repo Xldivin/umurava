@@ -9,6 +9,7 @@ import AppleIcon from '@mui/icons-material/Apple';
 import { Span } from 'components/Typography';
 import { useState } from "react";
 import LoginForm from './LoginForm';
+import Router from 'next/router'
 
 function Login() {
   const [open, setOpen] = useState(false);
@@ -31,7 +32,7 @@ function Login() {
             <Box sx={{width:{xs:350,sd:350,sm:438},height: 548,border: '1px solid black',ml:{xs:0,sd:0,sm:0,md:20}}}>
               <Box sx={{ display: 'flex', alignContent: 'space-around', ml:15, mt:3, textDecoration: 'underline',}}>
               <H5 sx={{ml:{xs:0,sd:0,sm:2},fontWeight: 'bold'}}>
-              SIGN IN AS A CLIENT
+              WELCOME TO UMURAVA
               </H5>
               </Box>
               <Box sx={{ display: 'flex',flexDirection: 'column'}}>
@@ -57,7 +58,7 @@ function Login() {
               > 
               Sign in with email address
               </Button>
-              <Paragraph sx={{mt:5, ml:{xs:7,sd:7,sm:13}}}>Don't have an account? <Span sx={{fontWeight: 'bold'}}>Sign Up</Span></Paragraph>
+              <Paragraph sx={{mt:5, ml:{xs:7,sd:7,sm:13}}}>Don't have an account? <Span sx={{fontWeight: 'bold'}} onClick={() =>{ Router.push('/register')}}>Sign Up</Span></Paragraph>
               <Paragraph sx={{ ml:{xs:7,sd:7,sm:13}, mt:5}}>© 2022 All rights reserved by umurava</Paragraph>
             </Box>
         </div>
