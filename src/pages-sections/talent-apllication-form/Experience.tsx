@@ -35,8 +35,9 @@ function Experience() {
                 <Container sx={{}}>
                     <Container sx={{ display: "flex", }}>
                         <TextField
-                            sx={{ mt: 10, width: 400, ml: 10 }}
+                            sx={{ mt: 10, width: 400, ml:{sm:0,md:10} }}
                             name="company"
+                            size="small"
                             type="text"
                             variant="outlined"
                             label="Company"
@@ -53,37 +54,40 @@ function Experience() {
                             placeholder="Enter The Position"
                         />
                     </Container>
-                    <Container sx={{ display: "flex" }}>
+                    <Container sx={{ display: "flex",flexDirection:{sm:"column",md:"row"} }}>
+                    <H3 sx={{position:'relative',top:"50px",left:{sm:"0px",md:"128px"}}}>Start</H3>
                         <Box sx={{ dispaly: "flex" }}>
-                            <H3 sx={{position:'relative',top:"80px",left:"80px"}}>Start</H3>
                             <TextField
-                                sx={{ mt: 10, width: 150, ml: 10 }}
+                                sx={{ mt: 10, width:150, ml:{sm:0,md:10} }}
                                 select
+                                size="small"
                                 onChange={Change}
                                 label="Month"
                                 placeholder="Select month"
                             >
-                                <MenuItem value={10}>Ten</MenuItem>
+                                <MenuItem value={10}>hellllo</MenuItem>
                                 <MenuItem value={20}>Twenty</MenuItem>
                                 <MenuItem value={30}>Thirty</MenuItem>
                             </TextField>
                             <TextField
-                                sx={{ mt: 10, width: 150, ml: 10 }}
+                                sx={{ mt: 10, width:150, ml:{sm:10,md:10} }}
                                 label="Year"
                                 select
+                                size="small"
                                 onChange={Change}
                                 placeholder="Select year"
                             >
-                                <MenuItem value={10}>Ten</MenuItem>
+                                <MenuItem value={10}>hello</MenuItem>
                                 <MenuItem value={20}>Twenty</MenuItem>
                                 <MenuItem value={30}>Thirty</MenuItem>
                             </TextField>
                         </Box>
-                        <Box>
-                            <H3 sx={{position:'relative',top:"80px",left:"80px"}}>End</H3>
+                        <H3 sx={{position:'relative',top:"50px",left:{sm:"0px",md:"120px"}}}>End</H3>
+                        <Box sx={{ dispaly: "flex" }}>
                             <TextField
-                                sx={{ mt: 10, width: 150, ml: 10 }}
+                                sx={{ mt: 10, width: 150, ml:{sm:0,md:10} }}
                                 select
+                                size="small"
                                 onChange={Change}
                                 label="Month"
                                 placeholder="Select month"
@@ -96,6 +100,7 @@ function Experience() {
                                 sx={{ mt: 10, width: 150, ml: 10, height: 38 }}
                                 placeholder="Select year"
                                 select
+                                size="small"
                                 onChange={Change}
                                 label="year"
                             >
@@ -105,8 +110,9 @@ function Experience() {
                             </TextField>
                         </Box>
                     </Container>
-                    <Box sx={{display:"flex", flexDirection:"column"}}>
-                    <FormControlLabel control={<Checkbox {...label} color="primary" />}label="I'm currently working here" sx={{ml:15}} />
+                    <Box sx={{display:"flex", flexDirection:"column",ml:{sm:5,md:0}}}>
+                    <FormControlLabel control={<Checkbox {...label} color="primary" />}label="I'm currently working here" sx={{ml:{sm:0,md:15}}} />
+                    <Box sx={{width:80}}>
                     <TextareaAutosize
                         style={{ width: 850, marginLeft: "110px", marginTop: "20px" }}
                         name="Summary"
@@ -114,6 +120,7 @@ function Experience() {
                         aria-label="Summary"
                         placeholder="Describe your experience here ..."
                     />
+                    </Box>
                     </Box>
                 </Container>
             </form>

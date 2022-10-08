@@ -69,7 +69,7 @@ function application_form() {
     <ThemeProvider theme={theme}>
     <Box sx={{background:'#F2F2F2',width:"100%",height:4000,overflowY:'hidden'}}>
       <Header/>
-        <Container sx={{width:1300,background:'#FFFFFF',height:3200,ml:18,position: "absolute", top:170,overflowX:'hidden'}}>
+        <Container sx={{width:{sm:735,md:1300},background:'#FFFFFF',height:{sm:3200,md:3200},ml:{sm:2,md:18},position: "absolute", top:170,overflowX:'hidden'}}>
         <Personal_info />
         <Experience />
         <Portofolio />
@@ -79,8 +79,8 @@ function application_form() {
         <Services />
         </Container>
         <Box sx={{mt:427}}>
-        <Footer/>
-        </Box>
+      <Footer/>
+    </Box>
     </Box>
     </ThemeProvider>
   )

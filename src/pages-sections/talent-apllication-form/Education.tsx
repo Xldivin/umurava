@@ -41,6 +41,7 @@ function Education() {
                     sx={{ mt: 10, width: 400, ml: 10 }}
                     name="Country"
                     type="text"
+                    size="small"
                     variant="outlined"
                     label="Country"
                     placeholder="Enter Country"
@@ -50,6 +51,7 @@ function Education() {
                     sx={{ mt: 10, width: 400, ml: 10 }}
                     name="title"
                     type="text"
+                    size="small"
                     variant="outlined"
                     label="University/College"
                     placeholder="Enter Institution"

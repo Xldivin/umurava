@@ -45,7 +45,7 @@ function application_form() {
         <form onSubmit={handleSubmit}>
           <Container sx={{display:'flex',}}>
           <TextField
-          sx={{mt:10,width:400,ml:10}}
+          sx={{mt:10,width:{sm:300,md:400},ml:{xs:2,sd:2,sm:0,md:10}}}
           name="first_name"
           size="small"
           type="text"
@@ -57,7 +57,7 @@ function application_form() {
           placeholder="Enter your first-name address"
           />
           <TextField
-          sx={{mt:10,width:400,ml:10}}
+          sx={{mt:10,width:{sm:300,md:400},ml:{xs:2,sd:2,sm:2,md:10}}}
           name="last_name"
           size="small"
           type="text"
@@ -71,7 +71,7 @@ function application_form() {
           </Container>
           <Container>
           <TextField
-          sx={{mt:10,width:400,ml:10}}
+          sx={{mt:10,width:{sm:290,md:400},ml:{xs:2,sd:2,sm:0,md:10}}}
           name="email"
           size="small"
           type="email"
@@ -84,7 +84,7 @@ function application_form() {
           />
           </Container>
         </form>
-        <Box sx={{ml:120,mt:5, display:'flex',justifyContent:'space-around'}}>
+        <Box sx={{ml:{sm:50,md:120},mt:5, display:'flex',justifyContent:'space-around'}}>
           <Button
             type="submit"
             variant="contained"
