@@ -21,7 +21,7 @@ function Experience() {
     return (
         <Box sx={{}}>
             <Container sx={{ borderBottom: 4, borderColor: '#2B71F0', display: 'flex', justifyContent: 'space-between' }}>
-                <H3 sx={{ mt: 6, ml: 10 }}>Experience</H3>
+                <H3 sx={{ mt: 6, ml:{xs:0,sd:0,sm:10,md:10} }}>Experience</H3>
                 <Button
                     type="submit"
                     variant="contained"
@@ -33,9 +33,9 @@ function Experience() {
             </Container>
             <form>
                 <Container sx={{}}>
-                    <Container sx={{ display: "flex", }}>
+                    <Container sx={{ display: "flex",flexDirection:{xs:"column",sd:"column",sm:"row",md:"row"} }}>
                         <TextField
-                            sx={{ mt: 10, width: 400, ml:{sm:0,md:10} }}
+                            sx={{ mt: 10,width:{sm:300,md:400}, ml:{sm:0,md:10} }}
                             name="company"
                             size="small"
                             type="text"
@@ -45,7 +45,7 @@ function Experience() {
                         />
 
                         <TextField
-                            sx={{ mt: 10, width: 400, ml: 10 }}
+                            sx={{ mt:{xs:4,sd:5,sm:10,md:10},width:{sm:300,md:400}, ml:{sm:2,md:10} }}
                             name="title"
                             size="small"
                             type="text"
@@ -54,11 +54,11 @@ function Experience() {
                             placeholder="Enter The Position"
                         />
                     </Container>
-                    <Container sx={{ display: "flex",flexDirection:{sm:"column",md:"row"} }}>
-                    <H3 sx={{position:'relative',top:"50px",left:{sm:"0px",md:"128px"}}}>Start</H3>
+                    <Container sx={{ display: "flex",flexDirection:{xs:"column",sd:"column",sm:"column",md:"row"}, mt:{xs:4,sd:5,sm:0,md:0} }}>
+                    <H3 sx={{position:'relative',top:{xs:"5px",sd:"5px",sm:"50px",md:"50px"},left:{sm:"0px",md:"128px"}}}>Start</H3>
                         <Box sx={{ dispaly: "flex" }}>
                             <TextField
-                                sx={{ mt: 10, width:150, ml:{sm:0,md:10} }}
+                                sx={{ mt:{sm:8,md:10}, width:{xs:120,sd:150,sm:150,md:150}, ml:{xs:0,sd:0,sm:0,md:10} }}
                                 select
                                 size="small"
                                 onChange={Change}
@@ -70,7 +70,7 @@ function Experience() {
                                 <MenuItem value={30}>Thirty</MenuItem>
                             </TextField>
                             <TextField
-                                sx={{ mt: 10, width:150, ml:{sm:10,md:10} }}
+                                sx={{ mt:{sm:8,md:10}, width:{xs:120,sd:150,sm:150,md:150}, ml:{xs:1,sd:2,sm:5,md:10} }}
                                 label="Year"
                                 select
                                 size="small"
@@ -82,10 +82,10 @@ function Experience() {
                                 <MenuItem value={30}>Thirty</MenuItem>
                             </TextField>
                         </Box>
-                        <H3 sx={{position:'relative',top:"50px",left:{sm:"0px",md:"120px"}}}>End</H3>
+                        <H3 sx={{position:'relative',top:{xs:"5px",sd:"5px",sm:"50px",md:"50px"},left:{sm:"0px",md:"120px"}}}>End</H3>
                         <Box sx={{ dispaly: "flex" }}>
                             <TextField
-                                sx={{ mt: 10, width: 150, ml:{sm:0,md:10} }}
+                                sx={{ mt:{sm:8,md:10}, width:{xs:120,sd:150,sm:150,md:150}, ml:{xs:0,sd:0,sm:0,md:10} }}
                                 select
                                 size="small"
                                 onChange={Change}
@@ -97,7 +97,7 @@ function Experience() {
                                 <MenuItem value={30}>Thirty</MenuItem>
                             </TextField>
                             <TextField
-                                sx={{ mt: 10, width: 150, ml: 10, height: 38 }}
+                                sx={{ mt:{sm:8,md:10}, width:{xs:120,sd:150,sm:150,md:150}, ml:{xs:1,sd:2,sm:5,md:10}, height: 38 }}
                                 placeholder="Select year"
                                 select
                                 size="small"
@@ -111,15 +111,18 @@ function Experience() {
                         </Box>
                     </Container>
                     <Box sx={{display:"flex", flexDirection:"column",ml:{sm:5,md:0}}}>
-                    <FormControlLabel control={<Checkbox {...label} color="primary" />}label="I'm currently working here" sx={{ml:{sm:0,md:15}}} />
+                    <FormControlLabel control={<Checkbox {...label} color="primary" />}label="I'm currently working here" sx={{ml:{xs:1,sd:2,sm:0,md:15},mt:{xs:3,sd:3,sm:0,md:0}}} />
                     <Box sx={{width:80}}>
-                    <TextareaAutosize
-                        style={{ width: 850, marginLeft: "110px", marginTop: "20px" }}
-                        name="Summary"
-                        minRows={8}
-                        aria-label="Summary"
-                        placeholder="Describe your experience here ..."
-                    />
+                    <TextField
+            sx={{ mt: 10, width:{xs:300,sd:350,sm:600,md:900}, ml:{xs:2,sd:2,sm:0,md:13}, height:100 }}
+            name="Experience"
+            multiline={true}
+            rows={3}
+            type="text"
+            variant="outlined"
+            label="Experience"
+            placeholder="Enter Experience ..."
+        />
                     </Box>
                     </Box>
                 </Container>

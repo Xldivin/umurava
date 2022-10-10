@@ -19,7 +19,7 @@ function Tool() {
   return (
     <Box sx={{ mt:5 }}>
     <Container sx={{ borderBottom: 4, borderColor: '#2B71F0', display: 'flex', justifyContent: 'space-between' }}>
-        <H3 sx={{ mt: 6, ml: 10 }}>Tools</H3>
+        <H3 sx={{ mt: 6, ml:{xs:0,sd:0,sm:10,md:10} }}>Tools</H3>
         <Button
             type="submit"
             variant="contained"
@@ -31,13 +31,16 @@ function Tool() {
     </Container>
     <form>
         <Container sx={{}}>
-            <TextareaAutosize
-                style={{ width: 850, marginLeft: "106px", marginTop: "20px" }}
-                name="Tool"
-                minRows={3}
-                aria-label="Tool"
-                placeholder="Enter Tool  here ..."
-            />
+        <TextField
+            sx={{ mt: 10, width:{xs:300,sd:350,sm:600,md:900}, ml:{sm:0,md:13}, height:100 }}
+            name="Tool"
+            multiline={true}
+            rows={3}
+            type="text"
+            variant="outlined"
+            label="Tool"
+            placeholder="Enter Different tools used..."
+        />
         </Container>
     </form>
     <Box sx={{ ml: 120, mt: 5, display: 'flex', justifyContent: 'space-around' }}>

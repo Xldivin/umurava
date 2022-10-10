@@ -19,7 +19,7 @@ function Expertise() {
   return (
     <Box sx={{ mt:5 }}>
     <Container sx={{ borderBottom: 4, borderColor: '#2B71F0', display: 'flex', justifyContent: 'space-between' }}>
-        <H3 sx={{ mt: 6, ml: 10 }}>Expertise</H3>
+        <H3 sx={{ mt: 6, ml:{xs:0,sd:0,sm:10,md:10}}}>Expertise</H3>
         <Button
             type="submit"
             variant="contained"
@@ -31,13 +31,16 @@ function Expertise() {
     </Container>
     <form>
         <Container sx={{}}>
-            <TextareaAutosize
-                style={{ width: 850, marginLeft: "106px", marginTop: "20px" }}
-                name="Expertise"
-                minRows={3}
-                aria-label="Expertise"
-                placeholder="Enter Expertise  here ..."
-            />
+        <TextField
+            sx={{ mt: 10, width:{xs:300,sd:350,sm:600,md:900}, ml:{sm:0,md:13}, height:100 }}
+            name="Expertise"
+            multiline={true}
+            rows={3}
+            type="text"
+            variant="outlined"
+            label="Expertise"
+            placeholder="Enter Expertise..."
+        />
         </Container>
     </form>
     <Box sx={{ ml: 120, mt: 5, display: 'flex', justifyContent: 'space-around' }}>

@@ -1,7 +1,7 @@
 import React from 'react'
 import Box from '@mui/material/Box';
 import Container from '@mui/material/Container';
-import { H3 } from "components/Typography";
+import { H4 } from "components/Typography";
 import Button from '@mui/material/Button';
 import ImageListItem from '@mui/material/ImageListItem';
 import amico from '../../../public/assets/images/umurava/amico.png';
@@ -11,7 +11,7 @@ function Portofolio() {
   return (
 <Box sx={{}}>
     <Container sx={{ borderBottom: 4, borderColor: '#2B71F0', display: 'flex', justifyContent: 'space-between' }}>
-        <H3 sx={{ mt: 6, ml: 10 }}>Portofolio Items</H3>
+        <H4 sx={{ mt: 6, ml:{xs:0,sd:0,sm:10,md:10} }}>Portofolio Items</H4>
         <Button
             type="submit"
             variant="contained"
@@ -21,7 +21,7 @@ function Portofolio() {
             Add Experience
         </Button>
     </Container>
-    <Container sx={{ml:40}}>
+    <Container sx={{ml:{sm:3,md:40}}}>
         <ImageListItem>
             <Image
             src={amico}
