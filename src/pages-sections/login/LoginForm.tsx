@@ -17,7 +17,7 @@ type SidenavProps = {
 const LoginForm: FC<SidenavProps> = (props) => {
   const { toggleForm } = props;
   return (
-    <Box sx={{border:1,width:500, position: 'absolute', top:70,ml:70,mt:15, borderRadius:10,backgroundColor:"grey.500",  zIndex: 'tooltip'}}>
+    <Box sx={{border:1,width:500, position: 'absolute', top:70,ml:70,mt:15, borderRadius:10,  zIndex: 'tooltip',  background: '#F2F2F2'}}>
     <form>
       <H3 textAlign="center" mb={1}>
         Login with email
@@ -32,7 +32,8 @@ const LoginForm: FC<SidenavProps> = (props) => {
         sx={{
           borderRadius: 28,
           ml:10,
-          width:300
+          mt:2,
+          width:300,
         }}
       />
       <TextField
@@ -44,7 +45,7 @@ const LoginForm: FC<SidenavProps> = (props) => {
         sx={{
           width:300,
           borderRadius: 28,
-          mt:7,
+          mt:5,
           ml:10
         }}
       />
