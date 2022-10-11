@@ -1,18 +1,15 @@
 import { Card, CardProps } from "@mui/material";
 import { styled } from "@mui/material/styles";
-import BazarButton from "components/BazarButton";
-import BazarTextField from "components/BazarTextField";
 import { FlexBox, FlexRowCenter } from "components/flex-box";
-import { Box, Divider } from "@mui/material";
+import { Box } from "@mui/material";
 import { H6 } from "components/Typography";
 import Link from "next/link";
 import { H3, Small } from "components/Typography";
 import { useFormik } from "formik";
-import React, { useCallback, useState } from "react";
+import React from "react";
+import {TextField} from "@mui/material";
 import * as yup from "yup";
-import EyeToggleButton from "./EyeToggleButton";
-import SocialButtons from "./SocialButtons";
-import { NextResponse, NextRequest } from 'next/server'
+import Button from '@mui/material/Button';
 import Router from 'next/router'
 
 const fbStyle = { background: "#3B5998", color: "white" };
@@ -32,6 +29,14 @@ export const Wrapper = styled<React.FC<WrapperProps & CardProps>>(
 
 const Reset = () => {
 
+const initialValues = {
+  email: "",
+};
+
+const formSchema = yup.object().shape({
+  email: yup.string().email("invalid email").required("Email is required"),
+});
+
   const handleFormSubmit = async (values: any) => {
     console.log(values);
     // NextResponse.redirect("/confirm_email")
@@ -50,7 +55,7 @@ const Reset = () => {
     });
 
   return (
-    <Wrapper elevation={3} >
+    <Box  sx={{mt:30,width:{xs:300,sm:500},bgcolor:"white", zIndex:5, mb:20,ml:{xs:8,sd:8,sm:15,md:70}}}>
       <form onSubmit={handleSubmit}>
         <H3 textAlign="center" mb={1}>
           Forgot password
@@ -66,9 +71,8 @@ const Reset = () => {
           Enter your email to reset your password
         </Small>
 
-        <BazarTextField
-          mb={1.5}
-          fullWidth
+        <TextField
+          sx={{mb:1.5,width:{xs:200,sm:300},ml:{xs:5,sm:14}}}
           name="email"
           size="small"
           type="email"
@@ -85,21 +89,20 @@ const Reset = () => {
           justifyContent="center"
           alignItems="center"
         >
-          <BazarButton
-            color="primary"
+          <Button
             variant="outlined"
-            sx={{ mb: "1.65rem", borderRadius: "1rem", mr: "1rem"}}
+            sx={{ mb: "1.65rem", borderRadius: "1rem",borderColor: 'info.main', mr: "1rem"}}
           >
             Cancel
-          </BazarButton>
-          <BazarButton
+          </Button>
+          <Button
             type="submit"
-            color="primary"
+            color="info"
             variant="contained"
-            sx={{ mb: "1.65rem", borderRadius: "1rem"}}
+            sx={{ mb: "1.65rem", borderRadius: "1rem", background: '#001A40'}}
           >
             Continue
-          </BazarButton>
+          </Button>
         </FlexBox>
       </form>
       <FlexRowCenter my="1.25rem">
@@ -112,16 +115,8 @@ const Reset = () => {
           </a>
         </Link>
       </FlexRowCenter>
-    </Wrapper>
+    </Box>
   );
 };
-
-const initialValues = {
-  email: "",
-};
-
-const formSchema = yup.object().shape({
-  email: yup.string().email("invalid email").required("Email is required"),
-});
 
 export default Reset;
