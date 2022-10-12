@@ -43,6 +43,7 @@ const LoginForm: FC<SidenavProps> = (props) => {
         Login with email
       </H3>
       <TextField
+        size="small"
         name="email"
         type="email"
         variant="outlined"

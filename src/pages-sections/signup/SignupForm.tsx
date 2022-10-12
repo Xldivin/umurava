@@ -45,6 +45,7 @@ const SignupForm: FC<SidenavProps> = (props) => {
         Sign up with email
       </H3>
       <TextField
+        size="small"
         name="email"
         type="email"
         variant="outlined"
