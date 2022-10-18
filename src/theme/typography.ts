@@ -1,16 +1,6 @@
-export const fontSize = 14;
+export const fontSize = 16;
 export const fontFamily = [
-  "Open Sans",
-  "Roboto",
-  "-apple-system",
-  "BlinkMacSystemFont",
-  "Segoe UI",
-  "Oxygen",
-  "Ubuntu",
-  "Cantarell",
-  "Fira Sans",
-  "Droid Sans",
-  "Helvetica Neue",
+  "Work Sans",
   "sans-serif",
 ].join(",");
 
