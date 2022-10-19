@@ -1,4 +1,5 @@
 import React from 'react'
+import Container  from '@mui/material/Container';
 import {TextField } from "@mui/material";
 import { H3 } from "components/Typography";
 import Box from '@mui/material/Box';
@@ -10,24 +11,26 @@ import { useFormik } from "formik";
 import * as yup from "yup";
 
 
-function Body() {
+function Body2() {
   const initialValues = {
     first_name: "",
     last_name: "",
-    job_title: "",
-    company_name: "",
-    email: "",
-    client: "",
+    descrption: "",
+    category: "",
+    summary: "",
     project: "",
+    skills: "",
+    experience: "",
   };
   const formSchema = yup.object().shape({
     first_name: yup.string().min(3,"Minimum of 3 characters").required("This field is required"),
     last_name: yup.string().min(3,"Minimum of 3 characters").required("This field is required"),
-    job_title: yup.string().min(3,"Minimum of 3 characters").required("This field is required"),
-    company_name: yup.string().min(2,"Minimum of 2 characters").required("This field is required"),
-    client: yup.string().min(3,"Minimum of 3 characters").required("This field is required"),
+    descrption: yup.string().min(3,"Minimum of 3 characters").required("This field is required"),
+    category: yup.string().min(2,"Minimum of 2 characters").required("This field is required"),
+    summary: yup.string().min(3,"Minimum of 3 characters").required("This field is required"),
     project: yup.string().min(3,"Minimum of 3 characters").required("This field is required"),
-    email: yup.string().email("invalid email").required("Email is required"),
+    skills: yup.string().min(3,"Minimum of 3 characters").required("This field is required"),
+    experience: yup.string().min(3,"Minimum of 3 characters").required("This field is required"),
   });
   const handleFormSubmit = async (values: any) => {
     console.log(values);
@@ -41,20 +44,21 @@ function Body() {
   });
   return (
     <Box sx={{ml:30,}}>
-        <H3 sx={{ml:{xs:-28,sd:-28,sm:-25,md:10},position:"relative",top:60}}>Solo Freelancer</H3>
+        <H3 sx={{ml:{xs:-28,sd:-28,sm:-25,md:10},position:"relative",top:60}}>Freelance Team</H3>
         <form onSubmit={handleSubmit}>
+        <Box sx={{display:"flex",flexDirection:{xs:"column",sd:"column",sm:"row",md:"row"}}}>
         <TextField
           sx={{mt:10,width:{xs:280,sd:300,sm:300,md:400},ml:{xs:-25,sd:-25,sm:-28,md:10}}}
           name="first_name"
           size="small"
           type="text"
           variant="outlined"
+          label="First-name"
           onBlur={handleBlur}
           value={values.first_name}
           onChange={handleChange}
           error={!!touched.first_name && !!errors.first_name}
           helperText={touched.first_name && errors.first_name}
-          label="First-name"
           placeholder="Enter your first-name"
           />
         <TextField
@@ -71,63 +75,52 @@ function Body() {
           label="Last_name"
           placeholder="Enter your last-name"
           />
+        </Box>
+        <Box sx={{display:"flex",flexDirection:{xs:"column",sd:"column",sm:"row",md:"row"}}}>
         <TextField
           sx={{mt:10,width:{xs:280,sd:300,sm:300,md:400},ml:{xs:-25,sd:-25,sm:-28,md:10}}}
-          name="job_title"
+          name="descrption"
           size="small"
           type="text"
           variant="outlined"
           onBlur={handleBlur}
-          value={values.job_title}
+          value={values.descrption}
           onChange={handleChange}
-          error={!!touched.job_title && !!errors.job_title}
-          helperText={touched.job_title && errors.job_title}
-          label="Job_Title"
-          placeholder="Enter your job_title"
+          error={!!touched.descrption && !!errors.descrption}
+          helperText={touched.descrption && errors.descrption}
+          label="Client Descrption"
+          placeholder="Enter your Client Descrption"
           />
         <TextField
           sx={{mt:10,width:{xs:280,sd:300,sm:300,md:400},ml:{xs:-25,sd:-25,sm:10,md:10}}}
-          name="company_name"
+          name="category"
           size="small"
           type="text"
           variant="outlined"
           onBlur={handleBlur}
-          value={values.company_name}
+          value={values.category}
           onChange={handleChange}
-          error={!!touched.company_name && !!errors.company_name}
-          helperText={touched.company_name && errors.company_name}
-          label="Company_Name"
-          placeholder="Enter your company_name"
+          error={!!touched.category && !!errors.category}
+          helperText={touched.category && errors.category}
+          label="Service Category"
+          placeholder="Enter your Service Category"
           />
+        </Box>
+        <Box>
         <TextField
-          sx={{mt:10,width:{xs:280,sd:300,sm:300,md:400},ml:{xs:-25,sd:-25,sm:-28,md:10}}}
-          name="email"
-          size="small"
-          type="text"
-          variant="outlined"
-          onBlur={handleBlur}
-          value={values.email}
-          onChange={handleChange}
-          error={!!touched.email && !!errors.email}
-          helperText={touched.email && errors.email}
-          label="Email"
-          placeholder="Enter your Email address"
-          />
-          <Box>
-          <TextField
             sx={{ mt: 10, width:{xs:300,sd:350,sm:350,md:400},ml:{xs:-26,sd:-26,sm:-28,md:10}, height:100 }}
-            name="client"
+            name="summary"
             multiline={true}
             rows={5}
             type="text"
             variant="outlined"
             onBlur={handleBlur}
-            value={values.client}
+            value={values.summary}
             onChange={handleChange}
-            error={!!touched.client && !!errors.client}
-            helperText={touched.client && errors.client}
-            label="About_Client"
-            placeholder="About_Client"
+            error={!!touched.summary && !!errors.summary}
+            helperText={touched.summary && errors.summary}
+            label="Project Summary"
+            placeholder="Project Summary"
         />
         <TextField
             sx={{ mt: 10, width:{xs:300,sd:350,sm:350,md:400},ml:{xs:-26,sd:-26,sm:2,md:10}, height:100 }}
@@ -141,16 +134,46 @@ function Body() {
             onChange={handleChange}
             error={!!touched.project && !!errors.project}
             helperText={touched.project && errors.project}
-            label="Project_Summary"
-            placeholder="Project_Summary"
+            label="Project_Description"
+            placeholder="Project_Description"
         />
-          </Box>
+        </Box>
+        <Box>
+        <TextField
+          sx={{mt:10,width:{xs:280,sd:300,sm:300,md:400},ml:{xs:-25,sd:-25,sm:-28,md:10}}}
+          name="skills"
+          size="small"
+          type="text"
+          variant="outlined"
+          onBlur={handleBlur}
+          value={values.skills}
+          onChange={handleChange}
+          error={!!touched.skills && !!errors.skills}
+          helperText={touched.skills && errors.skills}
+          label="Skills Required"
+          placeholder="Enter Skills Required"
+          />
+        <TextField
+          sx={{mt:10,width:{xs:280,sd:300,sm:300,md:400},ml:{xs:-25,sd:-25,sm:10,md:10}}}
+          name="experience"
+          size="small"
+          type="text"
+          variant="outlined"
+          onBlur={handleBlur}
+          value={values.experience}
+          onChange={handleChange}
+          error={!!touched.experience && !!errors.experience}
+          helperText={touched.experience && errors.experience}
+          label="Experience Required"
+          placeholder="Enter experience required"
+          />
+        </Box>
         <Box sx={{display:"flex",mb:10,mt:5,ml:{xs:-100,sd:-95,sm:-60,md:10}}}>
-        <Button variant="contained" sx={{width:80, ml:90, mt:4, backgroundColor:"#EFEFFD", color:"#4B4DED"}}>
+        <Button variant="contained" sx={{width:80, ml:90, mt:4, backgroundColor:"#EFEFFD", color:"#4B4DED"}}> 
         Back
         </Button>
-        <Button type="submit" variant="contained" sx={{width:80, ml:5, mt:4, backgroundColor:"#2B71F0", color:"#FFFFFF"}}> 
-        Next
+        <Button variant="contained" type="submit" sx={{width:80, ml:5, mt:4, backgroundColor:"#2B71F0", color:"#FFFFFF"}}> 
+        Submit
         </Button>
         </Box>
         </form>
@@ -167,4 +190,4 @@ function Body() {
   )
 }
 
-export default Body
+export default Body2
