@@ -14,11 +14,11 @@ import { Card as Cards } from '@mui/material';
 
 function Footer() {
   return (
-    <Box sx={{ background: '#001A40', height: { xs: "220vh", sd: "230vh", sm: "77vh", md: "60vh" }, width: { xs: "100vh", sm: 768, lg: 1600 } }}>
+    <Box sx={{ background: '#001A40', height: { xs: "235vh", sd: "235vh", sm: "77vh", md: "60vh" }, width: { xs: "55vh",sd:"61vh", sm: 768, lg: 1600 } }}>
       <Toolbar>
         <FlexBox sx={{ display: 'flex', flexDirection: { xs: "column", sd: "column", sm: "row", lg: "row" }, position: "relative", bottom: { xs: "0px", sd: "0px", sm: "0px", lg: "0px" }, left: { xs: "50px", sd: "70px", sm: "10px",md:"10px" } }} >
-          <Box sx={{ ml: { xs:0,sd:0,sm:0, md: 11 }, color: "white",mr:{xs:5} }}>
-            <H4 sx={{width:{xs:300,sd:0,sm:130,md:260}}}>For Businesses & Organizations</H4><br/>
+          <Box sx={{ ml: { xs:0,sd:0,sm:0, md: 11 }, color: "white",mr:{xs:5}, }}>
+            <H4 sx={{width:{xs:300,sd:280,sm:130,md:260}}}>For Businesses & Organizations</H4><br/>
             <ListItemText sx={{cursor:"pointer"}}>Customized Talent Marketplace</ListItemText>
             <ListItemText sx={{cursor:"pointer"}}>Hire & Outsource</ListItemText>
             <ListItemText sx={{cursor:"pointer"}}>Freelance Team</ListItemText>
@@ -41,8 +41,8 @@ function Footer() {
               </Typography>
             </FlexBox>
           </Box>
-          <Box sx={{ ml:{xs:0,sd:0,sm:0,md: 10 }, color: "white", }}>
-            <H4 sx={{width:{xs:300,sd:0,sm:140,md:200}}}>Talent Specializations</H4><br/>
+          <Box sx={{ ml:{xs:0,sd:0,sm:0,md: 10 }, color: "white",mt:{xs:5,sd:5,sm:0,md:0} }}>
+            <H4 sx={{width:{xs:300,sd:300,sm:140,md:200}}}>Talent Specializations</H4><br/>
             <ListItemText sx={{cursor:"pointer"}}>Web & Software Development</ListItemText>
             <ListItemText sx={{cursor:"pointer"}}>Graphics & Design</ListItemText>
             <ListItemText sx={{cursor:"pointer"}}>Videography & Animation</ListItemText>
@@ -52,7 +52,7 @@ function Footer() {
             <ListItemText sx={{cursor:"pointer"}}>Writing & Translation</ListItemText>
             <ListItemText sx={{cursor:"pointer"}}>Project Management</ListItemText>
           </Box>
-          <Box sx={{ ml: { xs:0,sd:0,sm:2,md: 10 }, color: "white" }}>
+          <Box sx={{ ml: { xs:0,sd:0,sm:2,md: 10 }, color: "white",mt:{xs:5,sd:5,sm:0,md:0} }}>
             <H4 sx={{width:{xs:300,sd:0,sm:100,md:150}}}>Soutions</H4><br/>
             <ListItemText sx={{cursor:"pointer"}}>Research & Data</ListItemText>
             <ListItemText sx={{cursor:"pointer"}}>Creative & Media</ListItemText>
@@ -60,15 +60,15 @@ function Footer() {
             <ListItemText sx={{cursor:"pointer"}}>For Global Companies</ListItemText>
             <ListItemText sx={{cursor:"pointer"}}>For Enterprises</ListItemText>
           </Box>
-          <Box sx={{ ml: { xs:0,sd:0,sm: 4, md: 15 }, color: "white" }}>
-            <H4 sx={{width:{xs:300,sd:0,sm:100,md:190}}}>For Talents</H4><br/>
+          <Box sx={{ ml: { xs:0,sd:0,sm: 4, md: 15 }, color: "white",mt:{xs:5,sd:5,sm:0,md:0} }}>
+            <H4 sx={{width:{xs:300,sd:280,sm:100,md:190}}}>For Talents</H4><br/>
             <ListItemText sx={{cursor:"pointer"}}>Join The Workforce</ListItemText>
             <ListItemText sx={{cursor:"pointer"}}>Form the Team</ListItemText>
             <ListItemText sx={{cursor:"pointer"}}>Find Jobs</ListItemText>
             <ListItemText sx={{cursor:"pointer"}}>Community</ListItemText>
             <ListItemText sx={{cursor:"pointer"}}>Upskilling & Training</ListItemText>
           </Box>
-          <Box sx={{ ml: { xs:0,sd:0,sm: 4, md: 10 }, color: "white" }}>
+          <Box sx={{ ml: { xs:0,sd:0,sm: 4, md: 10 }, color: "white",mt:{xs:5,sd:5,sm:0,md:0} }}>
             <H4 sx={{width:{xs:300,sd:0,sm:100,md:280}}}>Company</H4><br/>
             <ListItemText sx={{cursor:"pointer"}}>About Us</ListItemText>
             <ListItemText sx={{cursor:"pointer"}}>Why Umurava?</ListItemText>
