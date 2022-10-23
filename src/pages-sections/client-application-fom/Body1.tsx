@@ -26,7 +26,7 @@ function Body1() {
         <form>
         <Box sx={{display:"flex",flexDirection:{xs:"column",sd:"column",sm:"row",md:"row"}}}>
         <TextField
-          sx={{mt:10,width:{xs:280,sd:300,sm:300,md:400},ml:{xs:-25,sd:-25,sm:-28,md:10}}}
+          sx={{mt:10,width:{xs:300,sd:350,sm:300,md:400},ml:{xs:-26,sd:-25,sm:-28,md:10}}}
           name="category"
           size="small"
           type="text"
@@ -35,7 +35,7 @@ function Body1() {
           placeholder="Enter your Project-category"
           />
          <TextField
-            sx={{ mt: 10, width:{xs:300,sd:350,sm:350,md:400},ml:{xs:-26,sd:-26,sm:10,md:10}, height:100 }}
+            sx={{ mt: 10, width:{xs:300,sd:350,sm:300,md:400},ml:{xs:-26,sd:-25,sm:10,md:10}, height:100 }}
             name="description"
             multiline={true}
             rows={4}
@@ -47,7 +47,7 @@ function Body1() {
         </Box>
         <Box sx={{display:"flex",flexDirection:{xs:"column",sd:"column",sm:"row",md:"row"}}}>
         <TextField
-          sx={{mt:10,width:{xs:280,sd:300,sm:300,md:400},ml:{xs:-25,sd:-25,sm:-28,md:10}}}
+          sx={{mt:10,width:{xs:300,sd:350,sm:300,md:400},ml:{xs:-26,sd:-25,sm:-28,md:10}}}
           name="skills"
           size="small"
           type="text"
@@ -56,10 +56,11 @@ function Body1() {
           placeholder="Enter your Skills Required"
           />
         <TextField
-          sx={{mt:10,width:{xs:280,sd:300,sm:300,md:400},ml:{xs:-25,sd:-25,sm:10,md:10}}}
+          sx={{mt:10,width:{xs:300,sd:350,sm:300,md:400},ml:{xs:-26,sd:-25,sm:10,md:10}}}
           name="experience"
           size="small"
-          type="text"
+          type="file"
+          hidden
           variant="outlined"
           label="experience"
           placeholder="Enter your experience required"
@@ -67,7 +68,7 @@ function Body1() {
         </Box>
         <Box sx={{display:"flex",flexDirection:{xs:"column",sd:"column",sm:"row",md:"row"}}}>
         <TextField
-          sx={{mt:10,width:{xs:280,sd:300,sm:300,md:400},ml:{xs:-25,sd:-25,sm:-28,md:10}}}
+          sx={{mt:10,width:{xs:300,sd:350,sm:300,md:400},ml:{xs:-26,sd:-25,sm:-28,md:10}}}
           name="Budget"
           size="small"
           type="text"
@@ -76,7 +77,7 @@ function Body1() {
           placeholder="Enter your Budget-Proposal"
           />
         <TextField
-          sx={{mt:10,width:{xs:280,sd:300,sm:300,md:400},ml:{xs:-25,sd:-25,sm:10,md:10}}}
+          sx={{mt:10,width:{xs:300,sd:350,sm:300,md:400},ml:{xs:-26,sd:-25,sm:10,md:10}}}
           name="files"
           size="small"
           type="text"
@@ -85,31 +86,27 @@ function Body1() {
           placeholder="Enter your Project Supporting Files"
           />
         </Box>
-        <Box sx={{mt:10,display:"flex",flexDirection:{s:"column",sd:"column",sm:"row",md:"row"}}}>
-          <Box sx={{ml:{xs:-25,sd:-25,sm:-28,md:10}}}>
+        <Box sx={{mt:10,display:"flex",flexDirection:{xs:"column",sd:"column",sm:"row",md:"row"},ml:{xs:-26,sd:-25,sm:-28,md:10}}}>
           <DesktopDatePicker
           label="Start Date"
           inputFormat="MM/DD/YYYY"
           value={value}
           onChange={handleChange}
-          renderInput={(params) => <TextField {...params} sx={{width:{xs:280,sd:300,sm:300,md:400}}}/>}
+          renderInput={(params) => <TextField  size="small" {...params} sx={{width:{xs:300,sd:350,sm:300,md:400}}}/>}
         />
-          </Box>
-          <Box sx={{ml:{xs:-35,sd:-25,sm:10,md:10},mt:{xs:16,sd:10,sm:0,md:0}}}>
           <DesktopDatePicker
           label="End Date"
           inputFormat="MM/DD/YYYY"
           value={value}
           onChange={handleChange}
-          renderInput={(params) => <TextField {...params} sx={{width:{xs:280,sd:300,sm:300,md:400}}}/>}
+          renderInput={(params) => <TextField {...params} size="small" sx={{width:{xs:300,sd:350,sm:300,md:400},mt:{xs:8,sd:8,sm:0,md:0},ml:{xs:0,sd:0,sm:10}}}/>}
         />
-          </Box>
         </Box>
         <Box sx={{display:"flex",mb:10,mt:5,ml:{xs:-100,sd:-95,sm:-60,md:10}}}>
-        <Button variant="contained" sx={{width:80, ml:90, mt:4, backgroundColor:"#EFEFFD", color:"#4B4DED"}}> 
+        <Button variant="contained" sx={{width:80, ml:90, mt:4, backgroundColor:"#EFEFFD",color:"#4B4DED"}}> 
         Back
         </Button>
-        <Button variant="contained" sx={{width:80, ml:5, mt:4, backgroundColor:"#2B71F0", color:"#FFFFFF"}}> 
+        <Button variant="contained" sx={{width:80, ml:5, mt:4, backgroundColor:"#2B71F0",color:"#FFFFFF"}}> 
         Back
         </Button>
         </Box>

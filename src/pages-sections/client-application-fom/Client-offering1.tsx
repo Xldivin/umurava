@@ -12,14 +12,14 @@ function Client_landing() {
     <Box sx={{background:"#407BFF",height:800}}>
         <Box  sx={{display:"flex",justifyContent:"space-between"}}>
         <Box  sx={{display:{xs:"none",sd:"none",sm:"flex",md:"flex"}, ml:{sm:1,md:20}, mt:5}}>
-        <Paragraph sx={{color:"#ffffff",width:20}}>Platform</Paragraph>
-        <Paragraph sx={{ml:8,color:"#ffffff",width:80,}}>Solutions</Paragraph>
-        <Paragraph sx={{ml:2,color:"#ffffff",width:120}}>How it works</Paragraph>
-        <Paragraph sx={{ml:2,color:"#ffffff",width:80}}>Industries</Paragraph>
-        <Paragraph sx={{ml:2,color:"#ffffff",width:80}}>About us</Paragraph>
+        <Paragraph sx={{color:"#ffffff",width:20,cursor:"pointer"}}>Platform</Paragraph>
+        <Paragraph sx={{ml:8,color:"#ffffff",width:80,cursor:"pointer"}}>Solutions</Paragraph>
+        <Paragraph sx={{ml:2,color:"#ffffff",width:120,cursor:"pointer"}}>How it works</Paragraph>
+        <Paragraph sx={{ml:2,color:"#ffffff",width:80,cursor:"pointer"}}>Industries</Paragraph>
+        <Paragraph sx={{ml:2,color:"#ffffff",width:80,cursor:"pointer"}}>About us</Paragraph>
         </Box>
         <Box  sx={{display:{xs:"none",sd:"none",sm:"flex",md:"flex"},mr:15, mt:5}}>
-        <Paragraph sx={{color:"#ffffff"}}>Login</Paragraph>
+        <Paragraph sx={{color:"#ffffff",cursor:"pointer"}}>Login</Paragraph>
         <Button sx={{ml:2,borderRadius:'16px', background:"#1CBF73", pl:"20px",pr:"20px",color:"#ffffff",width:{sm:"210px",md:"230px"},position:"relative",bottom:"5px"}}>find quality talents</Button>
         </Box>
         </Box>

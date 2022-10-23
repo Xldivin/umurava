@@ -39,7 +39,7 @@ function client_form() {
 })
   return (
     <ThemeProvider theme={theme}>
-    <Box sx={{zIndex: 'modal', background: '#FFFFFF', width:{sm:768,md:1600},height:{sm:"185vh",md:1360,},overflowX:{xs:"hidden",sm:"hidden",lg:"hidden"},overflowY:{xs:"hidden",sm:"hidden",lg:"hidden"}}}>
+    <Box sx={{zIndex: 'modal', background: '#FFFFFF', width:{sm:768,md:1600},height:{sm:"195vh",md:1370,},overflowX:{xs:"hidden",sm:"hidden",lg:"hidden"},overflowY:{xs:"hidden",sm:"hidden",lg:"hidden"}}}>
         <Header_W />
         <Box_Header />
         <Body3 />

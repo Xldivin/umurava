@@ -48,7 +48,7 @@ function Body2() {
         <form onSubmit={handleSubmit}>
         <Box sx={{display:"flex",flexDirection:{xs:"column",sd:"column",sm:"row",md:"row"}}}>
         <TextField
-          sx={{mt:10,width:{xs:280,sd:300,sm:300,md:400},ml:{xs:-25,sd:-25,sm:-28,md:10}}}
+          sx={{mt:10,width:{xs:300,sd:350,sm:300,md:400},ml:{xs:-26,sd:-26,sm:-28,md:10}}}
           name="first_name"
           size="small"
           type="text"
@@ -62,7 +62,7 @@ function Body2() {
           placeholder="Enter your first-name"
           />
         <TextField
-          sx={{mt:10,width:{xs:280,sd:300,sm:300,md:400},ml:{xs:-25,sd:-25,sm:10,md:10}}}
+          sx={{mt:10,width:{xs:300,sd:350,sm:300,md:400},ml:{xs:-26,sd:-26,sm:10,md:10}}}
           name="last_name"
           size="small"
           type="text"
@@ -78,7 +78,7 @@ function Body2() {
         </Box>
         <Box sx={{display:"flex",flexDirection:{xs:"column",sd:"column",sm:"row",md:"row"}}}>
         <TextField
-          sx={{mt:10,width:{xs:280,sd:300,sm:300,md:400},ml:{xs:-25,sd:-25,sm:-28,md:10}}}
+          sx={{mt:10,width:{xs:300,sd:350,sm:300,md:400},ml:{xs:-26,sd:-26,sm:-28,md:10}}}
           name="descrption"
           size="small"
           type="text"
@@ -92,7 +92,7 @@ function Body2() {
           placeholder="Enter your Client Descrption"
           />
         <TextField
-          sx={{mt:10,width:{xs:280,sd:300,sm:300,md:400},ml:{xs:-25,sd:-25,sm:10,md:10}}}
+          sx={{mt:10,width:{xs:300,sd:350,sm:300,md:400},ml:{xs:-26,sd:-26,sm:10,md:10}}}
           name="category"
           size="small"
           type="text"
@@ -108,7 +108,7 @@ function Body2() {
         </Box>
         <Box>
         <TextField
-            sx={{ mt: 10, width:{xs:300,sd:350,sm:350,md:400},ml:{xs:-26,sd:-26,sm:-28,md:10}, height:100 }}
+            sx={{ mt: 10, width:{xs:300,sd:350,sm:300,md:400},ml:{xs:-26,sd:-26,sm:-28,md:10}, height:100 }}
             name="summary"
             multiline={true}
             rows={5}
@@ -123,7 +123,7 @@ function Body2() {
             placeholder="Project Summary"
         />
         <TextField
-            sx={{ mt: 10, width:{xs:300,sd:350,sm:350,md:400},ml:{xs:-26,sd:-26,sm:2,md:10}, height:100 }}
+            sx={{ mt: 10, width:{xs:300,sd:350,sm:300,md:400},ml:{xs:-26,sd:-26,sm:10,md:10}, height:100 }}
             name="project"
             multiline={true}
             rows={5}
@@ -140,7 +140,7 @@ function Body2() {
         </Box>
         <Box>
         <TextField
-          sx={{mt:10,width:{xs:280,sd:300,sm:300,md:400},ml:{xs:-25,sd:-25,sm:-28,md:10}}}
+          sx={{mt:15,width:{xs:300,sd:350,sm:300,md:400},ml:{xs:-26,sd:-26,sm:-28,md:10}}}
           name="skills"
           size="small"
           type="text"
@@ -154,7 +154,7 @@ function Body2() {
           placeholder="Enter Skills Required"
           />
         <TextField
-          sx={{mt:10,width:{xs:280,sd:300,sm:300,md:400},ml:{xs:-25,sd:-25,sm:10,md:10}}}
+          sx={{mt:15,width:{xs:300,sd:350,sm:300,md:400},ml:{xs:-26,sd:-26,sm:10,md:10}}}
           name="experience"
           size="small"
           type="text"

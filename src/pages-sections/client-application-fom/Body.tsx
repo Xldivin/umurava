@@ -44,7 +44,7 @@ function Body() {
         <H3 sx={{ml:{xs:-28,sd:-28,sm:-25,md:10},position:"relative",top:60}}>Solo Freelancer</H3>
         <form onSubmit={handleSubmit}>
         <TextField
-          sx={{mt:10,width:{xs:280,sd:300,sm:300,md:400},ml:{xs:-25,sd:-25,sm:-28,md:10}}}
+          sx={{mt:10,width:{xs:300,sd:350,sm:300,md:400},ml:{xs:-26,sd:-26,sm:-28,md:10}}}
           name="first_name"
           size="small"
           type="text"
@@ -58,7 +58,7 @@ function Body() {
           placeholder="Enter your first-name"
           />
         <TextField
-          sx={{mt:10,width:{xs:280,sd:300,sm:300,md:400},ml:{xs:-25,sd:-25,sm:10,md:10}}}
+          sx={{mt:10,width:{xs:300,sd:350,sm:300,md:400},ml:{xs:-26,sd:-26,sm:10,md:10}}}
           name="last_name"
           size="small"
           type="text"
@@ -72,7 +72,7 @@ function Body() {
           placeholder="Enter your last-name"
           />
         <TextField
-          sx={{mt:10,width:{xs:280,sd:300,sm:300,md:400},ml:{xs:-25,sd:-25,sm:-28,md:10}}}
+          sx={{mt:10,width:{xs:300,sd:350,sm:300,md:400},ml:{xs:-26,sd:-26,sm:-28,md:10}}}
           name="job_title"
           size="small"
           type="text"
@@ -86,7 +86,7 @@ function Body() {
           placeholder="Enter your job_title"
           />
         <TextField
-          sx={{mt:10,width:{xs:280,sd:300,sm:300,md:400},ml:{xs:-25,sd:-25,sm:10,md:10}}}
+          sx={{mt:10,width:{xs:300,sd:350,sm:300,md:400},ml:{xs:-26,sd:-26,sm:10,md:10}}}
           name="company_name"
           size="small"
           type="text"
@@ -100,7 +100,7 @@ function Body() {
           placeholder="Enter your company_name"
           />
         <TextField
-          sx={{mt:10,width:{xs:280,sd:300,sm:300,md:400},ml:{xs:-25,sd:-25,sm:-28,md:10}}}
+          sx={{mt:10,width:{xs:300,sd:350,sm:300,md:400},ml:{xs:-26,sd:-26,sm:-28,md:10}}}
           name="email"
           size="small"
           type="text"
@@ -146,10 +146,7 @@ function Body() {
         />
           </Box>
         <Box sx={{display:"flex",mb:10,mt:5,ml:{xs:-100,sd:-95,sm:-60,md:10}}}>
-        <Button variant="contained" sx={{width:80, ml:90, mt:4, backgroundColor:"#EFEFFD", color:"#4B4DED"}}>
-        Back
-        </Button>
-        <Button type="submit" variant="contained" sx={{width:80, ml:5, mt:4, backgroundColor:"#2B71F0", color:"#FFFFFF"}}> 
+        <Button type="submit" variant="contained" sx={{width:80, ml:98, mt:4, backgroundColor:"#2B71F0", color:"#FFFFFF"}}> 
         Next
         </Button>
         </Box>

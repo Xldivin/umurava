@@ -12,6 +12,7 @@ import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
 import { DesktopDatePicker } from '@mui/x-date-pickers/DesktopDatePicker';
 
 
+
 function Body3() {
   const [value, setValue] = React.useState<Dayjs | null>(
     dayjs('2014-08-18T21:11:54'),
@@ -25,7 +26,7 @@ function Body3() {
         <H3 sx={{ml:{xs:-28,sd:-28,sm:-25,md:10},position:"relative",top:60}}>Solo Freelancer2</H3>
         <Box sx={{display:"flex",flexDirection:{xs:"column",sd:"column",sm:"row",md:"row"}}}>
         <TextField
-          sx={{mt:10,width:{xs:280,sd:300,sm:300,md:400},ml:{xs:-25,sd:-25,sm:-28,md:10}}}
+          sx={{mt:10,width:{xs:300,sd:350,sm:300,md:400},ml:{xs:-26,sd:-25,sm:-28,md:10}}}
           name="budget"
           size="small"
           type="text"
@@ -34,7 +35,7 @@ function Body3() {
           placeholder="Budget-Proposal"
           />
         <TextField
-          sx={{mt:10,width:{xs:280,sd:300,sm:300,md:400},ml:{xs:-25,sd:-25,sm:10,md:10}}}
+          sx={{mt:10,width:{xs:300,sd:350,sm:300,md:400},ml:{xs:-26,sd:-25,sm:10,md:10}}}
           name="files"
           size="small"
           type="text"
@@ -43,25 +44,21 @@ function Body3() {
           placeholder="Project-supporting files"
           />
         </Box>
-        <Box sx={{display:"flex",flexDirection:{xs:"column",sd:"column",sm:"row",md:"row"},mt:{xs:10,sd:10,sm:8,md:7}}}>
-        <Box sx={{ml:{xs:-25,sd:-25,sm:-28,md:10}}}>
+        <Box sx={{mt:10,display:"flex",flexDirection:{xs:"column",sd:"column",sm:"row",md:"row"},ml:{xs:-26,sd:-25,sm:-28,md:10}}}>
           <DesktopDatePicker
           label="Start Date"
           inputFormat="MM/DD/YYYY"
           value={value}
           onChange={handleChange}
-          renderInput={(params) => <TextField {...params} sx={{width:{xs:280,sd:300,sm:300,md:400}}}/>}
+          renderInput={(params) => <TextField  size="small" {...params} sx={{width:{xs:300,sd:350,sm:300,md:400}}}/>}
         />
-        </Box>
-        <Box sx={{ml:{xs:-25,sd:-25,sm:10,md:10},mt:{xs:10,sd:10,sm:0,md:0}}}>
           <DesktopDatePicker
           label="End Date"
           inputFormat="MM/DD/YYYY"
           value={value}
           onChange={handleChange}
-          renderInput={(params) => <TextField {...params} sx={{width:{xs:280,sd:300,sm:300,md:400}}}/>}
+          renderInput={(params) => <TextField {...params} size="small" sx={{width:{xs:300,sd:350,sm:300,md:400},mt:{xs:8,sd:8,sm:0,md:0},ml:{xs:0,sd:0,sm:10}}}/>}
         />
-          </Box>
         </Box>
         <Box sx={{display:"flex",mb:10,mt:5,ml:{xs:-100,sd:-95,sm:-60,md:10}}}>
         <Button variant="contained" sx={{width:80, ml:90, mt:4, backgroundColor:"#EFEFFD", color:"#4B4DED"}}> 
