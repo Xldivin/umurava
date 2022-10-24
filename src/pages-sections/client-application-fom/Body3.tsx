@@ -22,7 +22,7 @@ function Body3() {
   };
   return (
     <LocalizationProvider dateAdapter={AdapterDayjs}>
-          <Box sx={{ml:30,}}>
+    <Box sx={{ml:30,}}>
         <H3 sx={{ml:{xs:-28,sd:-28,sm:-25,md:10},position:"relative",top:60}}>Solo Freelancer2</H3>
         <Box sx={{display:"flex",flexDirection:{xs:"column",sd:"column",sm:"row",md:"row"}}}>
         <TextField

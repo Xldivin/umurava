@@ -6,7 +6,8 @@ import Customer from '../../../public/assets/images/umurava/Customer.png';
 import Outsource from '../../../public/assets/images/umurava/Outsource.png';
 import Search from '../../../public/assets/images/umurava/Search.png';
 import Image from 'next/image';
-import Router from 'next/router'
+import Router from 'next/router';
+
 
 function Box_Header() {
   return (
