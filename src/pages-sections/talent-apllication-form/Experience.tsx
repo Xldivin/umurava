@@ -9,17 +9,22 @@ import MenuItem from '@mui/material/MenuItem';
 import { useState } from 'react';
 import FormControlLabel from '@mui/material/FormControlLabel';
 import Checkbox from '@mui/material/Checkbox';
+import dayjs, { Dayjs } from 'dayjs';
+import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
+import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
+import { DesktopDatePicker } from '@mui/x-date-pickers/DesktopDatePicker';
+
 
 
 function Experience() {
-    const [Age, setAge] = useState('');
-
-    const Change = (event: React.ChangeEvent<HTMLInputElement>) => {
-        setAge(event.target.value as string)
-    }
+    const [value, setValue] = React.useState<Dayjs | null>(null);
+    const handleChange = (newValue: Dayjs | null) => {
+        setValue(newValue);
+    };
     const label = { inputProps: { 'aria-label': 'Checkbox demo' } };
     return (
-        <Box sx={{}}>
+        <LocalizationProvider dateAdapter={AdapterDayjs}>
+             <Box sx={{}}>
             <Container sx={{ borderBottom: 4, borderColor: '#2B71F0', display: 'flex', justifyContent: 'space-between' }}>
                 <H3 sx={{ mt: 6, ml:{xs:0,sd:0,sm:10,md:10} }}>Experience</H3>
                 <Button
@@ -54,67 +59,27 @@ function Experience() {
                             placeholder="Enter The Position"
                         />
                     </Container>
-                    <Container sx={{ display: "flex",flexDirection:{xs:"column",sd:"column",sm:"column",md:"row"}, mt:{xs:4,sd:5,sm:0,md:0} }}>
-                    <H3 sx={{position:'relative',top:{xs:"5px",sd:"5px",sm:"50px",md:"50px"},left:{sm:"0px",md:"128px"}}}>Start</H3>
-                        <Box sx={{ dispaly: "flex" }}>
-                            <TextField
-                                sx={{ mt:{sm:8,md:10}, width:{xs:120,sd:150,sm:150,md:150}, ml:{xs:0,sd:0,sm:0,md:10} }}
-                                select
-                                size="small"
-                                onChange={Change}
-                                label="Month"
-                                placeholder="Select month"
-                            >
-                                <MenuItem value={10}>hellllo</MenuItem>
-                                <MenuItem value={20}>Twenty</MenuItem>
-                                <MenuItem value={30}>Thirty</MenuItem>
-                            </TextField>
-                            <TextField
-                                sx={{ mt:{sm:8,md:10}, width:{xs:120,sd:150,sm:150,md:150}, ml:{xs:1,sd:2,sm:5,md:10} }}
-                                label="Year"
-                                select
-                                size="small"
-                                onChange={Change}
-                                placeholder="Select year"
-                            >
-                                <MenuItem value={10}>hello</MenuItem>
-                                <MenuItem value={20}>Twenty</MenuItem>
-                                <MenuItem value={30}>Thirty</MenuItem>
-                            </TextField>
-                        </Box>
-                        <H3 sx={{position:'relative',top:{xs:"5px",sd:"5px",sm:"50px",md:"50px"},left:{sm:"0px",md:"120px"}}}>End</H3>
-                        <Box sx={{ dispaly: "flex" }}>
-                            <TextField
-                                sx={{ mt:{sm:8,md:10}, width:{xs:120,sd:150,sm:150,md:150}, ml:{xs:0,sd:0,sm:0,md:10} }}
-                                select
-                                size="small"
-                                onChange={Change}
-                                label="Month"
-                                placeholder="Select month"
-                            >
-                                <MenuItem value={10}>Ten</MenuItem>
-                                <MenuItem value={20}>Twenty</MenuItem>
-                                <MenuItem value={30}>Thirty</MenuItem>
-                            </TextField>
-                            <TextField
-                                sx={{ mt:{sm:8,md:10}, width:{xs:120,sd:150,sm:150,md:150}, ml:{xs:1,sd:2,sm:5,md:10}, height: 38 }}
-                                placeholder="Select year"
-                                select
-                                size="small"
-                                onChange={Change}
-                                label="year"
-                            >
-                                <MenuItem value={10}>Ten</MenuItem>
-                                <MenuItem value={20}>Twenty</MenuItem>
-                                <MenuItem value={30}>Thirty</MenuItem>
-                            </TextField>
-                        </Box>
-                    </Container>
+                    <Box sx={{mt:10,display:"flex",flexDirection:{xs:"column",sd:"column",sm:"row",md:"row"},ml:{xs:2,sd:2,sm:3,md:13}}}>
+          <DesktopDatePicker
+          label="Start Date"
+          inputFormat="MM/DD/YYYY"
+          value={value}
+          onChange={handleChange}
+          renderInput={(params) => <TextField  size="small" {...params} sx={{width:{xs:278,sd:324,sm:280,md:400}}}/>}
+        />
+          <DesktopDatePicker
+          label="End Date"
+          inputFormat="MM/DD/YYYY"
+          value={value}
+          onChange={handleChange}
+          renderInput={(params) => <TextField {...params} size="small" sx={{width:{xs:278,sd:324,sm:280,md:400},mt:{xs:8,sd:8,sm:0,md:0},ml:{xs:0,sd:0,sm:2,md:10}}}/>}
+        />
+        </Box>
                     <Box sx={{display:"flex", flexDirection:"column",ml:{sm:5,md:0}}}>
                     <FormControlLabel control={<Checkbox {...label} color="primary" />}label="I'm currently working here" sx={{ml:{xs:1,sd:2,sm:0,md:15},mt:{xs:3,sd:3,sm:0,md:0}}} />
                     <Box sx={{width:80}}>
                     <TextField
-            sx={{ mt: 10, width:{xs:300,sd:350,sm:600,md:900}, ml:{xs:2,sd:2,sm:0,md:13}, height:100 }}
+            sx={{ mt: 10, width:{xs:300,sd:350,sm:600,md:900}, ml:{xs:2,sd:2,sm:-2,md:13}, height:100 }}
             name="Experience"
             multiline={true}
             rows={3}
@@ -127,7 +92,7 @@ function Experience() {
                     </Box>
                 </Container>
             </form>
-            <Box sx={{ ml: 120, mt: 5, display: 'flex', justifyContent: 'space-around' }}>
+            <Box sx={{ml:{sd:20,sm:50,md:120}, mt: 5, display: 'flex', justifyContent: 'space-around' }}>
                 <Button
                     type="submit"
                     variant="contained"
@@ -145,6 +110,7 @@ function Experience() {
                 </Button>
             </Box>
         </Box>
+        </LocalizationProvider>
     )
 }
 

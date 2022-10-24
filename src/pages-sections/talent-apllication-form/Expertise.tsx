@@ -43,7 +43,7 @@ function Expertise() {
         />
         </Container>
     </form>
-    <Box sx={{ ml: 120, mt: 5, display: 'flex', justifyContent: 'space-around' }}>
+    <Box sx={{ ml:{sd:20,sm:50,md:120}, mt: 5, display: 'flex', justifyContent: 'space-around' }}>
         <Button
             type="submit"
             variant="contained"
