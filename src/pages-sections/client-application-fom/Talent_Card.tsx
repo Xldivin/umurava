@@ -10,9 +10,9 @@ import { Typography } from '@mui/material';
 import Button from '@mui/material/Button';
 import { H4 } from "components/Typography";
 
-function Talent_Card() {
+function Talent_Card({card}:any) {
   return (
-    <Box sx={{ width: 320, height: 390, background: "#ffffff", ml: 40, mt: 5 }}>
+    <Box sx={{ width: 320, height: 390, background: "#ffffff", mt: 5 }}>
       <Box sx={{ display: "flex" }}>
         <ImageListItem sx={{ ml: 2, mt: 2 }}>
           <Image
@@ -23,14 +23,14 @@ function Talent_Card() {
           </Image>
         </ImageListItem>
         <Box>
-          <Typography sx={{ ml: 2, mt: 2 }}>Ihirwe leny pascal</Typography>
+          <Typography sx={{ ml: 2, mt: 2 }}>{card.Name}</Typography>
           <Box sx={{ display: "flex", mt: "5px" }}>
             <PlaceIcon sx={{ ml: 2 }} />
-            <Typography sx={{ ml: 1 }}>Rwanda</Typography>
+            <Typography sx={{ ml: 1 }}>{card.Nationality}</Typography>
           </Box>
           <Box sx={{ display: "flex", mt: "5px" }}>
             <WatchLaterIcon sx={{ ml: 2 }} />
-            <Typography sx={{ ml: 1 }}>20 hrs/Week</Typography>
+            <Typography sx={{ ml: 1 }}>{card.Hours}</Typography>
           </Box>
           <Box sx={{ display: "flex" }}>
             <Typography sx={{ ml: 2, mt: 2, border: 1.5, borderRadius: '10px', width: 80, pl: 1, height: 30, pt: "3px", borderColor: "#407BFF" }}>Matching</Typography>
@@ -38,7 +38,7 @@ function Talent_Card() {
           </Box>
         </Box>
       </Box>
-      <H4 sx={{ml:2}}>Backend Developer</H4>
+      <H4 sx={{ml:2}}>{card.Developer}</H4>
       <Box sx={{display:"flex"}}>
       <ImageListItem sx={{ ml: 2 }}>
           <Image
@@ -46,24 +46,24 @@ function Talent_Card() {
           >
           </Image>
         </ImageListItem>
-        <Typography>Senior</Typography>
+        <Typography>{card.Experience}</Typography>
       </Box>
       <Typography sx={{ml:2,mt:"5px",mb:"5px"}}>Skills</Typography>
       <Box sx={{ml:2}}>
-        <Button sx={{backgroundColor: "#F3F3F3",ml:1}}>Javascript</Button>
-        <Button sx={{backgroundColor: "#F3F3F3",ml:1}}>Angular js</Button>
-        <Button sx={{backgroundColor: "#F3F3F3",ml:1}}>Angular js</Button>
+        <Button sx={{backgroundColor: "#F3F3F3",ml:1}}>{card.Skill1}</Button>
+        <Button sx={{backgroundColor: "#F3F3F3",ml:1}}>{card.Skill2}</Button>
+        <Button sx={{backgroundColor: "#F3F3F3",ml:1}}>{card.Skill3}</Button>
       </Box>
       <Box sx={{ml:2,mb:"10px"}}>
-        <Button sx={{backgroundColor: "#F3F3F3",mt:2,ml:1}}>Javascript</Button>
-        <Button sx={{backgroundColor: "#F3F3F3",mt:2,ml:1}}>Angular js</Button>
-        <Button sx={{backgroundColor: "#F3F3F3",mt:2,ml:1}}>Angular js</Button>
+        <Button sx={{backgroundColor: "#F3F3F3",mt:2,ml:1}}>{card.Skill4}</Button>
+        <Button sx={{backgroundColor: "#F3F3F3",mt:2,ml:1}}>{card.Skill5}</Button>
+        <Button sx={{backgroundColor: "#F3F3F3",mt:2,ml:1}}>{card.Skill6}</Button>
       </Box>
       <Typography sx={{ml:2,mb:"5px"}}>Experience</Typography>
       <Box sx={{display:"flex", justifyContent:"space-between"}}>
-      <Typography sx={{ml:2}}>2 years and 5 months</Typography>
+      <Typography sx={{ml:2}}>{card.Experience_Date}</Typography>
       <Typography sx={{fontWeight: 1000,mr:5,fontSize:35,position:"relative",top:-15}}>
-        $12
+      {card.Salary_Per_hour}
       </Typography>
       </Box>
     </Box>
