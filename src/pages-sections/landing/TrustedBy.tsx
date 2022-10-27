@@ -18,6 +18,23 @@ import WSHLogo from "../../assets/trusted_by/WSH.jpg";
 import Carousel from 'react-multi-carousel';
 import 'react-multi-carousel/lib/styles.css';
 
+// an array of the logos
+const logos1 = [
+    CIBALogo,
+    EducationCollaborative,
+    Gdg_Kigali,
+    HiiL_Logo,
+    IGIHE_LOGO,
+    KeplerLogo
+];
+
+const logos2 = [
+    LateriteLogo,
+    QuiqpayLogo,
+    Tori,
+    Viamo_Logo,
+    WSHLogo
+];
 // use carousel to display logos
 const responsive = {
     desktop: {
@@ -53,8 +70,7 @@ const TrustedBy = () => {
             <Container id="section-1" sx={{ mt: 8, position: "relative",
                 display: "flex",
                 flexDirection: "row",
-                justifyContent: "left",
-                marginTop: 13
+                marginTop: 4
             }}
             >
                 <Box maxWidth="830px" mx="auto" mb={8.5}
@@ -85,13 +101,28 @@ const TrustedBy = () => {
                         dotListClass="custom-dot-list-style"
                         itemClass="carousel-item-padding-40-px"
                     >
-                        <LazyImage src={CIBALogo} alt="CIBA" />
-                        <LazyImage src={EducationCollaborative} alt="Education Collaborative" />
-                        <LazyImage src={Gdg_Kigali} alt="GDG Kigali" />
-                        <LazyImage src={HiiL_Logo} alt="HiiL" />
-                        <LazyImage src={IGIHE_LOGO} alt="IGIHE" />
-                        <LazyImage src={KeplerLogo} alt="Kepler" />
-
+                          {logos1.map((logo, index) => (
+                                <LazyImage
+                                    key={index}
+                                    src={logo}
+                                    alt="Trusted By"
+                                    width="100%"
+                                    height="100%"
+                                    sx={{
+                                        maxWidth: "100%",
+                                        maxHeight: "100%",
+                                        objectFit: "contain",
+                                        objectPosition: "center",
+                                        width: "100%",
+                                        height: "100%",
+                                        display: "flex",
+                                        alignItems: "center",
+                                        justifyContent: "center",
+                                        margin: "auto",
+                                        padding: "10px"
+                                    }}
+                                />
+                            ))}
                     </Carousel>
                     {/* carousel that move the opposite direction*/}
                     <Carousel
@@ -111,11 +142,28 @@ const TrustedBy = () => {
                         dotListClass="custom-dot-list-style"
                         itemClass="carousel-item-padding-40-px"
                     >
-                        <LazyImage src={LateriteLogo} alt="Laterite"/>
-                        <LazyImage src={QuiqpayLogo} alt="Quiqpay" />
-                        <LazyImage src={Tori} alt="Tori" />
-                        <LazyImage src={Viamo_Logo} alt="Viamo" />
-                        <LazyImage src={WSHLogo} alt="WSH" />
+                        {logos2.map((logo, index) => (
+                            <LazyImage
+                                key={index}
+                                src={logo}
+                                alt="Trusted By"
+                                width="100%"
+                                height="100%"
+                                sx={{
+                                    maxWidth: "100%",
+                                    maxHeight: "100%",
+                                    objectFit: "contain",
+                                    objectPosition: "center",
+                                    width: "100%",
+                                    height: "100%",
+                                    display: "flex",
+                                    alignItems: "center",
+                                    justifyContent: "center",
+                                    margin: "auto",
+                                    padding: "10px"
+                                }}
+                            />
+                        ))}
                     </Carousel>
                 </Box>
             </Container>
