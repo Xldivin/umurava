@@ -15,8 +15,9 @@ import QuiqpayLogo from "../../assets/trusted_by/Quiqpay.svg";
 import Tori from "../../assets/trusted_by/Tori.png";
 import Viamo_Logo from "../../assets/trusted_by/Viamo_Logo.png";
 import WSHLogo from "../../assets/trusted_by/WSH.jpg";
+import SokoFund from "../../assets/trusted_by/SokoFund.png";
 import Carousel from 'react-multi-carousel';
-import 'react-multi-carousel/lib/styles.css';
+// import 'react-multi-carousel/lib/styles.css';
 
 // an array of the logos
 const logos1 = [
@@ -33,7 +34,8 @@ const logos2 = [
     QuiqpayLogo,
     Tori,
     Viamo_Logo,
-    WSHLogo
+    WSHLogo,
+    SokoFund
 ];
 // use carousel to display logos
 const responsive = {
@@ -64,111 +66,77 @@ const TrustedByWrapper = styled(Box)(({ theme }) => ({
 }));
 
 const TrustedBy = () => {
-    // @ts-ignore
-    return (
-        <TrustedByWrapper>
-            <Container id="section-1" sx={{ mt: 8, position: "relative",
-                display: "flex",
-                flexDirection: "row",
-                marginTop: 4
-            }}
-            >
-                <Box maxWidth="830px" mx="auto" mb={8.5}
-                     sx={{
-                         display: "flex",
-                         flexDirection: "column"
-                     }}
-                >
-                    <Typography component="div" sx={{fontSize: 20, fontWeight: 500, color: "#fff", mb: -4}}
-
-                    >
-                        Our Partners
+    // loop through the logos and display them not using carousel
+        return (
+            <TrustedByWrapper>
+                <Container sx={{ mt: 8, position: "relative" }}>
+                    <Typography component="div" sx={{fontSize: 20,
+                        fontWeight: 500, color: "#000"
+                    }}>
+                        Trusted by
                     </Typography>
-                    <Carousel
-                        swipeable={false}
-                        draggable={false}
-                        showDots={false}
-                        responsive={responsive}
-                        ssr={true} // means to render carousel on server-side.
-                        infinite={true}
-                        autoPlay={true}
-                        autoPlaySpeed={3000}
-                        keyBoardControl={true}
-                        customTransition="all .5"
-                        transitionDuration={500}
-                        containerClass="carousel-container"
-                        removeArrowOnDeviceType={["tablet", "mobile", "desktop"]}
-                        dotListClass="custom-dot-list-style"
-                        itemClass="carousel-item-padding-40-px"
-                    >
-                          {logos1.map((logo, index) => (
-                                <LazyImage
-                                    key={index}
-                                    src={logo}
-                                    alt="Trusted By"
-                                    width="100%"
-                                    height="100%"
-                                    sx={{
-                                        maxWidth: "100%",
-                                        maxHeight: "100%",
-                                        objectFit: "contain",
-                                        objectPosition: "center",
-                                        width: "100%",
-                                        height: "100%",
-                                        display: "flex",
-                                        alignItems: "center",
-                                        justifyContent: "center",
-                                        margin: "auto",
-                                        padding: "10px"
-                                    }}
-                                />
-                            ))}
-                    </Carousel>
-                    {/* carousel that move the opposite direction*/}
-                    <Carousel
-                        swipeable={false}
-                        draggable={false}
-                        showDots={false}
-                        responsive={responsive}
-                        ssr={true} // means to render carousel on server-side.
-                        infinite={true}
-                        autoPlay={true}
-                        autoPlaySpeed={3000}
-                        keyBoardControl={true}
-                        customTransition="all .5"
-                        transitionDuration={500}
-                        containerClass="carousel-container"
-                        removeArrowOnDeviceType={["tablet", "mobile", "desktop"]}
-                        dotListClass="custom-dot-list-style"
-                        itemClass="carousel-item-padding-40-px"
-                    >
-                        {logos2.map((logo, index) => (
-                            <LazyImage
+                    <Box
+                        sx={{
+                            display: "flex",
+                            justifyContent: "center",
+                            alignItems: "center",
+                            mt: 4,
+                            mb: 4
+                        }}
+                        >
+                        {logos1.map((logo, index) => (
+                            <Box
                                 key={index}
-                                src={logo}
-                                alt="Trusted By"
-                                width="100%"
-                                height="100%"
                                 sx={{
-                                    maxWidth: "100%",
-                                    maxHeight: "100%",
-                                    objectFit: "contain",
-                                    objectPosition: "center",
-                                    width: "100%",
-                                    height: "100%",
                                     display: "flex",
                                     alignItems: "center",
                                     justifyContent: "center",
-                                    margin: "auto",
-                                    padding: "10px"
+                                    width: "100%",
+                                    height: "100%",
                                 }}
-                            />
+                            >
+                                <LazyImage
+                                    src={logo}
+                                    alt="Trusted by"
+                                    width="100%"
+                                    height="100%"
+                                    sx={{ objectFit: "contain" }}
+                                />
+                            </Box>
                         ))}
-                    </Carousel>
-                </Box>
-            </Container>
-        </TrustedByWrapper>
-    );
-}
+                    </Box>
+                    <Box
+                        sx={{
+                            display: "flex",
+                            justifyContent: "center",
+                            alignItems: "center",
+                            mb: 8
+                        }}
+                    >
+                        {logos2.map((logo, index) => (
+                            <Box
+                                key={index}
+                                sx={{
+                                    display: "flex",
+                                    alignItems: "center",
+                                    justifyContent: "center",
+                                    width: "100%",
+                                    height: "100%",
+                                }}
+                            >
+                                <LazyImage
+                                    src={logo}
+                                    alt="Trusted by"
+                                    width="100%"
+                                    height="100%"
+                                    sx={{ objectFit: "contain" }}
+                                />
+                            </Box>
+                        ))}
+                    </Box>
+                    </Container>
+                </TrustedByWrapper>
+            );
+};
 
 export default TrustedBy;
