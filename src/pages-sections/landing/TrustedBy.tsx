@@ -21,7 +21,7 @@ import Carousel from 'react-multi-carousel';
 
 // an array of the logos
 const logos1 = [
-    CIBALogo,
+    LateriteLogo,
     EducationCollaborative,
     Gdg_Kigali,
     HiiL_Logo,
@@ -30,7 +30,7 @@ const logos1 = [
 ];
 
 const logos2 = [
-    LateriteLogo,
+    CIBALogo,
     QuiqpayLogo,
     Tori,
     Viamo_Logo,
