@@ -1,5 +1,5 @@
 import React from 'react'
-import Login from 'pages-sections/login/Login'
+import Register from 'pages-sections/signup/signup-questionaire'
 import Header from 'pages-sections/login/Header'
 import Box1 from 'pages-sections/login/Box1'
 import Footer from 'pages-sections/login/Footer'
@@ -18,7 +18,7 @@ declare module '@mui/material/styles' {
   }  
 }
 
-function login2() {
+function register() {
   const theme = createTheme({
     breakpoints:{
       values:{
@@ -38,12 +38,11 @@ function login2() {
     <ThemeProvider theme={theme}>
       <Box sx={{overflowX:{xs:"hidden",sm:"hidden",lg:"hidden"}}}>
         <Header />
-        <Login />
+        <Register />
         <Box1 />
         <Footer />
       </Box>
     </ThemeProvider>
   )
 }
-
-export default login2
+export default register

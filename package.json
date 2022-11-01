@@ -54,6 +54,7 @@
     "simplebar-react": "^2.3.6",
     "stylis": "^4.1.1",
     "stylis-plugin-rtl": "^2.1.1",
+    "swiper": "^8.4.2",
     "typewriter-effect": "^2.18.2",
     "yup": "^0.32.11"
   },
