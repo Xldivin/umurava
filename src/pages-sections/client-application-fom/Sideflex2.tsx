@@ -91,7 +91,7 @@ function Talent_Cards() {
       "Skill5": "Angular Js",
       "Skill6": "Angular Js",
       "Experience_Date": "2 Years and 5 Months",
-      "Salary_Per_hour": "12"
+      "Salary_Per_hour": "$12"
     },
     {
       "id": 2,
@@ -107,7 +107,7 @@ function Talent_Cards() {
       "Skill5": "Angular Js",
       "Skill6": "Angular Js",
       "Experience_Date": "2 Years and 5 Months",
-      "Salary_Per_hour": "12"
+      "Salary_Per_hour": "$12"
     },
     {
       "id": 3,
@@ -123,7 +123,7 @@ function Talent_Cards() {
       "Skill5": "Angular Js",
       "Skill6": "Angular Js",
       "Experience_Date": "2 Years and 5 Months",
-      "Salary_Per_hour": "12"
+      "Salary_Per_hour": "$12"
     },
     {
       "id": 4,
@@ -139,7 +139,7 @@ function Talent_Cards() {
       "Skill5": "Angular Js",
       "Skill6": "Angular Js",
       "Experience_Date": "2 Years and 5 Months",
-      "Salary_Per_hour": "12"
+      "Salary_Per_hour": "$12"
     },
   ]
   const label = { inputProps: { 'aria-label': 'Checkbox demo' } };
@@ -147,8 +147,8 @@ function Talent_Cards() {
   return (
     <Box sx={{ flexGrow: 1, overflow: "hidden" }}>
       <Grid container spacing={3}>
-        <Grid item xs={3} sx={{ background: "#407BFF", maxHeight: "103vh" }}>
-          <Box sx={{ display: "flex", flexDirection: "column" }}>
+        <Grid item xs={4} sx={{ background: "#407BFF", maxHeight: "150vh", border: 1, borderColor:"#407BFF", borderRadius: '16px',mt:3, position:"fixed", width:400,height:879}}>
+          <Box sx={{ display: "flex", flexDirection: "column",position:"relative" }}>
             <H5 sx={{ ml: 10, color: "#ffffff" }}>Work-model</H5>
             <FormControlLabel control={<Checkbox {...label} sx={{
               color: grey[100], '&.Mui-checked': { color: grey[100], },
@@ -159,7 +159,7 @@ function Talent_Cards() {
             <FormControlLabel control={<Checkbox {...label} sx={{
               color: grey[100], '&.Mui-checked': { color: grey[100], },
             }} />} label="Hybrid" sx={{ ml: 3, mt: 0, color: "#ffffff" }} />
-            <H5 sx={{ ml: 10, color: "#ffffff",mt:2 }}>Hourly rate</H5>
+            <H5 sx={{ ml: 10, color: "#ffffff",mt:2, }}>Hourly rate</H5>
             <Slider
               orientation="horizontal"
               getAriaValueText={valuetext}
@@ -168,7 +168,8 @@ function Talent_Cards() {
               sx={{
                 color: '#000',
                 width: 300,
-                ml: 5,
+                ml:4,
+                position:"relative",
                 height: 4,
                 '& .MuiSlider-thumb': {
                   width: 10,
@@ -292,8 +293,8 @@ function Talent_Cards() {
             </Select>
           </Box>
         </Grid>
-        <Grid item xs={8}>
-          <Box>
+        <Grid item xs={8} sx={{ml:50}}>
+          <Box sx={{}}>
             <H3 sx={{ ml: { xs: -28, sd: -28, sm: -25, md: 2 }, position: "relative", top: 60 }}>Search Talent/Team</H3>
             <TextField
               sx={{ mt: 10, width: { xs: 280, sd: 300, sm: 700, md: 500 }, ml: { xs: -25, sd: -25, sm: -28, md: 45 } }}

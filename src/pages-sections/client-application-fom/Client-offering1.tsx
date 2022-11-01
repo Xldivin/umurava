@@ -25,7 +25,7 @@ function Client_landing() {
       </Box>
       <Box sx={{ display: "flex", mt: 17, ml: { sm: -5, md: 15 }, justifyContent: "space-between", flexDirection: { xs: "column", sd: "column", sm: "row", md: "row" } }}>
         <Box sx={{ ml: { xs: 5, sd: 5, sm: 10, md: 10 } }}>
-          <H3 sx={{ mb: 5, width: 270, color: "#ffffff", position: "relative" }}>Get on-demand and vetted talents and teams</H3>
+          <H3 sx={{ mb: 5, width: 270, color: "#ffffff", position: "relative" }}>Get Africa’s Quality Talents and Teams, On-Demand</H3>
           <Paragraph sx={{ width: { xs: 310, sd: 350, sm: 390, md: 390 }, mb: 5, color: "#ffffff" }}>We are building a  large workforce hub of African vetted Freelance Developers, Designers, Marketers, Videographers, Finance specialists, Researchers, Data Analysts, Transcribers & Translators, and many more that deliver high quality services and deliver projects successfully  in their respective areas of expertise.
           </Paragraph>
           <Button sx={{ borderRadius: '16px', background: "#1CBF73", pl: "25px", pr: "25px", color: "#ffffff" }}>View Talents</Button>

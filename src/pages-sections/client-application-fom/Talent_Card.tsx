@@ -12,7 +12,7 @@ import { H4 } from "components/Typography";
 
 function Talent_Card({card}:any) {
   return (
-    <Box sx={{ width: 320, height: 390, background: "#ffffff", mt: 5 }}>
+    <Box sx={{ width: 320, height: 390, background: "#ffffff", mt: 5,ml:4 }}>
       <Box sx={{ display: "flex" }}>
         <ImageListItem sx={{ ml: 2, mt: 2 }}>
           <Image
