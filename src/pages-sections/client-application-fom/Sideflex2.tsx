@@ -91,7 +91,8 @@ function Talent_Cards() {
       "Skill5": "Angular Js",
       "Skill6": "Angular Js",
       "Experience_Date": "2 Years and 5 Months",
-      "Salary_Per_hour": "$12"
+      "Salary_Per_hour": "$12",
+      "Per_hour": "/hr"
     },
     {
       "id": 2,
@@ -107,7 +108,8 @@ function Talent_Cards() {
       "Skill5": "Angular Js",
       "Skill6": "Angular Js",
       "Experience_Date": "2 Years and 5 Months",
-      "Salary_Per_hour": "$12"
+      "Salary_Per_hour": "$12",
+      "Per_hour": "/hr"
     },
     {
       "id": 3,
@@ -123,7 +125,9 @@ function Talent_Cards() {
       "Skill5": "Angular Js",
       "Skill6": "Angular Js",
       "Experience_Date": "2 Years and 5 Months",
-      "Salary_Per_hour": "$12"
+      "Salary_Per_hour": "$12",
+      "Per_hour": "/hr"
+
     },
     {
       "id": 4,
@@ -139,7 +143,8 @@ function Talent_Cards() {
       "Skill5": "Angular Js",
       "Skill6": "Angular Js",
       "Experience_Date": "2 Years and 5 Months",
-      "Salary_Per_hour": "$12"
+      "Salary_Per_hour": "$12",
+      "Per_hour": "/hr"
     },
   ]
   const label = { inputProps: { 'aria-label': 'Checkbox demo' } };

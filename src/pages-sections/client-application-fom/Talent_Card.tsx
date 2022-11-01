@@ -8,7 +8,7 @@ import Rectangle from '../../../public/assets/images/umurava/Rectangle.png';
 import PlaceIcon from '@mui/icons-material/Place';
 import { Typography } from '@mui/material';
 import Button from '@mui/material/Button';
-import { H4 } from "components/Typography";
+import { H4, Span } from "components/Typography";
 
 function Talent_Card({card}:any) {
   return (
@@ -62,8 +62,9 @@ function Talent_Card({card}:any) {
       <Typography sx={{ml:2,mb:"5px"}}>Experience</Typography>
       <Box sx={{display:"flex", justifyContent:"space-between"}}>
       <Typography sx={{ml:2}}>{card.Experience_Date}</Typography>
-      <Typography sx={{fontWeight: 1000,mr:5,fontSize:35,position:"relative",top:-15}}>
+      <Typography sx={{fontWeight: 1000,mr:5,fontSize:35,position:"relative",top:-15,color:"#5547F1"}}>
       {card.Salary_Per_hour}
+      <Span sx={{fontSize:20, color:"#000"}}>{card.Per_hour}</Span>
       </Typography>
       </Box>
     </Box>
