@@ -37,7 +37,7 @@ const theme = createTheme({
 function search_talent() {
   return (
     <ThemeProvider theme={theme}>
-    <Box sx={{ background: "#F3F3F3", height: "130vh" }}>
+    <Box sx={{ height: "130vh" }}>
       <Talent_Cards />
     </Box>
     </ThemeProvider>
