@@ -5,6 +5,7 @@ import Client_offering2 from 'pages-sections/client-application-fom/Client-offer
 import Footer from 'pages-sections/login/Footer';
 import { ThemeProvider, createTheme } from "@mui/material/styles";
 import "@mui/material/styles/createPalette";
+import Box1 from 'pages-sections/login/Box1';
 
 declare module '@mui/material/styles' {
   interface BreakpointOverrides {
@@ -40,6 +41,7 @@ function talent_offering_page() {
     <Box sx={{overflowX:{xs:"hidden",sd:"hidden",sm:"hidden",md:"hidden"},}}>
       <Client_landing />
       <Client_offering2 />
+      <Box1 />
       <Footer />
     </Box>
     </ThemeProvider>

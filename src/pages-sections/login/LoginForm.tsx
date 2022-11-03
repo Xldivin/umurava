@@ -1,15 +1,8 @@
-import { Card, CardProps } from "@mui/material";
-import { styled } from "@mui/material/styles";
-import BazarButton from "components/BazarButton";
-import BazarTextField from "components/BazarTextField";
-import { H3, Small } from "components/Typography";
-import { Box, BoxProps, TextField, TextFieldProps } from "@mui/material";
-import { useFormik } from "formik";
-import React, { FC, useCallback, useState } from "react";
-import * as yup from "yup";
+import { H3 } from "components/Typography";
+import { Box, TextField, } from "@mui/material";
+import React, { FC } from "react";
 import Button from '@mui/material/Button';
-import Login from "./Login";
-import  { Paragraph, H5 } from 'components/Typography';
+import  { Paragraph } from 'components/Typography';
 
 type SidenavProps = {
   toggleForm?: () => void;

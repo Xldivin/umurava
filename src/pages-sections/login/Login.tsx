@@ -19,9 +19,7 @@ function Login() {
   const toggleForm = () => setOpen((open) => !open);
   return (
     <div>
-        {open && <LoginForm 
-        toggleForm = {toggleForm}
-        /> }
+        {open && <LoginForm toggleForm = {toggleForm}/>}
         <FlexBox sx={{ml:40, mt:20,zIndex: 'modal'}}>
         <div>
         <Paragraph fontSize={30} maxWidth="500px" sx={{fontWeight: 'bold'}}>

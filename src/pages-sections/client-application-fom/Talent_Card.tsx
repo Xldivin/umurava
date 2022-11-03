@@ -12,7 +12,7 @@ import { H4, Span } from "components/Typography";
 
 function Talent_Card({card}:any) {
   return (
-    <Box sx={{ width: 320, height: 390, background: "#ffffff", mt: 5,ml:4 }}>
+    <Box sx={{ width: 350, height: 400, background: "#ffffff", mt: 5,ml:4 }}>
       <Box sx={{ display: "flex" }}>
         <ImageListItem sx={{ ml: 2, mt: 2 }}>
           <Image
@@ -23,7 +23,7 @@ function Talent_Card({card}:any) {
           </Image>
         </ImageListItem>
         <Box>
-          <Typography sx={{ ml: 2, mt: 2 }}>{card.Name}</Typography>
+          <Typography sx={{ ml: 2, mt: 2,fontWeight: 1000 }}>{card.Name}</Typography>
           <Box sx={{ display: "flex", mt: "5px" }}>
             <PlaceIcon sx={{ ml: 2 }} />
             <Typography sx={{ ml: 1 }}>{card.Nationality}</Typography>
@@ -49,15 +49,15 @@ function Talent_Card({card}:any) {
         <Typography>{card.Experience}</Typography>
       </Box>
       <Typography sx={{ml:2,mt:"5px",mb:"5px"}}>Skills</Typography>
-      <Box sx={{ml:2}}>
-        <Button sx={{backgroundColor: "#F3F3F3",ml:1}}>{card.Skill1}</Button>
-        <Button sx={{backgroundColor: "#F3F3F3",ml:1}}>{card.Skill2}</Button>
-        <Button sx={{backgroundColor: "#F3F3F3",ml:1}}>{card.Skill3}</Button>
+      <Box sx={{ml:1,display:"flex"}}>
+        <Button sx={{backgroundColor: "#F3F3F3",color:"#000",width:"140px",height:"40px",fontSize:12}}>{card.Skill1}</Button>
+        <Button sx={{backgroundColor: "#F3F3F3",ml:1,color:"#000",width:"140px",height:"40px",fontSize:12}}>{card.Skill2}</Button>
+        <Button sx={{backgroundColor: "#F3F3F3",ml:1,color:"#000",width:"140px",height:"40px",fontSize:12,mr:1}}>{card.Skill3}</Button>
       </Box>
-      <Box sx={{ml:2,mb:"10px"}}>
-        <Button sx={{backgroundColor: "#F3F3F3",mt:2,ml:1}}>{card.Skill4}</Button>
-        <Button sx={{backgroundColor: "#F3F3F3",mt:2,ml:1}}>{card.Skill5}</Button>
-        <Button sx={{backgroundColor: "#F3F3F3",mt:2,ml:1}}>{card.Skill6}</Button>
+      <Box sx={{ml:1,display:"flex"}}>
+        <Button sx={{backgroundColor: "#F3F3F3",mt:2,color:"#000",width:"140px",height:"40px",fontSize:12}}>{card.Skill4}</Button>
+        <Button sx={{backgroundColor: "#F3F3F3",mt:2,ml:1,color:"#000",width:"140px",height:"40px",fontSize:12}}>{card.Skill5}</Button>
+        <Button sx={{backgroundColor: "#F3F3F3",mt:2,ml:1,color:"#000",width:"140px",height:"40px",fontSize:12,mr:1}}>{card.Skill6}</Button>
       </Box>
       <Typography sx={{ml:2,mb:"5px"}}>Experience</Typography>
       <Box sx={{display:"flex", justifyContent:"space-between"}}>

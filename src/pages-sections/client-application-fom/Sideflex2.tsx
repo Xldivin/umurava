@@ -152,7 +152,7 @@ function Talent_Cards() {
   return (
     <Box sx={{ flexGrow: 1, overflow: "hidden" }}>
       <Grid container spacing={3}>
-        <Grid item xs={4} sx={{ background: "#407BFF", maxHeight: "150vh", border: 1, borderColor:"#407BFF", borderRadius: '16px',mt:3, position:"fixed", width:400,height:879}}>
+        <Grid item xs={4} sx={{ background: "#407BFF", maxHeight: "150vh", border: 1, borderColor:"#407BFF", borderRadius: '16px',mt:3, position:{sm:"absolute",md:"fixed"}, width:{sm:600,md:400},height:879}}>
           <Box sx={{ display: "flex", flexDirection: "column",position:"relative" }}>
             <H5 sx={{ ml: 10, color: "#ffffff" }}>Work-model</H5>
             <FormControlLabel control={<Checkbox {...label} sx={{

@@ -17,11 +17,30 @@ declare module '@mui/material/styles' {
   }  
 }
 
+
+const theme = createTheme({
+  breakpoints:{
+    values:{
+      xs: 0,
+      sd: 400,
+      sm: 600,
+      md: 900,
+      lg: 1300,
+      xl: 1536,
+    }
+  },
+  status: {
+    danger: '#e53e3e',
+  },
+})
+
 function search_talent() {
   return (
-    <Box sx={{ background: "#F3F3F3", height: "125vh" }}>
+    <ThemeProvider theme={theme}>
+    <Box sx={{ background: "#F3F3F3", height: "130vh" }}>
       <Talent_Cards />
     </Box>
+    </ThemeProvider>
   )
 }
 
