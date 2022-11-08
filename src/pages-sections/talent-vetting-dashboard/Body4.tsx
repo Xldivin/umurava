@@ -1,7 +1,6 @@
 import React from 'react'
 import Box from '@mui/material/Box';
 import Sidebar from './Sidebar';
-import { H3 } from 'components/Typography';
 import { Typography } from "@mui/material";
 import draw2 from '../../../public/assets/images/umurava/draw2.png';
 import Image from 'next/image';
@@ -14,9 +13,9 @@ function Body4() {
                 <Sidebar />
                 <Box sx={{ ml: 50, display: "flex" }}>
                     <Box>
-                        <H3 sx={{ ml: 2, mt: 5 }}>Technical test</H3>
+                        <Typography variant="h3" sx={{ ml: 2, mt: 5 }}>Technical test</Typography>
                         <Box sx={{ width: 770, height: 180, background: "#fff", mt: 5, border: 1, borderColor: "#fff", borderRadius: "16px", ml: -5 }}>
-                            <H3 sx={{ color: "#407BFF", ml: 5, mt: 2 }}>Communication interview</H3>
+                            <Typography variant="h3" sx={{ color: "#407BFF", ml: 5, mt: 2 }}>Communication interview</Typography>
                             <Typography sx={{ ml: 5, mt: 2, width: 600, fontSize: 15, fontWeight: 'bold' }}>The third step of Umurava vetting process is Umurava test which is a technical Test which is done on our platform, This test evaluates your technical skills and your problem-solving abilities through  assessment, The tests varies according To your domain, You have to pass with exceptional results in this phase</Typography>
                         </Box>
                         <Box sx={{ display: "flex", ml: -5 }}>
@@ -40,7 +39,7 @@ function Body4() {
                         <ImageListItem sx={{ ml: 8, mt: 8 }}>
                             <Image src={draw2} />
                         </ImageListItem>
-                        <H3 sx={{ ml: 18, mt: 5, color: "#407BFF" }}>Next Step</H3>
+                        <Typography variant="h3" sx={{ ml: 18, mt: 5, color: "#407BFF" }}>Next Step</Typography>
                         <Typography align='center' sx={{ width: 400, mt: 5, fontSize: 18, pl: 2, pr: 2, fontWeight: 'bold' }}>After passing your technical test, The nextStep is a technical interview with our Expertsin your domain, this interview will containa section where you perform tasks live.</Typography>
                     </Box>
                 </Box>

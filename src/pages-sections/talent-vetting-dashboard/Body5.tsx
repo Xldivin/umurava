@@ -1,7 +1,6 @@
 import React from 'react'
 import Box from '@mui/material/Box';
 import Sidebar from './Sidebar';
-import { H3 } from 'components/Typography';
 import { Typography } from "@mui/material";
 import draw3 from '../../../public/assets/images/umurava/draw3.png';
 import Image from 'next/image';
@@ -15,9 +14,9 @@ function Body5() {
                 <Sidebar />
                 <Box sx={{ ml: 50, display: "flex" }}>
                     <Box>
-                        <H3 sx={{ ml: 2, mt: 5 }}>Technical Interview</H3>
+                        <Typography variant="h3" sx={{ ml: 2, mt: 5 }}>Technical Interview</Typography>
                         <Box sx={{ width: 770, height: 180, background: "#fff", mt: 5, border: 1, borderColor: "#fff", borderRadius: "16px", ml: -5 }}>
-                            <H3 sx={{ color: "#407BFF", ml: 5, mt: 2 }}>Technical Interview</H3>
+                            <Typography variant="h3" sx={{ color: "#407BFF", ml: 5, mt: 2 }}>Technical Interview</Typography>
                             <Typography sx={{ ml: 5, mt: 2, width: 600, fontSize: 15, fontWeight: 'bold' }}>The next Step is the technical interview Part where you have a live session with experts in your functional domain, Our experts provide live exercises, and Through them they evaiuate your problem-solving abilities, the depth or your experience, communication ability and your creativity</Typography>
                         </Box>
                         <Box sx={{ display: "flex", ml: -5 }}>
@@ -42,7 +41,7 @@ function Body5() {
                         <ImageListItem sx={{ ml: 8, mt: 8 }}>
                             <Image src={draw3} />
                         </ImageListItem>
-                        <H3 sx={{ ml: 18, mt: 5, color: "#407BFF" }}>Next Step</H3>
+                        <Typography variant="h3" sx={{ ml: 18, mt: 5, color: "#407BFF" }}>Next Step</Typography>
                         <Typography align='center' sx={{ width: 400, mt: 5, fontSize: 18, pl: 2, pr: 2, fontWeight: 'bold' }}>After passing your technical test, The nextStep is a technical interview with our Expertsin your domain, this interview will containa section where you perform tasks live.</Typography>
                     </Box>
                 </Box>

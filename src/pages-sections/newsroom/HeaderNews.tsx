@@ -1,17 +1,17 @@
 import React from 'react'
-import { AppBar, Toolbar } from "@mui/material"
+import { AppBar, Toolbar } from "@mui/material";
 import Box from '@mui/material/Box';
-import { H3 } from "components/Typography";
 import { TextField,IconButton } from "@mui/material";
 import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
 import SearchIcon from '@mui/icons-material/Search';
-import { blue,grey } from '../../theme/themeColors';
+import Typography from '@mui/material/Typography';
+
 function HeaderNews() {
   return (
     <div>
     <Box sx={{width:{xs:"100vh",sm:768,lg:1600},height:80, backgroundColor: 'grey.300'}}>
         <Toolbar>
-            <H3 sx={{ml:{sm:2,lg:10},mt:{xs:2,sm:3,lg:3},fontSize:{sm:20,lg:25},display:{xs:'none',sm:'block',lg:'block'}}}>Newsroom</H3>
+            <Typography  variant='h3' sx={{ml:{sm:2,lg:10},mt:{xs:2,sm:3,lg:3},fontSize:{sm:20,lg:25},display:{xs:'none',sm:'block',lg:'block'}}}>Newsroom</Typography>
             <TextField
                     size="small"
                     name="Search Newsroom"
@@ -33,7 +33,7 @@ function HeaderNews() {
                       )
                     }}
              />
-             <H3 sx={{ml:{xs:5,sm:5,lg:10},mt:3,display:{xs:'none',sm:'block',lg:'block'}}}>Popular Topics <ArrowDropDownIcon /></H3>
+             <Typography  variant='h3' sx={{ml:{xs:5,sm:5,lg:10},mt:3,display:{xs:'none',sm:'block',lg:'block'}}}>Popular Topics <ArrowDropDownIcon /></Typography>
         </Toolbar>
     </Box>
     </div>

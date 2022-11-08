@@ -1,6 +1,5 @@
 import React from 'react'
 import Box from '@mui/material/Box';
-import { H3 } from 'components/Typography';
 import { Typography } from "@mui/material";
 import ImageListItem from '@mui/material/ImageListItem';
 import process from '../../../public/assets/images/umurava/Process.png';
@@ -18,7 +17,7 @@ function Sidebar() {
   return (
     <Box sx={{ background: "#fff", borderRadius: '16px',ml:-3, position:{sm:"absolute",md:"fixed"}, width:365,height:879,display:{sm:"none",md:"block"}}}>
         <Box sx={{background:"#407BFF", width: 310, height:700,ml:4.5,mt:18, border:1,borderColor:"#407BFF",borderRadius:"16px",display:"flex"}}>
-            <H3 sx={{color:"#fff",ml:4,mt:4}}>Vetting Process</H3>
+            <Typography variant="h3" sx={{color:"#fff",ml:4,mt:4}}>Vetting Process</Typography>
             <Box sx={{display:"flex"}}>
                 <ImageListItem sx={{mt:9.5,ml:-20,color:"#fff"}}>
                     <Image

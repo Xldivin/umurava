@@ -2,24 +2,15 @@ import React from 'react'
 import Box from '@mui/material/Box';
 import Container from '@mui/material/Container';
 import { Typography } from '@mui/material';
-import { InputLabel } from '@mui/material';
-import { Grid } from '@mui/material';
 import { TextField } from "@mui/material";
-import TextareaAutosize from '@mui/material/TextareaAutosize';
-import { H3 } from "components/Typography";
 import Button from '@mui/material/Button';
-import MenuItem from '@mui/material/MenuItem';
-import FormControl from '@mui/material/FormControl';
-import { useState } from 'react';
-import FormControlLabel from '@mui/material/FormControlLabel';
-import Checkbox from '@mui/material/Checkbox';
 
 function Expertise() {
     const label = { inputProps: { 'aria-label': 'Checkbox demo' } };
   return (
     <Box sx={{ mt:5 }}>
     <Container sx={{ borderBottom: 4, borderColor: '#2B71F0', display: 'flex', justifyContent: 'space-between' }}>
-        <H3 sx={{ mt: 6, ml:{xs:0,sd:0,sm:10,md:10}}}>Expertise</H3>
+        <Typography variant="h3" sx={{ mt: 6, ml:{xs:0,sd:0,sm:10,md:10}}}>Expertise</Typography>
         <Button
             type="submit"
             variant="contained"

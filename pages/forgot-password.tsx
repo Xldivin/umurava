@@ -1,4 +1,3 @@
-import { FlexRowCenter } from "components/flex-box";
 import Header from 'pages-sections/login/Header'
 import Forget from "pages-sections/reset-password/Forgot";
 import Footer from 'pages-sections/login/Footer'

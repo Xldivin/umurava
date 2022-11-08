@@ -1,7 +1,7 @@
 import React from 'react'
 import { Toolbar } from "@mui/material"
 import Box from '@mui/material/Box';
-
+import CatchPokemonIcon from "@mui/icons-material/CatchingPokemon"
 
 function Header() {
   return (

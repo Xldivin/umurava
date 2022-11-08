@@ -1,13 +1,10 @@
-import { H3 } from "components/Typography";
-import { Box, TextField } from "@mui/material";
+ import { Box, TextField} from "@mui/material";
 import { useFormik } from "formik";
-import React, { FC, useCallback, useState } from "react";
+import React, { FC} from "react";
 import * as yup from "yup";
 import Button from '@mui/material/Button';
 import Login from "./Login";
-import { Span } from 'components/Typography';
-import  { Paragraph, H5 } from 'components/Typography';
-import Router from 'next/router'
+import Typography from '@mui/material/Typography';
 
 type SidenavProps = {
   toggleForm?: () => void;
@@ -37,11 +34,12 @@ const LoginForm: FC<SidenavProps> = (props) => {
 
   const { toggleForm } = props;
   return (
-    <Box sx={{border:1,width:{xs:350,sd:395,sm:500,md:500}, position: 'absolute', top:{xs:450,sd:450,sm:300,md:70},ml:{xs:2,sd:2,sm:20,md:70},mt:15, borderRadius:10,zIndex: 'tooltip',background: '#F2F2F2'}}>
-    <form onSubmit={handleSubmit}>
-      <H3 textAlign="center" mb={1}>
+    <Box sx={{border:1,width:500, position: 'absolute', top:70,ml:70,mt:15, borderRadius:10,  zIndex: 'tooltip',  background: '#F2F2F2'}}>
+    <form>
+      <Typography variant="h3" textAlign="center" mb={1}>
         Login with email
-      </H3>
+      </Typography>
+
       <TextField
         size="small"
         name="email"
@@ -51,7 +49,6 @@ const LoginForm: FC<SidenavProps> = (props) => {
         onBlur={handleBlur}
         onChange={handleChange}
         error={!!touched.email && !!errors.email}
-        helperText={touched.email && errors.email}
         label="Email or Phone Number"
         placeholder="exmple@mail.com"
         sx={{
@@ -68,7 +65,6 @@ const LoginForm: FC<SidenavProps> = (props) => {
         onBlur={handleBlur}
         onChange={handleChange}
         error={!!touched.password && !!errors.password}
-        helperText={touched.password && errors.password}
         autoComplete="on"
         variant="outlined"
         sx={{
@@ -78,9 +74,9 @@ const LoginForm: FC<SidenavProps> = (props) => {
           ml:{xs:3,sd:6,sm:9,md:10},
         }}
       />
-    <Paragraph sx={{ml:{xs:27,sd:29,sm:25,md:33}}} onClick={() =>{ Router.push('/forgot-password')}}>
+    <Typography sx={{ml:{xs:27,sd:29,sm:25,md:33}}} onClick={() =>{ Router.push('/forgot-password')}}>
       Forget Password?
-    </Paragraph>
+    </Typography>
     </form>
     <Box sx={{display:'flex' , flexDirection: 'column',ml:15}}>
     <Button variant="contained" sx={{width:250,ml:{xs:-10,sd:-6,sm:2},borderRadius: 28,mt:4}}>
@@ -92,10 +88,9 @@ const LoginForm: FC<SidenavProps> = (props) => {
         Cancel
       </Button>
     </Box>
-    <Paragraph sx={{mt:4, ml:{xs:8,sd:10,sm:18,md:18}}}>
-    Don't have an account?
-    <Span sx={{fontWeight: 'bold'}} onClick={() =>{ Router.push('/register')}}>Sign Up</Span>
-    </Paragraph>
+    <Typography sx={{mt:4, ml:25}}>
+      Forget Password?
+    </Typography>
   </Box>
   )
 }

@@ -4,10 +4,7 @@ import Container  from '@mui/material/Container';
 import { useFormik } from "formik";
 import * as yup from "yup";
 import { Typography } from '@mui/material';
-import { InputLabel } from '@mui/material';
-import { Grid } from '@mui/material';
 import {TextField } from "@mui/material";
-import { H3 } from "components/Typography";
 import Button from '@mui/material/Button';
 
 function application_form() {
@@ -40,7 +37,7 @@ function application_form() {
    
     <Container sx={{}}>
             <Container sx={{borderBottom: 4,borderColor: '#2B71F0' }}>
-            <H3 sx={{mt:6,ml:{xs:0,sd:0,sm:10,md:10}}}>Personal info</H3>
+            <Typography variant="h3" sx={{mt:6,ml:{xs:0,sd:0,sm:10,md:10}}}>Personal info</Typography>
             </Container>
         <form onSubmit={handleSubmit}>
           <Container sx={{display:'flex',flexDirection:{xs:"column",sd:"column",sm:"row",md:"row"}}}>
