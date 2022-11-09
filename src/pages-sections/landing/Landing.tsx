@@ -4,11 +4,23 @@ import LazyImage from "components/LazyImage";
 import { H1, Paragraph, Span } from "components/Typography";
 import Link from "next/link";
 import { Link as Scroll } from "react-scroll";
+import { ThemeProvider, createTheme } from "@mui/material/styles";
 import { styled, Theme } from "@mui/material/styles";
 import Typewriter from "typewriter-effect";
 import Header from "./Header1";
 import AfricaMap from "../../assets/images/AfricaMap.svg";
 import {display} from "@mui/system";
+
+declare module '@mui/material/styles' {
+    interface BreakpointOverrides {
+        xs: true;
+        sd: true;
+        sm: true;
+        md: true;
+        lg: true;
+        xl: true;
+    }
+}
 
 const EmailUsWrapper = styled(Box)(({ theme }) => ({
     "& .link": {
@@ -20,17 +32,37 @@ const EmailUsWrapper = styled(Box)(({ theme }) => ({
 }));
 
 const Landing = () => {
+    const theme = createTheme({
+        breakpoints:{
+            values:{
+                xs: 0,
+                sd: 400,
+                sm: 600,
+                md: 900,
+                lg: 1300,
+                xl: 1536,
+            }
+        },
+        // @ts-ignore
+        status: {
+            danger: '#e53e3e',
+        },
+    })
     // @ts-ignore
     return (
+        <ThemeProvider theme={theme}>
         <Box
             sx={{
                 background: "#2B71F0",
                 color: "#fff",
+                display: "flex",
+                flexDirection: "column",
             }}
         >
             <Header />
-            <Container id="section-1" sx={{
-                mt: 8, position: "relative",
+            <Box id="section-1" sx={{
+                mt: 8,
+                position: "relative",
                 display: "flex",
                 flexDirection: "row",
                 justifyContent: "left"
@@ -38,13 +70,15 @@ const Landing = () => {
                 <Typography component="div" sx={{fontSize: 20, fontWeight: 500, color: "#fff", mb: -4}}>
                     Umurava 1.0 coming soon
                     </Typography>
-            </Container>
+            </Box>
 
-            <Container id="section-1" sx={{ mt: 8, position: "relative",
+            <Box id="section-1" sx={{
+                mt: 8,
+                position: "relative",
                 display: "flex",
                 flexDirection: "row",
                 justifyContent: "left",
-                marginLeft: -30,
+                // marginLeft: -30,
                 marginTop: 13
             }}
             >
@@ -79,20 +113,14 @@ const Landing = () => {
                             href="https://material-ui.com/store/items/bazar-pro-react-ecommerce-template/"
                             passHref={true}
                         >
-                            <Button variant="contained" color="success" sx={{ m: "0.5rem",
+                            <Button variant="contained" sx={{ m: "0.5rem",
                                 borderRadius: "2rem",
                                 marginLeft: -14,
-                                marginTop: 5
+                                marginTop: 5,
+                                background: "#1CBF73",
                             }}>
-                                <Typography
-                                    color={"#fff"}
-                                    sx={{
-                                        fontWeight: "500",
-                                        fontStyle: "regular"
-                                    }}
-                                >
+
                                     Find Quality Talents
-                                </Typography>
                             </Button>
                         </Link>
 
@@ -164,9 +192,10 @@ const Landing = () => {
                 {/*/>*/}
                 {/*  Add the africa map here*/}
 
-            </Container>
+            </Box>
 
         </Box>
+</ThemeProvider>
     );
 };
 

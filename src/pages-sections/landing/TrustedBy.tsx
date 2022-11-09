@@ -2,8 +2,8 @@ import { Container, Typography } from "@mui/material";
 import { Box } from "@mui/system";
 import { FlexBox } from "components/flex-box";
 import LazyImage from "components/LazyImage";
+import { ThemeProvider, createTheme } from "@mui/material/styles";
 import { styled, Theme } from "@mui/material/styles";
-
 import CIBALogo from "../../assets/trusted_by/CIBA.png";
 import EducationCollaborative from "../../assets/trusted_by/EducationCollaborative.png";
 import Gdg_Kigali from "../../assets/trusted_by/Gdg_Kigali.png";
@@ -18,6 +18,17 @@ import WSHLogo from "../../assets/trusted_by/WSH.jpg";
 import SokoFund from "../../assets/trusted_by/SokoFund.png";
 import Carousel from 'react-multi-carousel';
 // import 'react-multi-carousel/lib/styles.css';
+declare module '@mui/material/styles' {
+    interface BreakpointOverrides {
+        xs: true;
+        sd: true;
+        sm: true;
+        md: true;
+        lg: true;
+        xl: true;
+    }
+}
+
 
 // an array of the logos
 const logos1 = [
@@ -66,8 +77,26 @@ const TrustedByWrapper = styled(Box)(({ theme }) => ({
 }));
 
 const TrustedBy = () => {
+    // @ts-ignore
+    const theme = createTheme({
+        breakpoints:{
+            values:{
+                xs: 0,
+                sd: 400,
+                sm: 600,
+                md: 900,
+                lg: 1300,
+                xl: 1536,
+            }
+        },
+        // @ts-ignore
+        status: {
+            danger: '#e53e3e',
+        },
+    })
     // loop through the logos and display them not using carousel
         return (
+            <ThemeProvider theme={theme}>
             <TrustedByWrapper>
                 <Container sx={{ mt: 8, position: "relative" }}>
                     <Typography component="div" sx={{fontSize: 20,
@@ -136,6 +165,7 @@ const TrustedBy = () => {
                     </Box>
                     </Container>
                 </TrustedByWrapper>
+            </ThemeProvider>
             );
 };
 
