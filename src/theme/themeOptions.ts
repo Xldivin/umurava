@@ -21,7 +21,28 @@ const themeOptions: ThemeOptions = {
     },
     typography: {
         h1: {
-            fontWeight: 700,
+            fontWeight: "bold",
+            fontSize:30,
+        },
+        h2: {
+            fontWeight: "bold",
+            fontSize:28,
+        },
+        h3: {
+            fontWeight: "bold",
+            fontSize:25,
+        },
+        h4: {
+            fontWeight: "bold",
+            fontSize:23,
+        },
+        h5: {
+            fontWeight: "bold",
+            fontSize:20,
+        },
+        h6: {
+            fontWeight: "bold",
+            fontSize:18,
         },
     },
     status: {

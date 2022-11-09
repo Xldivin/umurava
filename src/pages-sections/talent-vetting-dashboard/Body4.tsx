@@ -15,7 +15,7 @@ function Body4() {
                     <Box>
                         <Typography variant="h3" sx={{ ml: 2, mt: 5 }}>Technical test</Typography>
                         <Box sx={{ width: 770, height: 180, background: "#fff", mt: 5, border: 1, borderColor: "#fff", borderRadius: "16px", ml: -5 }}>
-                            <Typography variant="h3" sx={{ color: "#407BFF", ml: 5, mt: 2 }}>Communication interview</Typography>
+                            <Typography variant="h3" sx={{ color: "#407BFF", ml: 5, mt: 2 }}>Umurava Test</Typography>
                             <Typography sx={{ ml: 5, mt: 2, width: 600, fontSize: 15, fontWeight: 'bold' }}>The third step of Umurava vetting process is Umurava test which is a technical Test which is done on our platform, This test evaluates your technical skills and your problem-solving abilities through  assessment, The tests varies according To your domain, You have to pass with exceptional results in this phase</Typography>
                         </Box>
                         <Box sx={{ display: "flex", ml: -5 }}>
