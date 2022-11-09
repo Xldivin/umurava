@@ -44,6 +44,9 @@ function Body6() {
                                 ml: 5,
                                 mt: 1,
                                 width: 320,
+                                '& fieldset': {
+                                    borderRadius: '15px',
+                                },
                             }}
                         />
                         <Typography variant="h6" sx={{ ml: 5, mt: 2 }}>Availability</Typography>
@@ -64,6 +67,9 @@ function Body6() {
                                 ml: 5,
                                 mt: 1,
                                 width: 320,
+                                '& fieldset': {
+                                    borderRadius: '15px',
+                                },
                             }}
                         />
                         <Typography variant="h6" sx={{ ml: 5, mt: 2 }}>Location</Typography>
@@ -80,6 +86,9 @@ function Body6() {
                                     ml: 5,
                                     mt: 1,
                                     width: 150,
+                                    '& fieldset': {
+                                        borderRadius: '15px',
+                                    },
                                 }}
                             />
                             <TextField
@@ -94,6 +103,9 @@ function Body6() {
                                     ml: 3,
                                     mt: 1,
                                     width: 150,
+                                    '& fieldset': {
+                                        borderRadius: '15px',
+                                      },
                                 }}
                             />
                         </Box>
@@ -103,8 +115,8 @@ function Body6() {
                             size="small"
                             type="text"
                             variant="outlined"
-                            label="Location"
-                            placeholder="Country"
+                            label="Bio"
+                            placeholder="Bio"
                             multiline={true}
                             rows={3}
                             sx={{
@@ -113,7 +125,10 @@ function Body6() {
                                 width: 320,
                                 border: 1,
                                 borderColor: "#fff",
-                                borderRadius: "16px"
+                                borderRadius: "16px",
+                                '& fieldset': {
+                                    borderRadius: '15px',
+                                  },
                             }}
                         />
                         <Button
