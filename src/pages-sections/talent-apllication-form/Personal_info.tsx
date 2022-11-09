@@ -86,7 +86,6 @@ function application_form() {
         </form>
         <Box sx={{ml:{sd:20,sm:50,md:120},mt:5, display:'flex',justifyContent:'space-around'}}>
           <Button
-            type="submit"
             variant="contained"
             sx={{background: '#DBDBDB',color:'#000000'}}
           >

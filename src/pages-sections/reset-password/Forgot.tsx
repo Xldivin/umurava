@@ -6,9 +6,9 @@ import { H6 } from "components/Typography";
 import Link from "next/link";
 import { H3, Small } from "components/Typography";
 import { useFormik } from "formik";
+import * as yup from "yup";
 import React from "react";
 import {TextField} from "@mui/material";
-import * as yup from "yup";
 import Button from '@mui/material/Button';
 import Router from 'next/router'
 
@@ -39,7 +39,6 @@ const formSchema = yup.object().shape({
 
   const handleFormSubmit = async (values: any) => {
     console.log(values);
-    // NextResponse.redirect("/confirm_email")
     const reset_token = "token values"
     localStorage.setItem("token",reset_token)
     localStorage.setItem("email",values.email)
