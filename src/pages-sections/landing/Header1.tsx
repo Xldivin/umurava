@@ -135,26 +135,57 @@ const Header = () => {
                             {/*        Login*/}
                             {/*    </Typography>*/}
                             </Scroll>
-                            {!downSM && (
-                                <Link
-                                    passHref={true}
-                                    href="mailto:info@umurava.com"
-                                >
-                                    <Button variant="contained"
-                                            sx={{
-                                                borderRadius: "2rem",
-                                                fontSize: 24,
-                                                backgroundColor: "#1CBF73",
-                                            }}
+                            {/*{!downSM && (*/}
+                            {/*    <Link*/}
+                            {/*        passHref={true}*/}
+                            {/*        href="mailto:info@umurava.com"*/}
+                            {/*    >*/}
+                            {/*        <Button variant="contained"*/}
+                            {/*                sx={{*/}
+                            {/*                    borderRadius: "2rem",*/}
+                            {/*                    fontSize: 24,*/}
+                            {/*                    backgroundColor: "#1CBF73",*/}
+                            {/*                }}*/}
+                            {/*        >*/}
+                            {/*            <Typography*/}
+                            {/*                color={"#fff"}*/}
+                            {/*            >*/}
+                            {/*                Book a Demo*/}
+                            {/*            </Typography>*/}
+                            {/*        </Button>*/}
+                            {/*    </Link>*/}
+                            {/*)}*/}
+                            <Button
+                                variant={"contained"}
+                                sx={{
+                                    backgroundColor: "#1CBF73",
+                                    color: "#fff",
+                                    fontWeight: 600,
+                                    fontFamily: "Work Sans",
+                                    fontSize: { xs: 16, sm: 16, md: 18, lg: 18 },
+                                    lineHeight: 1.2,
+                                    bottom: 15,
+                                    width: 160,
+                                    height: 50,
+                                    borderRadius: 10,
+                                    "&:hover": {
+                                        backgroundColor: "#1CDF73",
+                                    },
+                                }}
+                            >
+                                <Link href={"/"}>
+                                    <a
+                                        style={{
+                                            textDecoration: "none",
+                                            color: "#fff",
+                                            fontStyle: "normal",
+                                            textTransform: "none",
+                                        }}
                                     >
-                                        <Typography
-                                            color={"#fff"}
-                                        >
-                                            Book a Demo
-                                        </Typography>
-                                    </Button>
+                                        Book a Demo
+                                    </a>
                                 </Link>
-                            )}
+                            </Button>
                             {/* had Sidenav here %%%%%%%%%%%*/}
                             {/* mobile menu */}
                             {/*{downSM && (*/}

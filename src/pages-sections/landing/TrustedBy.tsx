@@ -104,9 +104,11 @@ const TrustedBy = () => {
                     mt: 3,
                     position: { xs: "relative", md: "relative" },
                     height: { xs: "60vh", md: "50vh" },
+                    fontFamily: "Work Sans",
                 }}>
                     <Typography component="div" sx={{fontSize: 42,
                         fontWeight: 700, color: "#2B71F0",
+                        fontFamily: "Work Sans",
                     }}>
                         Trusted by
                     </Typography>
@@ -115,6 +117,7 @@ const TrustedBy = () => {
                             fontSize: 20,
                             fontWeight: 500,
                             fontStyle: "medium",
+                            fontFamily: "Work Sans",
                             color: "#001A40",
                             mt: 1,
                         }}

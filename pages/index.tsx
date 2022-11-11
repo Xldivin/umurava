@@ -14,7 +14,11 @@ const IndexPage = () => {
   const [filterDemo, setFilterDemo] = useState("");
 
   return (
-    <Box id="top" overflow="hidden" bgcolor="background.paper">
+    <Box id="top" overflow="hidden" bgcolor="background.paper"
+    sx={{
+        fontFamily: "Work Sans",
+    }}
+    >
       <Landing />
       <TrustedBy />
       {/* <Section6 setFilterDemo={setFilterDemo} />

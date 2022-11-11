@@ -116,6 +116,7 @@ const Landing = () => {
                                     fontWeight: 500,
                                     fontSize: { xs: 32, sm: 36, md: 36, lg: 38 },
                                     lineHeight: 1.2,
+                                    FontFamily: "Work Sans"
                                 }}
                             >
                                     Bringing Talent As A Service
@@ -141,6 +142,7 @@ const Landing = () => {
                                     fontWeight: 500,
                                     fontSize: { xs: 20, sm: 22, md: 20, lg: 20 },
                                     lineHeight: 1.2,
+                                    fontFamily: "Work Sans",
                                     bottom: 5
                                 }}
                             >
@@ -168,11 +170,11 @@ const Landing = () => {
                                 sx={{
                                     backgroundColor: "#1CBF73",
                                     color: "#fff",
-                                    fontWeight: 600,
-                                    fontSize: { xs: 16, sm: 16, md: 18, lg: 18 },
+
                                     lineHeight: 1.2,
                                     bottom: 5,
                                     width: 220,
+                                    // FontFamily: "Work Sans",
                                     height: 50,
                                     borderRadius: 10,
                                     "&:hover": {
@@ -189,7 +191,15 @@ const Landing = () => {
                                             textTransform: "none",
                                         }}
                                     >
-                                        Find Quality Talents
+                                        <Typography
+                                        sx={{
+                                            fontFamily: "Work Sans",
+                                            fontWeight: 500,
+                                            fontSize: { xs: 16, sm: 16, md: 18, lg: 18 },
+                                        }}
+                                        >
+                                            Find Quality Talents
+                                        </Typography>
                                     </a>
                                 </Link>
                             </Button>
@@ -229,7 +239,15 @@ const Landing = () => {
                                                 textTransform: "none",
                                             }}
                                             >
-                                            Apply as a Talent
+                                            <Typography
+                                                sx={{
+                                                    fontFamily: "Work Sans",
+                                                    fontWeight: 500,
+                                                    fontSize: { xs: 16, sm: 16, md: 18, lg: 18 },
+                                                }}
+                                            >
+                                                Apply as a Talent
+                                            </Typography>
                                         </a>
                                     </Link>
                                 </Typography>
@@ -239,7 +257,7 @@ const Landing = () => {
                         sx={{
                             display: "flex",
                             flexDirection: "row",
-                            position: { md: "relative", xs: "absolute", sm: "relative" },
+                            position: { md: "relative", xs: "relative", sm: "relative" },
                             alignItems: "flex-start",
                             // width: "100%",
                             height: { xs: "100%", sm: "100%", md: 0, lg: 0 },
@@ -274,6 +292,7 @@ const Landing = () => {
                                         fontSize: { xs: 16, sm: 16, md: 20, lg: 20 },
                                         lineHeight: 1.2,
                                         marginLeft: 2,
+                                        fontFamily: "Work Sans",
                                     }}
                                 >
                                     Book a Demo
@@ -294,6 +313,56 @@ const Landing = () => {
                                     }}
                                 />
                             </Box>
+                            <Button
+                                variant={"outlined"}
+                                sx={{
+                                    bottom: 15,
+                                    width: 220,
+                                    height: 50,
+                                    borderRadius: 2,
+                                    position: { xs: "relative", sm: "relative", md: "relative", lg: "relative" },
+                                    borderColor: "#fff",
+                                    left: { xs: 1, sm: 2, md: 300, lg: 300 },
+                                    "&:hover": {
+                                        // backgroundColor: "#fff",
+                                        color: "#2B71F0",
+                                    },
+                                }}
+                            >
+                                <Typography
+                                    sx={{
+                                        color: "#fff",
+                                        fontWeight: 400,
+                                        fontSize: { xs: 16, sm: 16, md: 18, lg: 18 },
+                                        lineHeight: 1.2,
+                                        "&:hover": {
+                                            color: "#2B71F0",
+                                        }
+                                    }}
+                                >
+                                    <Link
+                                        href={"/"}>
+                                        <a
+                                            style={{
+                                                textDecoration: "none",
+                                                color: "#fff",
+                                                fontStyle: "normal",
+                                                textTransform: "none",
+                                            }}
+                                        >
+                                            <Typography
+                                                sx={{
+                                                    fontFamily: "Work Sans",
+                                                    fontWeight: 500,
+                                                    fontSize: { xs: 16, sm: 16, md: 18, lg: 18 },
+                                                }}
+                                            >
+                                                Send Us An Email
+                                            </Typography>
+                                        </a>
+                                    </Link>
+                                </Typography>
+                            </Button>
 
                         </Box>
                     </Box>
