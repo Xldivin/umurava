@@ -53,7 +53,7 @@ const Landing = () => {
                 justifyContent: "center",
                 alignItems: "center",
                 width: "100%",
-                height: { xs: "82vh", sm: "70vh", md: "80vh", lg: "80vh" },
+                height: { xs: "100vh", sm: "90vh", md: "80vh", lg: "80vh" },
                 backgroundColor: "#2B71F0",
                 position: "relative",
             }}
@@ -113,7 +113,7 @@ const Landing = () => {
                                 variant={"h3"}
                                 sx={{
                                     color: "#fff",
-                                    fontWeight: 500,
+                                    fontWeight: 700,
                                     fontSize: { xs: 32, sm: 36, md: 36, lg: 38 },
                                     lineHeight: 1.2,
                                     FontFamily: "Work Sans"
@@ -129,7 +129,7 @@ const Landing = () => {
                                 flexDirection: "column",
                                 justifyContent: "space-between",
                                 alignItems: "flex-start",
-                                width: "80%",
+                                width: { xs: "70%", sm: "60%", md: "90%", lg: "95%" },
                                 height: "100%",
                                 position: "relative",
                                 // backgroundColor: "green",
@@ -146,10 +146,22 @@ const Landing = () => {
                                     bottom: 5
                                 }}
                             >
-                                AI-Powered Customized Talent Marketplace and
-                                End-To-End Workforce Outsourcing Platform.
-                                We enable the businesses & organizations to easily find, hire, outsource, manage, and pay Africa's Vetted & Quality Freelance Talents
-                                and Teams specialized in the in-demand fields for the Digital Economy.
+                                An AI-Powered Customized Talent Marketplace and End-to-End Workforce Outsourcing Platform.
+                                We match businesses & organizations with Africa’s Quality Talents & Teams specialized in the in-demand fields for the digital economy.
+                                Our areas of Specialization range from technology, creative & media, marketing & communications, business, research & data, and Transcription & Translation for both short-term and long-term job opportunities.
+                            </Typography>
+                            <Typography
+                                sx={{
+                                    color: "#fff",
+                                    fontWeight: 600,
+                                    fontSize: { xs: 20, sm: 22, md: 20, lg: 20 },
+                                    lineHeight: 1.2,
+                                    fontFamily: "Work Sans",
+                                    bottom: 5,
+                                    marginTop: { xs: 4, sm: 4, md: 4, lg: 4 }
+                                }}
+                            >
+                                Trained and Vetted Talents for you.
                             </Typography>
 
                         </Box>
