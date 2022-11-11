@@ -1,7 +1,7 @@
 import { Container, Typography } from "@mui/material";
 import { Box } from "@mui/system";
-import { FlexBox } from "components/flex-box";
-import LazyImage from "components/LazyImage";
+// import { FlexBox } from "components/flex-box";
+// import LazyImage from "components/LazyImage";
 import { ThemeProvider, createTheme } from "@mui/material/styles";
 import { styled, Theme } from "@mui/material/styles";
 import CIBALogo from "../../assets/trusted_by/CIBA.png";
@@ -16,6 +16,8 @@ import Tori from "../../assets/trusted_by/Tori.png";
 import Viamo_Logo from "../../assets/trusted_by/Viamo_Logo.png";
 import WSHLogo from "../../assets/trusted_by/WSH.jpg";
 import SokoFund from "../../assets/trusted_by/SokoFund.png";
+import ImageListItem from '@mui/material/ImageListItem';
+import Image from 'next/image';
 import Carousel from 'react-multi-carousel';
 // import 'react-multi-carousel/lib/styles.css';
 declare module '@mui/material/styles' {
@@ -98,13 +100,31 @@ const TrustedBy = () => {
         return (
             <ThemeProvider theme={theme}>
             <TrustedByWrapper>
-                <Container sx={{ mt: 8, position: "relative" }}>
-                    <Typography component="div" sx={{fontSize: 20,
-                        fontWeight: 500, color: "#000"
+                <Container sx={{
+                    mt: 3,
+                    position: { xs: "relative", md: "relative" },
+                    height: { xs: "60vh", md: "50vh" },
+                }}>
+                    <Typography component="div" sx={{fontSize: 42,
+                        fontWeight: 700, color: "#2B71F0",
                     }}>
                         Trusted by
                     </Typography>
-                    <Box
+                    <Typography
+                        sx={{
+                            fontSize: 20,
+                            fontWeight: 500,
+                            fontStyle: "medium",
+                            color: "#001A40",
+                            mt: 1,
+                        }}
+                    >
+
+                        Join thousands of the businesses & organizations ranging from Startups to Corporates that trust Umurava to hire,
+                        outsource, manage, and pay Africa's Top Talents and Teams for both short-term and long-term jobs and projects.
+
+                    </Typography>
+                        <Box
                         sx={{
                             display: "flex",
                             justifyContent: "center",
@@ -124,13 +144,23 @@ const TrustedBy = () => {
                                     height: "100%",
                                 }}
                             >
-                                <LazyImage
-                                    src={logo}
-                                    alt="Trusted by"
-                                    width="100%"
-                                    height="100%"
-                                    sx={{ objectFit: "contain" }}
-                                />
+
+                                <ImageListItem
+                                    sx={{
+                                        display: "flex",
+                                        alignItems: "center",
+                                        justifyContent: "center",
+                                        width: "100%",
+                                        height: "100%",
+                                    }}
+                                >
+                                    <Image
+                                        src={logo}
+                                        alt="Trusted by"
+                                        width="100%"
+                                        height="60%"
+                                    />
+                                </ImageListItem>
                             </Box>
                         ))}
                     </Box>
@@ -153,13 +183,22 @@ const TrustedBy = () => {
                                     height: "100%",
                                 }}
                             >
-                                <LazyImage
+                            <ImageListItem
+                                sx={{
+                                    display: "flex",
+                                    alignItems: "center",
+                                    justifyContent: "center",
+                                }}
+                            >
+                                <Image
                                     src={logo}
                                     alt="Trusted by"
                                     width="100%"
-                                    height="100%"
-                                    sx={{ objectFit: "contain" }}
+                                    height="60%"
+                                    // fill
                                 />
+                            </ImageListItem>
+
                             </Box>
                         ))}
                     </Box>

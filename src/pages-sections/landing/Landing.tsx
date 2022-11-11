@@ -1,15 +1,18 @@
 import { Box, Button, Container, Typography } from "@mui/material";
-import { FlexBox } from "components/flex-box";
-import LazyImage from "components/LazyImage";
-import { H1, Paragraph, Span } from "components/Typography";
+// import { FlexBox } from "components/flex-box";
+// import LazyImage from "components/LazyImage";
+// import { H1, Paragraph, Span } from "components/Typography";
 import Link from "next/link";
 import { Link as Scroll } from "react-scroll";
 import { ThemeProvider, createTheme } from "@mui/material/styles";
 import { styled, Theme } from "@mui/material/styles";
 import Typewriter from "typewriter-effect";
 import Header from "./Header1";
+import ImageListItem from '@mui/material/ImageListItem';
+import Image from 'next/image';
 import AfricaMap from "../../assets/images/AfricaMap.svg";
 import {display} from "@mui/system";
+import ArrowRightAltIcon from '@mui/icons-material/ArrowRightAlt';
 
 declare module '@mui/material/styles' {
     interface BreakpointOverrides {
@@ -21,15 +24,6 @@ declare module '@mui/material/styles' {
         xl: true;
     }
 }
-
-const EmailUsWrapper = styled(Box)(({ theme }) => ({
-    "& .link": {
-        color: theme.palette.primary.main,
-        cursor: "pointer",
-        transition: "color 250ms ease-in-out",
-        "&:hover": { color: theme.palette.primary.main },
-    },
-}));
 
 const Landing = () => {
     const theme = createTheme({
@@ -51,151 +45,288 @@ const Landing = () => {
     // @ts-ignore
     return (
         <ThemeProvider theme={theme}>
-        <Box
+            <Header />
+            <Box
             sx={{
-                background: "#2B71F0",
-                color: "#fff",
                 display: "flex",
                 flexDirection: "column",
-            }}
-        >
-            <Header />
-            <Box id="section-1" sx={{
-                mt: 8,
+                justifyContent: "center",
+                alignItems: "center",
+                width: "100%",
+                height: { xs: "82vh", sm: "70vh", md: "80vh", lg: "80vh" },
+                backgroundColor: "#2B71F0",
                 position: "relative",
-                display: "flex",
-                flexDirection: "row",
-                justifyContent: "left"
-            }}>
-                <Typography component="div" sx={{fontSize: 20, fontWeight: 500, color: "#fff", mb: -4}}>
-                    Umurava 1.0 coming soon
-                    </Typography>
-            </Box>
-
-            <Box id="section-1" sx={{
-                mt: 8,
-                position: "relative",
-                display: "flex",
-                flexDirection: "row",
-                justifyContent: "left",
-                // marginLeft: -30,
-                marginTop: 13
             }}
             >
-                <Box maxWidth="830px" mx="auto" mb={8.5}
-                     sx={{
-                         display: "flex",
-                         flexDirection: "column"
-                     }}
-                >
-                    <H1 color="secondary.main" fontSize="40px" fontWeight="700"
-                    style={{marginBottom: 20}}
+                <Box
+                sx={{
+                    display: { md: "flex" },
+                    flexDirection: { md: "row", xs: "column", sm: "column" },
+                    width: "100%",
+                    height: { md: "80%", xs: "100%", sm: "100%" },
+                    position: { md: "absolute", xs: "relative", sm: "relative" },
+                    // backgroundColor: "yellow",
+                    top: 30,
+                    left: 0
+                }}
                     >
-                        <Box fontSize="36px" color={"#fff"} fontWeight="700" mb={0}>
-                            Bringing Talent As A Service
+                    <Box
+                    sx={{
+                        display: "flex",
+                        flexDirection: "column",
+                        alignItems: "flex-start",
+                        width: "100%",
+                        height: "100%",
+                        position: "relative",
+                        // backgroundColor: "red",
+                        left: { md: 100, xs: 80, sm: 80 }
+                    }}
+                    >
+                        <Box>
+                            <Typography
+                                sx={{
+                                    color: "#fff",
+                                    fontWeight: 500,
+                                    fontSize: { xs: 24, sm: 24, md: 20, lg: 20 },
+                                    textAlign: "center",
+                                    lineHeight: 1,
+                                    bottom: 5,
+                                    marginTop: { xs: 4, sm: 4, md: 0, lg: 0 },
+                                }}
+                            >
+                                Umurava 1.0 coming soon
+                            </Typography>
                         </Box>
-                        <Box fontSize="36px" color={"#fff"} fontWeight="700" mt={-1}>
-                            Workforce Infrastructure
-                        </Box>  
-                    </H1>
-
-                    <Paragraph color="#fff" fontSize={20}
-                               fontWeight="200" lineHeight="1.2"
-                               maxWidth="480px" mb={4}>
-                                   AI-Powered Customized Talent Marketplace and
-                                    End-To-End Workforce Outsourcing Platform.
-                                    We enable the businesses & organizations to easily find, hire, outsource, manage, and pay Africa's Vetted & Quality Freelance Talents
-                        and Teams specialized in the in-demand fields for the Digital Economy.
-                    </Paragraph>
-
-                    <FlexBox justifyContent="center" m={-1}>
-                        <Link
-                            href="https://material-ui.com/store/items/bazar-pro-react-ecommerce-template/"
-                            passHref={true}
+                        <Box
+                        sx={{
+                            display: "flex",
+                            flexDirection: "column",
+                            justifyContent: "space-between",
+                            alignItems: "flex-start",
+                            width: "80%",
+                            position: "relative",
+                            marginTop: { xs: 4, sm: 5, md: 4, lg: 4 },
+                            // backgroundColor: "green",
+                        }}
                         >
-                            <Button variant="contained" sx={{ m: "0.5rem",
-                                borderRadius: "2rem",
-                                marginLeft: -14,
-                                marginTop: 5,
-                                background: "#1CBF73",
-                            }}>
+                            <Typography
+                                variant={"h3"}
+                                sx={{
+                                    color: "#fff",
+                                    fontWeight: 500,
+                                    fontSize: { xs: 32, sm: 36, md: 36, lg: 38 },
+                                    lineHeight: 1.2,
+                                }}
+                            >
+                                    Bringing Talent As A Service
+                                    Workforce Infrastructure
+                            </Typography>
+                        </Box>
+                        <Box
+                            sx={{
+                                display: "flex",
+                                flexDirection: "column",
+                                justifyContent: "space-between",
+                                alignItems: "flex-start",
+                                width: "80%",
+                                height: "100%",
+                                position: "relative",
+                                // backgroundColor: "green",
+                                marginTop: { xs: 4, sm: 6, md: 4, lg: 4 },
+                            }}
+                        >
+                            <Typography
+                                sx={{
+                                    color: "#fff",
+                                    fontWeight: 500,
+                                    fontSize: { xs: 20, sm: 22, md: 20, lg: 20 },
+                                    lineHeight: 1.2,
+                                    bottom: 5
+                                }}
+                            >
+                                AI-Powered Customized Talent Marketplace and
+                                End-To-End Workforce Outsourcing Platform.
+                                We enable the businesses & organizations to easily find, hire, outsource, manage, and pay Africa's Vetted & Quality Freelance Talents
+                                and Teams specialized in the in-demand fields for the Digital Economy.
+                            </Typography>
 
-                                    Find Quality Talents
+                        </Box>
+                        <Box
+                            sx={{
+                                display: "flex",
+                                flexDirection: "row",
+                                alignItems: "flex-start",
+                                width: "80%",
+                                height: "100%",
+                                position: "relative",
+                                // backgroundColor: "green",
+                                marginTop: { xs: 6, sm: 6, md: 4, lg: 4 },
+                            }}
+                        >
+                            <Button
+                                variant={"contained"}
+                                sx={{
+                                    backgroundColor: "#1CBF73",
+                                    color: "#fff",
+                                    fontWeight: 600,
+                                    fontSize: { xs: 16, sm: 16, md: 18, lg: 18 },
+                                    lineHeight: 1.2,
+                                    bottom: 5,
+                                    width: 220,
+                                    height: 50,
+                                    borderRadius: 10,
+                                    "&:hover": {
+                                        backgroundColor: "#1CDF73",
+                                    },
+                                }}
+                            >
+                                <Link href={"/"}>
+                                    <a
+                                        style={{
+                                            textDecoration: "none",
+                                            color: "#fff",
+                                            fontStyle: "normal",
+                                            textTransform: "none",
+                                        }}
+                                    >
+                                        Find Quality Talents
+                                    </a>
+                                </Link>
                             </Button>
-                        </Link>
-
-                        <Scroll to="get" duration={400} offset={-72 - 16} smooth={true}
-                        >
-                            <Button variant="outlined"
-                                    sx={{ m: "0.5rem",
-                                        borderRadius: "2rem",
-                                        fontWeight: "500",
-                                        fontStyle: "regular",
-                                        marginTop: 5
-                                    }}>
-                                Apply as a Talent
-                            </Button>
-                        </Scroll>
-                    </FlexBox>
-                    <EmailUsWrapper>
-                        <Link
-                            href="mailto:info@umurava.com"
-                            passHref={true}
-                        >
-                            <Button variant="outlined" color="success" sx={{ m: "0.5rem",
-                                marginTop: 5,
-                                width: 200,
-                                marginLeft: 55,
-                                marginRight: -15
-                            }}>
+                            <Button
+                                variant={"outlined"}
+                                sx={{
+                                    bottom: 5,
+                                    width: 220,
+                                    height: 50,
+                                    borderRadius: 10,
+                                    borderColor: "#fff",
+                                    marginLeft: { xs: 1, sm: 2, md: 6, lg: 6 },
+                                    "&:hover": {
+                                        // backgroundColor: "#fff",
+                                        color: "#2B71F0",
+                                    },
+                                }}
+                            >
                                 <Typography
-                                    color={"#fff"}
                                     sx={{
-                                        fontWeight: "500",
-                                        fontStyle: "regular"
+                                        color: "#fff",
+                                        fontWeight: 600,
+                                        fontSize: { xs: 16, sm: 16, md: 18, lg: 18 },
+                                        lineHeight: 1.2,
+                                        "&:hover": {
+                                            color: "#2B71F0",
+                                        }
                                     }}
                                 >
-                                    Send us an email
+                                    <Link
+                                        href={"/"}>
+                                        <a
+                                            style={{
+                                                textDecoration: "none",
+                                                color: "#fff",
+                                                fontStyle: "normal",
+                                                textTransform: "none",
+                                            }}
+                                            >
+                                            Apply as a Talent
+                                        </a>
+                                    </Link>
                                 </Typography>
                             </Button>
-                        </Link>
-                    </EmailUsWrapper>
-
-                    <Box
+                        </Box>
+                        <Box
                         sx={{
-                            marginRight: -170,
-                            marginTop: -75
+                            display: "flex",
+                            flexDirection: "row",
+                            position: { md: "relative", xs: "absolute", sm: "relative" },
+                            alignItems: "flex-start",
+                            // width: "100%",
+                            height: { xs: "100%", sm: "100%", md: 0, lg: 0 },
+                            marginTop: { xs: 1, sm: 1, md: 1, lg: 1 },
                         }}
-                    >
-                        <LazyImage
-                            sx={{
-                                position: "relative",
-                                bottom: 0,
-                                right: 0,
-                                zIndex: 2,
-                                imageResolution: 1
-                            }}
-                            width={327}
-                            height={105}
-                            layout="responsive"
-                            src={AfricaMap}
-                        />
+                        >
+                            <Box
+                                sx={{
+                                    width: 15,
+                                    height: 15,
+                                    backgroundColor: "#fff",
+                                }}
+                            >
+                            </Box>
+                            <Box
+                                sx={{
+                                    width: 40,
+                                    height: 15,
+                                    backgroundColor: "#1CBF73",
+                                }}
+                                ></Box>
+                            <Box
+                                sx={{
+                                    color: "#fff",
+                                    marginTop: { xs: -0.3, sm: -0.3, md: -0.7, lg: -0.7 },
+                                }}
+                                >
+                                <Typography
+                                    sx={{
+                                        color: "#fff",
+                                        fontWeight: 500,
+                                        fontSize: { xs: 16, sm: 16, md: 20, lg: 20 },
+                                        lineHeight: 1.2,
+                                        marginLeft: 2,
+                                    }}
+                                >
+                                    Book a Demo
+                                </Typography>
+                            </Box>
+                            <Box
+                                sx={{
+                                    color: "#fff",
+                                    marginTop: { xs: -0.4, sm: -0.4, md: -1.2, lg: -1.2 },
+                                }}
+                                >
+                                <ArrowRightAltIcon
+                                    sx={{
+                                        color: "#fff",
+                                        fontSize: { xs: 24, sm: 24, md: 36, lg: 36 },
+                                        lineHeight: 1.2,
+                                        marginLeft: 1
+                                    }}
+                                />
+                            </Box>
+
+                        </Box>
                     </Box>
 
+                    <Box
+                    sx={{
+                        display: "flex",
+                        flexDirection: "column",
+                        justifyContent: "center",
+                        alignItems: "center",
+                        width: "100%",
+                        height: "100%",
+                        position: "relative"
+                        // backgroundColor: "green"
+                    }}
+                    >
+                        <ImageListItem
+                            sx={{
+                                display: { xs: "none", sm: "none", md: "flex" },
+                                alignItems: "center",
+                                justifyContent: "center",
+                                width: { xs: "100%", md: "80%", lg: "100%", xl: "100%" },
+                                height: { xs: "100%", md: "80%", lg: "100%", xl: "100%" },
+                            }}
+                        >
+                            <Image
+                                src={AfricaMap}
+                            />
+                        </ImageListItem>
+                    </Box>
                 </Box>
-
-                {/*<LazyImage*/}
-                {/*  width={5417}*/}
-                {/*  height={1179}*/}
-                {/*  layout="responsive"*/}
-                {/*  src="/assets/images/landing/page-group-2.png"*/}
-                {/*/>*/}
-                {/*  Add the africa map here*/}
-
             </Box>
-
-        </Box>
-</ThemeProvider>
+        </ThemeProvider>
     );
 };
 

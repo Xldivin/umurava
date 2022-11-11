@@ -1,11 +1,11 @@
 import { Box } from "@mui/material";
-import Setting from "components/Setting";
-import Footer from "pages-sections/landing/Footer";
-import Section1 from "pages-sections/landing/Section1";
-import Section2 from "pages-sections/landing/Section2";
-import Section3 from "pages-sections/landing/Section3";
-import Section4 from "pages-sections/landing/Section4";
-import Section6 from "pages-sections/landing/Section6";
+// import Setting from "components/Setting";
+// import Footer from "pages-sections/landing/Footer";
+// import Section1 from "pages-sections/landing/Section1";
+// import Section2 from "pages-sections/landing/Section2";
+// import Section3 from "pages-sections/landing/Section3";
+// import Section4 from "pages-sections/landing/Section4";
+// import Section6 from "pages-sections/landing/Section6";
 import Landing from "pages-sections/landing/Landing";
 import TrustedBy from "pages-sections/landing/TrustedBy";
 import { useState } from "react";

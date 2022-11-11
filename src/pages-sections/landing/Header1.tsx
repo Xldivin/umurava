@@ -4,9 +4,9 @@ import { Box, Button, Container, IconButton, Typography, useMediaQuery } from "@
 import { styled, Theme } from "@mui/material/styles";
 import { keyframes } from "@mui/styled-engine";
 import clsx from "clsx";
-import Image from "components/BazarImage";
-import { FlexBetween, FlexBox } from "components/flex-box";
-import Sidenav from "components/sidenav/Sidenav";
+// import Image from "components/BazarImage";
+// import { FlexBetween, FlexBox } from "components/flex-box";
+// import Sidenav from "components/sidenav/Sidenav";
 import debounce from "lodash/debounce";
 import Link from "next/link";
 import { Fragment, useCallback, useEffect, useState } from "react";
@@ -70,9 +70,23 @@ const Header = () => {
     return (
         <Fragment>
             <HeaderWrapper>
-                <Box className={clsx({ fixedHeader: isFixed })}>
+                <Box className={clsx({ fixedHeader: isFixed })}
+                sx={{
+                backgroundColor: "#2B71F0",
+                    display: "flex",
+                    alignItems: "flex-end"
+                }
+                }
+                >
                     <Container>
-                        <FlexBetween height={headerHeight}>
+                        <Box height={headerHeight}
+                        sx={{
+                            display: "flex",
+                            flexDirection: "column",
+                            alignItems: "flex-end",
+                            paddingTop: "2rem"
+                        }}
+                        >
                             <Scroll to="top" duration={400} smooth={true} isDynamic>
                             {/*  <Box sx={{ cursor: "pointer" }}>*/}
                             {/*    <Image width="96px" height="44px" src="/assets/images/logo2.svg" alt="logo" />*/}
@@ -126,10 +140,11 @@ const Header = () => {
                                     passHref={true}
                                     href="mailto:info@umurava.com"
                                 >
-                                    <Button variant="contained" color="success" className="purchase-link"
+                                    <Button variant="contained"
                                             sx={{
                                                 borderRadius: "2rem",
-                                                fontSize: 16
+                                                fontSize: 24,
+                                                backgroundColor: "#1CBF73",
                                             }}
                                     >
                                         <Typography
@@ -140,70 +155,70 @@ const Header = () => {
                                     </Button>
                                 </Link>
                             )}
-
+                            {/* had Sidenav here %%%%%%%%%%%*/}
                             {/* mobile menu */}
-                            {downSM && (
-                                <Sidenav
-                                    open={open}
-                                    width={260}
-                                    position="right"
-                                    toggleSidenav={toggleSidenav}
-                                    handle={
-                                        <IconButton>
-                                            <Menu />
-                                        </IconButton>
-                                    }
-                                >
-                                    <Box
-                                        p={2}
-                                        sx={{
-                                            "& .link": {
-                                                cursor: "pointer",
-                                                transition: "color 250ms ease-in-out",
-                                                "&:hover": { color: "primary.main" },
-                                            },
-                                        }}
-                                    >
-                                        <Scroll to="features" duration={400} offset={-headerHeight - 16} smooth={true}>
-                                            <Typography className="link" py={1} onClick={toggleSidenav}>
-                                                Features
-                                            </Typography>
-                                        </Scroll>
+                            {/*{downSM && (*/}
+                            {/*    <Box*/}
+                            {/*        open={open}*/}
+                            {/*        width={260}*/}
+                            {/*        position="right"*/}
+                            {/*        toggleSidenav={toggleSidenav}*/}
+                            {/*        handle={*/}
+                            {/*            <IconButton>*/}
+                            {/*                <Menu />*/}
+                            {/*            </IconButton>*/}
+                            {/*        }*/}
+                            {/*    >*/}
+                            {/*        <Box*/}
+                            {/*            p={2}*/}
+                            {/*            sx={{*/}
+                            {/*                "& .link": {*/}
+                            {/*                    cursor: "pointer",*/}
+                            {/*                    transition: "color 250ms ease-in-out",*/}
+                            {/*                    "&:hover": { color: "primary.main" },*/}
+                            {/*                },*/}
+                            {/*            }}*/}
+                            {/*        >*/}
+                            {/*            <Scroll to="features" duration={400} offset={-headerHeight - 16} smooth={true}>*/}
+                            {/*                <Typography className="link" py={1} onClick={toggleSidenav}>*/}
+                            {/*                    Features*/}
+                            {/*                </Typography>*/}
+                            {/*            </Scroll>*/}
 
-                                        <Scroll to="demos" duration={400} offset={-headerHeight - 16} smooth={true}>
-                                            <Typography className="link" py={1} onClick={toggleSidenav}>
-                                                Demos
-                                            </Typography>
-                                        </Scroll>
+                            {/*            <Scroll to="demos" duration={400} offset={-headerHeight - 16} smooth={true}>*/}
+                            {/*                <Typography className="link" py={1} onClick={toggleSidenav}>*/}
+                            {/*                    Demos*/}
+                            {/*                </Typography>*/}
+                            {/*            </Scroll>*/}
 
-                                        <Scroll
-                                            smooth={true}
-                                            duration={400}
-                                            to="technologies"
-                                            offset={-headerHeight - 16}
-                                        >
-                                            <Typography className="link" py={1} mb={2} onClick={toggleSidenav}>
-                                                Technologies
-                                            </Typography>
-                                        </Scroll>
+                            {/*            <Scroll*/}
+                            {/*                smooth={true}*/}
+                            {/*                duration={400}*/}
+                            {/*                to="technologies"*/}
+                            {/*                offset={-headerHeight - 16}*/}
+                            {/*            >*/}
+                            {/*                <Typography className="link" py={1} mb={2} onClick={toggleSidenav}>*/}
+                            {/*                    Technologies*/}
+                            {/*                </Typography>*/}
+                            {/*            </Scroll>*/}
 
-                                        <Link
-                                            href="https://material-ui.com/store/items/bazar-pro-react-ecommerce-template/"
-                                            passHref={true}
-                                        >
-                                            <Button variant="outlined" color="primary">
-                                                Purchase Now
-                                            </Button>
-                                        </Link>
-                                    </Box>
-                                </Sidenav>
-                            )}
-                        </FlexBetween>
+                            {/*            <Link*/}
+                            {/*                href="https://material-ui.com/store/items/bazar-pro-react-ecommerce-template/"*/}
+                            {/*                passHref={true}*/}
+                            {/*            >*/}
+                            {/*                <Button variant="outlined" color="primary">*/}
+                            {/*                    Purchase Now*/}
+                            {/*                </Button>*/}
+                            {/*            </Link>*/}
+                            {/*        </Box>*/}
+                            {/*    </Box>*/}
+                            {/*)}*/}
+                        </Box>
                     </Container>
                 </Box>
             </HeaderWrapper>
 
-            {isFixed && <Box height={headerHeight} />}
+            {/*{isFixed && <Box height={headerHeight} />}*/}
         </Fragment>
     );
 };
