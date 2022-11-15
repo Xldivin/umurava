@@ -39,8 +39,8 @@ function talent_offering_page() {
   return (
     <ThemeProvider theme={theme}>
     <Box sx={{overflowX:{xs:"hidden",sd:"hidden",sm:"hidden",md:"hidden"},}}>
-      <Client_landing />
-      <Client_offering2 />
+      {/*<Client_landing />*/}
+      {/*<Client_offering2 />*/}
       <Box1 />
       <Footer />
     </Box>

@@ -42,7 +42,7 @@ function client_form() {
     <Box sx={{zIndex: 'modal', background: '#FFFFFF', width:{sm:768,md:1600},height:{xs:2500,sd:2498,sm:1280,md:1325,},overflowX:{xs:"hidden",sm:"hidden",lg:"hidden"},overflowY:{xs:"hidden",sm:"hidden",lg:"hidden"}}}>
         <Header_W />
         <Box_Header />
-        <Body4 />
+        {/*<Body4 />*/}
         <Footer />
     </Box>
     </ThemeProvider>

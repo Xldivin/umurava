@@ -15,7 +15,7 @@ declare module '@mui/material/styles' {
     md: true;
     lg: true;
     xl: true;
-  }  
+  }
 }
 
 
@@ -42,7 +42,7 @@ function client_form() {
     <Box sx={{zIndex: 'modal', background: '#FFFFFF', width:{sm:768,md:1600},height:{sm:"245vh",md:1710},overflowX:{xs:"hidden",sm:"hidden",lg:"hidden"},overflowY:{xs:"hidden",sm:"hidden",lg:"hidden"}}}>
         <Header_W />
         <Box_Header />
-        <Body2 />
+        {/*<Body2 />*/}
         <Footer />
     </Box>
     </ThemeProvider>

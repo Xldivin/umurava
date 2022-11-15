@@ -38,7 +38,6 @@ function register() {
     <ThemeProvider theme={theme}>
       <Box sx={{overflowX:{xs:"hidden",sm:"hidden",lg:"hidden"}}}>
         <Header />
-        <Register />
         <Box1 />
         <Footer />
       </Box>
