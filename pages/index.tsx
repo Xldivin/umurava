@@ -6,7 +6,8 @@ import { Box } from "@mui/material";
 // import Section3 from "pages-sections/landing/Section3";
 // import Section4 from "pages-sections/landing/Section4";
 // import Section6 from "pages-sections/landing/Section6";
-import Landing from "pages-sections/landing/Landing";
+// import Landing from "pages-sections/landing/Landing";
+import ComingSoon from "./ComingSoon";
 import TrustedBy from "pages-sections/landing/TrustedBy";
 import { useState } from "react";
 
@@ -19,17 +20,16 @@ const IndexPage = () => {
         fontFamily: "Work Sans",
     }}
     >
-      <Landing />
+      <ComingSoon />
       <TrustedBy />
       {/* <Section6 setFilterDemo={setFilterDemo} />
       <Section2 />
       <Section3 filterDemo={filterDemo} setFilterDemo={setFilterDemo} />
       <Section4 />
       <Footer /> */}
-
       {/* <Setting /> */}
     </Box>
-  );
+);
 };
 
 export default IndexPage;

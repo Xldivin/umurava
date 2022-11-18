@@ -25,36 +25,52 @@ declare module '@mui/material/styles' {
     }
 }
 
+const LandingWrapper = styled(Box)(({ theme }) => ({
+    "& .link": {
+        color: theme.palette.primary.main,
+        cursor: "pointer",
+        // backgroundColor: "#2B71F0",
+        transition: "all 0.3s ease",
+        "&:hover": {
+            color: theme.palette.primary.dark,
+        }
+    },
+}));
+
 const Landing = () => {
-    const theme = createTheme({
-        breakpoints:{
-            values:{
-                xs: 0,
-                sd: 400,
-                sm: 600,
-                md: 900,
-                lg: 1300,
-                xl: 1536,
-            }
-        },
-        // @ts-ignore
-        status: {
-            danger: '#e53e3e',
-        },
-    })
+    // const theme = createTheme({
+    //     breakpoints:{
+    //         values:{
+    //             xs: 0,
+    //             sd: 400,
+    //             sm: 600,
+    //             md: 900,
+    //             lg: 1300,
+    //             xl: 1536,
+    //         }
+    //     },
+    //     // @ts-ignore
+    //     status: {
+    //         danger: '#e53e3e',
+    //     },
+    // })
     // @ts-ignore
     return (
-        <ThemeProvider theme={theme}>
+            <LandingWrapper
+            sx={{
+                backgroundColor: "#2B71F0",
+                height: { xs: "140vh", sm: "120vh", md: "80vh", lg: "80vh" },
+            }}
+            >
             <Header />
-            <Box
+            <Container
             sx={{
                 display: "flex",
                 flexDirection: "column",
                 justifyContent: "center",
                 alignItems: "center",
                 width: "100%",
-                height: { xs: "100vh", sm: "90vh", md: "80vh", lg: "80vh" },
-                backgroundColor: "#2B71F0",
+                // backgroundColor: "#2B71F0",
                 position: "relative",
             }}
             >
@@ -79,7 +95,7 @@ const Landing = () => {
                         height: "100%",
                         position: "relative",
                         // backgroundColor: "red",
-                        left: { md: 100, xs: 80, sm: 80 }
+                        // left: { md: 100, xs: 80, sm: 80 }
                     }}
                     >
                         <Box>
@@ -215,55 +231,96 @@ const Landing = () => {
                                     </a>
                                 </Link>
                             </Button>
+
+
                             <Button
                                 variant={"outlined"}
                                 sx={{
-                                    bottom: 5,
-                                    width: 220,
-                                    height: 50,
+                                    color: "#fff",
                                     borderRadius: 10,
                                     borderColor: "#fff",
+                                    lineHeight: 1.2,
+                                    bottom: 5,
+                                    width: 220,
                                     marginLeft: { xs: 1, sm: 2, md: 6, lg: 6 },
+                                    // FontFamily: "Work Sans",
+                                    height: 50,
                                     "&:hover": {
-                                        // backgroundColor: "#fff",
-                                        color: "#2B71F0",
+                                        backgroundColor: "#1c91df",
                                     },
                                 }}
                             >
-                                <Typography
-                                    sx={{
-                                        color: "#fff",
-                                        fontWeight: 600,
-                                        fontSize: { xs: 16, sm: 16, md: 18, lg: 18 },
-                                        lineHeight: 1.2,
-                                        "&:hover": {
-                                            color: "#2B71F0",
-                                        }
-                                    }}
-                                >
-                                    <Link
-                                        href={"/"}>
-                                        <a
-                                            style={{
-                                                textDecoration: "none",
-                                                color: "#fff",
-                                                fontStyle: "normal",
-                                                textTransform: "none",
+                                <Link href={"/"}>
+                                    <a
+                                        style={{
+                                            textDecoration: "none",
+                                            color: "#fff",
+                                            fontStyle: "normal",
+                                            textTransform: "none",
+                                        }}
+                                    >
+                                        <Typography
+                                            sx={{
+                                                fontFamily: "Work Sans",
+                                                fontWeight: 500,
+                                                fontSize: { xs: 16, sm: 16, md: 18, lg: 18 },
                                             }}
-                                            >
-                                            <Typography
-                                                sx={{
-                                                    fontFamily: "Work Sans",
-                                                    fontWeight: 500,
-                                                    fontSize: { xs: 16, sm: 16, md: 18, lg: 18 },
-                                                }}
-                                            >
-                                                Apply as a Talent
-                                            </Typography>
-                                        </a>
-                                    </Link>
-                                </Typography>
+                                        >
+                                            Apply as a Talent
+                                        </Typography>
+                                    </a>
+                                </Link>
                             </Button>
+
+                            {/*<Button*/}
+                            {/*    variant={"outlined"}*/}
+                            {/*    sx={{*/}
+                            {/*        bottom: 5,*/}
+                            {/*        width: 220,*/}
+                            {/*        height: 50,*/}
+                            {/*        borderRadius: 10,*/}
+                            {/*        borderColor: "#fff",*/}
+                            {/*        marginLeft: { xs: 1, sm: 2, md: 6, lg: 6 },*/}
+                            {/*        "&:hover": {*/}
+                            {/*            // backgroundColor: "#fff",*/}
+                            {/*            color: "#2B71F0",*/}
+                            {/*        },*/}
+                            {/*    }}*/}
+                            {/*>*/}
+                            {/*    <Typography*/}
+                            {/*        sx={{*/}
+                            {/*            color: "#fff",*/}
+                            {/*            fontWeight: 600,*/}
+                            {/*            fontSize: { xs: 16, sm: 16, md: 18, lg: 18 },*/}
+                            {/*            lineHeight: 1.2,*/}
+                            {/*            "&:hover": {*/}
+                            {/*                color: "#2B71F0",*/}
+                            {/*            }*/}
+                            {/*        }}*/}
+                            {/*    >*/}
+                            {/*        <Link*/}
+                            {/*            href={"/"}>*/}
+                            {/*            <a*/}
+                            {/*                style={{*/}
+                            {/*                    textDecoration: "none",*/}
+                            {/*                    color: "#fff",*/}
+                            {/*                    fontStyle: "normal",*/}
+                            {/*                    textTransform: "none",*/}
+                            {/*                }}*/}
+                            {/*                >*/}
+                            {/*                <Typography*/}
+                            {/*                    sx={{*/}
+                            {/*                        fontFamily: "Work Sans",*/}
+                            {/*                        fontWeight: 500,*/}
+                            {/*                        fontSize: { xs: 16, sm: 16, md: 18, lg: 18 },*/}
+                            {/*                    }}*/}
+                            {/*                >*/}
+                            {/*                    Apply as a Talent*/}
+                            {/*                </Typography>*/}
+                            {/*            </a>*/}
+                            {/*        </Link>*/}
+                            {/*    </Typography>*/}
+                            {/*</Button>*/}
                         </Box>
                         <Box
                         sx={{
@@ -325,56 +382,98 @@ const Landing = () => {
                                     }}
                                 />
                             </Box>
+
                             <Button
                                 variant={"outlined"}
                                 sx={{
-                                    bottom: 15,
-                                    width: 220,
-                                    height: 50,
+                                    color: "#fff",
                                     borderRadius: 2,
-                                    position: { xs: "relative", sm: "relative", md: "relative", lg: "relative" },
                                     borderColor: "#fff",
-                                    left: { xs: 1, sm: 2, md: 300, lg: 300 },
+                                    lineHeight: 1.2,
+                                    position: { xs: "relative", sm: "relative", md: "relative", lg: "relative" },
+                                    bottom: 5,
+                                    left: { xs: 1, sm: 2, md: 250, lg: 250 },
+                                    width: 220,
+                                    marginLeft: { xs: 1, sm: 2, md: 6, lg: 6 },
+                                    // FontFamily: "Work Sans",
+                                    height: 50,
                                     "&:hover": {
-                                        // backgroundColor: "#fff",
-                                        color: "#2B71F0",
+                                        backgroundColor: "#1c91df",
                                     },
                                 }}
                             >
-                                <Typography
-                                    sx={{
-                                        color: "#fff",
-                                        fontWeight: 400,
-                                        fontSize: { xs: 16, sm: 16, md: 18, lg: 18 },
-                                        lineHeight: 1.2,
-                                        "&:hover": {
-                                            color: "#2B71F0",
-                                        }
-                                    }}
-                                >
-                                    <Link
-                                        href={"/"}>
-                                        <a
-                                            style={{
-                                                textDecoration: "none",
-                                                color: "#fff",
-                                                fontStyle: "normal",
-                                                textTransform: "none",
+                                <Link href={"/"}>
+                                    <a
+                                        style={{
+                                            textDecoration: "none",
+                                            color: "#fff",
+                                            fontStyle: "normal",
+                                            textTransform: "none",
+                                        }}
+                                    >
+                                        <Typography
+                                            sx={{
+                                                fontFamily: "Work Sans",
+                                                fontWeight: 500,
+                                                fontSize: { xs: 16, sm: 16, md: 18, lg: 18 },
                                             }}
                                         >
-                                            <Typography
-                                                sx={{
-                                                    fontFamily: "Work Sans",
-                                                    fontWeight: 500,
-                                                    fontSize: { xs: 16, sm: 16, md: 18, lg: 18 },
-                                                }}
-                                            >
-                                                Send Us An Email
-                                            </Typography>
-                                        </a>
-                                    </Link>
-                                </Typography>
+                                            Send Us An Email
+                                        </Typography>
+                                    </a>
+                                </Link>
                             </Button>
+
+                            {/*<Button*/}
+                            {/*    variant={"outlined"}*/}
+                            {/*    sx={{*/}
+                            {/*        bottom: 15,*/}
+                            {/*        width: 220,*/}
+                            {/*        height: 50,*/}
+                            {/*        borderRadius: 2,*/}
+                            {/*        position: { xs: "relative", sm: "relative", md: "relative", lg: "relative" },*/}
+                            {/*        borderColor: "#fff",*/}
+                            {/*        left: { xs: 1, sm: 2, md: 300, lg: 300 },*/}
+                            {/*        "&:hover": {*/}
+                            {/*            // backgroundColor: "#fff",*/}
+                            {/*            color: "#2B71F0",*/}
+                            {/*        },*/}
+                            {/*    }}*/}
+                            {/*>*/}
+                            {/*    <Typography*/}
+                            {/*        sx={{*/}
+                            {/*            color: "#fff",*/}
+                            {/*            fontWeight: 400,*/}
+                            {/*            fontSize: { xs: 16, sm: 16, md: 18, lg: 18 },*/}
+                            {/*            lineHeight: 1.2,*/}
+                            {/*            "&:hover": {*/}
+                            {/*                color: "#2B71F0",*/}
+                            {/*            }*/}
+                            {/*        }}*/}
+                            {/*    >*/}
+                            {/*        <Link*/}
+                            {/*            href={"/"}>*/}
+                            {/*            <a*/}
+                            {/*                style={{*/}
+                            {/*                    textDecoration: "none",*/}
+                            {/*                    color: "#fff",*/}
+                            {/*                    fontStyle: "normal",*/}
+                            {/*                    textTransform: "none",*/}
+                            {/*                }}*/}
+                            {/*            >*/}
+                            {/*                <Typography*/}
+                            {/*                    sx={{*/}
+                            {/*                        fontFamily: "Work Sans",*/}
+                            {/*                        fontWeight: 500,*/}
+                            {/*                        fontSize: { xs: 16, sm: 16, md: 18, lg: 18 },*/}
+                            {/*                    }}*/}
+                            {/*                >*/}
+                            {/*                    Send Us An Email*/}
+                            {/*                </Typography>*/}
+                            {/*            </a>*/}
+                            {/*        </Link>*/}
+                            {/*    </Typography>*/}
+                            {/*</Button>*/}
 
                         </Box>
                     </Box>
@@ -406,8 +505,8 @@ const Landing = () => {
                         </ImageListItem>
                     </Box>
                 </Box>
-            </Box>
-        </ThemeProvider>
+            </Container>
+            </LandingWrapper>
     );
 };
 

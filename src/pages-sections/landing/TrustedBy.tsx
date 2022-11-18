@@ -20,17 +20,16 @@ import ImageListItem from '@mui/material/ImageListItem';
 import Image from 'next/image';
 import Carousel from 'react-multi-carousel';
 // import 'react-multi-carousel/lib/styles.css';
-declare module '@mui/material/styles' {
-    interface BreakpointOverrides {
-        xs: true;
-        sd: true;
-        sm: true;
-        md: true;
-        lg: true;
-        xl: true;
-    }
-}
-
+// declare module '@mui/material/styles' {
+//     interface BreakpointOverrides {
+//         xs: true;
+//         sd: true;
+//         sm: true;
+//         md: true;
+//         lg: true;
+//         xl: true;
+//     }
+// }
 
 // an array of the logos
 const logos1 = [
@@ -51,23 +50,23 @@ const logos2 = [
     SokoFund
 ];
 // use carousel to display logos
-const responsive = {
-    desktop: {
-        breakpoint: { max: 3000, min: 1024 },
-        items: 5,
-        slidesToSlide: 5 // optional, default to 1.
-    },
-    tablet: {
-        breakpoint: { max: 1024, min: 464 },
-        items: 3,
-        slidesToSlide: 3 // optional, default to 1.
-    },
-    mobile: {
-        breakpoint: { max: 464, min: 0 },
-        items: 2,
-        slidesToSlide: 2 // optional, default to 1.
-    }
-};
+// const responsive = {
+//     desktop: {
+//         breakpoint: { max: 3000, min: 1024 },
+//         items: 5,
+//         slidesToSlide: 5 // optional, default to 1.
+//     },
+//     tablet: {
+//         breakpoint: { max: 1024, min: 464 },
+//         items: 3,
+//         slidesToSlide: 3 // optional, default to 1.
+//     },
+//     mobile: {
+//         breakpoint: { max: 464, min: 0 },
+//         items: 2,
+//         slidesToSlide: 2 // optional, default to 1.
+//     }
+// };
 
 const TrustedByWrapper = styled(Box)(({ theme }) => ({
     "& .link": {
@@ -79,26 +78,9 @@ const TrustedByWrapper = styled(Box)(({ theme }) => ({
 }));
 
 const TrustedBy = () => {
-    // @ts-ignore
-    const theme = createTheme({
-        breakpoints:{
-            values:{
-                xs: 0,
-                sd: 400,
-                sm: 600,
-                md: 900,
-                lg: 1300,
-                xl: 1536,
-            }
-        },
-        // @ts-ignore
-        status: {
-            danger: '#e53e3e',
-        },
-    })
     // loop through the logos and display them not using carousel
         return (
-            <ThemeProvider theme={theme}>
+            // <ThemeProvider theme={theme}>
             <TrustedByWrapper>
                 <Container sx={{
                     mt: 3,
@@ -207,7 +189,7 @@ const TrustedBy = () => {
                     </Box>
                     </Container>
                 </TrustedByWrapper>
-            </ThemeProvider>
+            // </ThemeProvider>
             );
 };
 
