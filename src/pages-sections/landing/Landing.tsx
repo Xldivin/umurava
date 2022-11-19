@@ -164,9 +164,9 @@ const Landing = () => {
                                     bottom: 5
                                 }}
                             >
-                                An AI-Powered Customized Talent Marketplace and End-to-End Workforce Outsourcing Platform.
-                                We match businesses & organizations with Africa’s Quality Talents & Teams specialized in the in-demand fields for the digital economy.
-                                Our areas of Specialization range from technology, creative & media, marketing & communications, business, research & data, and Transcription & Translation for both short-term and long-term job opportunities.
+                                An AI-Powered Customized Talent Marketplace and End-to-End Workforce Outsourcing Platform. We match businesses & organizations with Africa’s Quality Talents & Teams specialized in the in-demand fields for the digital economy.
+                                Our areas of Specializations range from technology, creative & media, business, research & data, and Transcription & Translation for both short-term and long-term job opportunities.
+
                             </Typography>
                             <Typography
                                 sx={{
@@ -179,7 +179,7 @@ const Landing = () => {
                                     marginTop: { xs: 4, sm: 4, md: 4, lg: 4 }
                                 }}
                             >
-                                Trained and Vetted Talents for you.
+                                Trained and Vetted Talents & Teams  for you.
                             </Typography>
 
                         </Box>

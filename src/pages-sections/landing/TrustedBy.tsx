@@ -105,8 +105,7 @@ const TrustedBy = () => {
                         }}
                     >
 
-                        Join various businesses and organizations ranging from Startups to Corporates that trust Umurava to hire,
-                        outsource, and manage Africa's vetted Talents and teams mainly freelancers, remote talents, services providers and full-time employees.
+                        Join various businesses and organizations ranging from Startups to Corporates that trust Umurava to hire, outsource, and manage Africa's vetted Talents and teams mainly freelancers, remote talents, services providers and full-time employees.
 
                     </Typography>
                         <Box
