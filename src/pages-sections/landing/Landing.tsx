@@ -59,7 +59,7 @@ const Landing = () => {
             <LandingWrapper
             sx={{
                 backgroundColor: "#2B71F0",
-                height: { xs: "140vh", sm: "120vh", md: "80vh", lg: "80vh" },
+                height: { xs: "110vh", sm: "120vh", md: "100vh", lg: "90vh" },
             }}
             >
             <Header />
@@ -70,6 +70,7 @@ const Landing = () => {
                 justifyContent: "center",
                 alignItems: "center",
                 width: "100%",
+                height: { xs: "60vh", sm: "60vh", md: "100vh", lg: "80vh" },
                 // backgroundColor: "#2B71F0",
                 position: "relative",
             }}
@@ -108,6 +109,7 @@ const Landing = () => {
                                     lineHeight: 1,
                                     bottom: 5,
                                     marginTop: { xs: 4, sm: 4, md: 0, lg: 0 },
+                                    fontFamily: "Work Sans",
                                 }}
                             >
                                 Umurava 1.0 coming soon
