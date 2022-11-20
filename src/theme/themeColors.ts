@@ -43,11 +43,11 @@ export const primary = {
   200: "#F8C7CF",
   300: "#F07D90",
   400: "#EC6178",
-  500: "#D23F57",
-  600: "#E63E58",
-  700: "#E3364E",
-  800: "#DF2E44",
-  900: "#D91F33",
+  500: "#2B71F0",
+  600: "#2B71F0",
+  700: "#2B71B0",
+  800: "#2B71E0",
+  900: "#2B71F0",
 };
 
 export const secondary = {
@@ -137,12 +137,15 @@ export const warning = {
   main: "#FFCD4E",
   contrastText: "#FFFFFF",
 };
-
+export const white = "#FFFFFF";
+export const black = "#000000";
 export const themeColors = {
   error,
   warning,
   success,
   secondary,
+  white,
+    black,
   grey: { ...grey },
   info: { ...blue },
   divider: grey[200],

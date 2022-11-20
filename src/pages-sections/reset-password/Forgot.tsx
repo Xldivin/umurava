@@ -1,16 +1,14 @@
 import { Card, CardProps } from "@mui/material";
 import { styled } from "@mui/material/styles";
-import { FlexBox, FlexRowCenter } from "components/flex-box";
 import { Box } from "@mui/material";
-import { H6 } from "components/Typography";
 import Link from "next/link";
-import { H3, Small } from "components/Typography";
 import { useFormik } from "formik";
 import * as yup from "yup";
 import React from "react";
 import {TextField} from "@mui/material";
 import Button from '@mui/material/Button';
 import Router from 'next/router'
+import Typography from '@mui/material/Typography';
 
 const fbStyle = { background: "#3B5998", color: "white" };
 const googleStyle = { background: "#4285F4", color: "white" };
@@ -56,19 +54,20 @@ const formSchema = yup.object().shape({
   return (
     <Box  sx={{mt:30,width:{xs:300,sm:500},bgcolor:"white", zIndex:5, mb:20,ml:{xs:8,sd:8,sm:15,md:70}}}>
       <form onSubmit={handleSubmit}>
-        <H3 textAlign="center" mb={1}>
+        <Typography textAlign="center" mb={1}>
           Forgot password
-        </H3>
-        <Small
-          mb={4.5}
-          display="block"
-          fontSize="14px"
-          fontWeight="600"
-          color="grey.800"
-          textAlign="center"
+        </Typography>
+        <TextField
+        sx={{
+          mb:4.5,
+          display:"block",
+          fontSize:"14px",
+          fontWeight:"600",
+          textAlign:"center"
+        }}
         >
           Enter your email to reset your password
-        </Small>
+        </TextField>
 
         <TextField
           sx={{mb:1.5,width:{xs:200,sm:300},ml:{xs:5,sm:14}}}
@@ -82,11 +81,14 @@ const formSchema = yup.object().shape({
           label="Email"
           placeholder="Enter your email address"
           error={!!touched.email && !!errors.email}
-          helperText={touched.email && errors.email}
+          helperText={!!touched.email && !!errors.email}
         />
-        <FlexBox
+        <Box
           justifyContent="center"
           alignItems="center"
+          sx={{
+            display:"flex"
+          }}
         >
           <Button
             variant="outlined"
@@ -102,18 +104,18 @@ const formSchema = yup.object().shape({
           >
             Continue
           </Button>
-        </FlexBox>
+        </Box>
       </form>
-      <FlexRowCenter my="1.25rem">
+      <Box my="1.25rem">
         <Box>Go back to</Box>
         <Link href={"/login"}>
           <a>
-            <H6 ml={1} borderBottom="1px solid" borderColor="grey.900">
+            <Typography variant="h6" ml={1} borderBottom="1px solid" borderColor="grey.900">
                 Login
-            </H6>
+            </Typography>
           </a>
         </Link>
-      </FlexRowCenter>
+      </Box>
     </Box>
   );
 };

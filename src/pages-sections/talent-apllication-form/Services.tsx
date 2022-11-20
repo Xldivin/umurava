@@ -2,15 +2,15 @@ import React from 'react'
 import Box from '@mui/material/Box';
 import Container from '@mui/material/Container';
 import { TextField } from "@mui/material";
-import { H3 } from "components/Typography";
 import Button from '@mui/material/Button';
+import { Typography } from '@mui/material';
 
 function Services() {
     const label = { inputProps: { 'aria-label': 'Checkbox demo' } };
   return (
     <Box sx={{ mt:5 }}>
     <Container sx={{ borderBottom: 4, borderColor: '#2B71F0', display: 'flex', justifyContent: 'space-between' }}>
-        <H3 sx={{ mt: 6, ml:{xs:0,sd:0,sm:10,md:10} }}>Services</H3>
+        <Typography variant="h3" sx={{ mt: 6, ml:{xs:0,sd:0,sm:10,md:10} }}>Services</Typography>
         <Button
             type="submit"
             variant="contained"

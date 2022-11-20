@@ -1,9 +1,12 @@
 import { Button } from "@mui/material";
-import BazarImage from "components/BazarImage";
-import { FlexBox } from "components/flex-box";
+import Image from 'next/image';
+import ImageListItem from '@mui/material/ImageListItem';
 import Link from "next/link";
 import { useRouter } from "next/router";
+import Box from '@mui/material/Box';
 import React from "react";
+import notfound from '../../../public/assets/images/umurava/404.png';
+import { Typography } from "@mui/material";
 
 const Error404 = () => {
   const router = useRouter();
@@ -13,23 +16,18 @@ const Error404 = () => {
   };
 
   return (
-    <FlexBox
-      flexDirection="column"
-      minHeight="100vh"
-      justifyContent="center"
-      alignItems="center"
-      px={2}
+    <Box
+     sx={{
+      display:"flex",
+      flexDirection:"column",
+      minHeight:"100vh",
+      justifyContent:"center",
+      alignItems:"center",
+      px:2,
+     }}
     >
-      <BazarImage
-        src="/assets/images/illustrations/404.svg"
-        sx={{
-          display: "block",
-          maxWidth: "320px",
-          width: "100%",
-          mb: "1.5rem",
-        }}
-      />
-      <FlexBox flexWrap="wrap">
+      <Typography>404</Typography>
+      <Box sx={{display:"flex"}}>
         <Button
           variant="outlined"
           color="primary"
@@ -43,8 +41,8 @@ const Error404 = () => {
             Go to Home
           </Button>
         </Link>
-      </FlexBox>
-    </FlexBox>
+      </Box>
+    </Box>
   );
 };
 

@@ -39,7 +39,7 @@ function signup() {
     <ThemeProvider theme={theme}>
       <Box sx={{overflowX:{xs:"hidden",sm:"hidden",lg:"hidden"}}}>
         <Header />
-        <SignUp />
+        {/*<SignUp />*/}
         <Box1 />
         <Footer />
       </Box>

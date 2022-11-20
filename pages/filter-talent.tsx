@@ -38,7 +38,7 @@ function search_talent() {
   return (
     <ThemeProvider theme={theme}>
     <Box sx={{ height: "130vh" }}>
-      <Talent_Cards />
+      {/*<Talent_Cards />*/}
     </Box>
     </ThemeProvider>
   )

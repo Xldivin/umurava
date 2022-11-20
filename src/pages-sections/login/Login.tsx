@@ -1,15 +1,12 @@
 import React from 'react'
-import  { Paragraph, H5 } from 'components/Typography';
-import { FlexBox } from "components/flex-box";
 import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
+import { Typography } from '@mui/material';
 import GoogleIcon from '@mui/icons-material/Google';
 import FacebookIcon from '@mui/icons-material/Facebook';
 import AppleIcon from '@mui/icons-material/Apple';
-import { Span } from 'components/Typography';
 import { useState } from "react";
 import LoginForm from './LoginForm';
-import Router from 'next/router'
 
 function Login() {
   const [open, setOpen] = useState(false);
@@ -19,21 +16,21 @@ function Login() {
         {open && <LoginForm 
         toggleForm = {toggleForm}
         /> }
-        <Box sx={{ml:{xs:2,sd:4,sm:10,md:40}, mt:20,zIndex:'modal',display:"flex",flexDirection:{xs:"column",sd:"column",sm:"column",md:"row"}}}>
+        <Box sx={{display:"flex",ml:40, mt:20,zIndex: 'modal',justifyContent:"column"}}>
         <div>
-        <Paragraph fontSize={30} sx={{fontWeight: 'bold',width:{xs:"350px",sd:"400px",sm:"480px"}}}>
+        <Typography variant="h5" fontSize={30} maxWidth="500px" sx={{fontWeight: 'bold'}}>
             Outsource, Hire, Work with and Manage the Africa's Vetted Talents & Teams
-        </Paragraph>
-      <Paragraph fontSize={18} sx={{mt:6,width:{xs:"350px",sd:"400px",sm:"480px"}}}>
+        </Typography>
+        <Typography fontSize={18} maxWidth='480px' sx={{mt:6}}>
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam pellentesque nibh in dolor fermentum ullamcorper. Maecenas imperdiet est tellus, et dictum quam sodales sed. Cras in orci non turpis sagittis consectetur at id elit. 
-      </Paragraph>
+        </Typography>
         </div>
         <div>
-            <Box sx={{width:{xs:350,sd:350,sm:438},height: 548,border: '1px solid black',ml:{xs:0,sd:0,sm:0,md:20}}}>
-              <Box sx={{ display: 'flex', alignContent: 'space-around', ml:15, mt:3, textDecoration: 'underline',}}>
-              <H5 sx={{ml:{xs:0,sd:0,sm:2},fontWeight: 'bold'}}>
-              WELCOME TO UMURAVA
-              </H5>
+            <Box sx={{width: 437,height: 548,border: '1px solid black',ml:20}}>
+              <Box sx={{ display: 'flex', alignContent: 'space-around', ml:15, mt:3, textDecoration: 'underline'}}>
+              <Typography variant="h5" sx={{ml:2}}>
+              SIGN IN AS A CLIENT
+              </Typography>
               </Box>
               <Box sx={{ display: 'flex',flexDirection: 'column'}}>
               <Button variant="contained" startIcon={<GoogleIcon />} color='inherit'sx={{mt:5, width:{xs:300,sd:300,sm:350}, ml:{xs:2,sd:2,sm:5}, borderRadius: 28}}> 
@@ -46,20 +43,20 @@ function Login() {
                 Sign in with facebook
               </Button>
               </Box>
-              <FlexBox>
-              <Span sx={{borderBottom: 1, mt:7, width:{xs:120,sd:120,sm:150}, ml:2}}></Span>
-              <Span sx={{ mt:7, ml:2, position: "relative", top: "8px"}}>or</Span>
-              <Span sx={{borderBottom: 1, mt:7, width:{xs:120,sd:120,sm:150}, ml:2}}></Span>
-              </FlexBox>
-              <Button variant="contained"color='inherit' sx={{mt:6, width:{xs:300,sd:300,sm:350}, ml:{xs:2,sd:2,sm:5}, borderRadius: 28}}
+              <Box>
+              <Box sx={{borderBottom: 1, mt:7, width:150, ml:2, display:"inline"}}></Box>
+              <Box sx={{ mt:7, ml:2, position: "relative", top: "8px", display:"inline"}}>or</Box>
+              <Box sx={{borderBottom: 1, mt:7, width:150, ml:2, display:"inline"}}></Box>
+              </Box>
+              <Button variant="contained"color='inherit' sx={{mt:6, width:350, ml:5, borderRadius: 28}}
               onClick={() =>{
                 toggleForm()
               }}
               > 
               Sign in with email address
               </Button>
-              <Paragraph sx={{mt:5, ml:{xs:7,sd:7,sm:13}}}>Don't have an account? <Span sx={{fontWeight: 'bold'}} onClick={() =>{ Router.push('/register')}}>Sign Up</Span></Paragraph>
-              <Paragraph sx={{ ml:{xs:7,sd:7,sm:13}, mt:5}}>© 2022 All rights reserved by umurava</Paragraph>
+              <Typography sx={{mt:5, ml:13,display:"inline"}}>Don't have an account? <Typography sx={{fontWeight: 'bold',display:"inline"}}>Login</Typography></Typography>
+              <Typography sx={{ml:11, mt:5}}>2022 All rights reserved by umurava</Typography>
             </Box>
         </div>
         </Box>

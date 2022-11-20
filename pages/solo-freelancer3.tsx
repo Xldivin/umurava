@@ -1,7 +1,7 @@
 import React from 'react'
 import Box_Header from 'pages-sections/client-application-fom/Box-Header'
 import Header_W from 'pages-sections/client-application-fom/Header-W'
-import Body3 from 'pages-sections/client-application-fom/Body3';
+// import Body3 from 'pages-sections/client-application-fom/Body3';
 import Footer from 'pages-sections/login/Footer';
 import Box from '@mui/material/Box';
 import { ThemeProvider, createTheme } from "@mui/material/styles";
@@ -42,7 +42,7 @@ function client_form() {
     <Box sx={{zIndex: 'modal', background: '#FFFFFF', width:{sm:768,md:1600},height:{sm:"195vh",md:1370,},overflowX:{xs:"hidden",sm:"hidden",lg:"hidden"},overflowY:{xs:"hidden",sm:"hidden",lg:"hidden"}}}>
         <Header_W />
         <Box_Header />
-        <Body3 />
+        {/*<Body3 />*/}
         <Footer />
     </Box>
     </ThemeProvider>

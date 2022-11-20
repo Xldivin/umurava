@@ -1,13 +1,12 @@
 import { Card, CardProps } from "@mui/material";
 import { styled } from "@mui/material/styles";
-import { FlexBox } from "components/flex-box";
 import { Box, } from "@mui/material";
-import { H3, Small } from "components/Typography";
 import { useFormik } from "formik";
 import React from "react";
 import {TextField } from "@mui/material";
 import * as yup from "yup";
 import Button from '@mui/material/Button';
+import { Typography } from '@mui/material';
 
 const fbStyle = { background: "#3B5998", color: "white" };
 const googleStyle = { background: "#4285F4", color: "white" };
@@ -51,19 +50,20 @@ const Reset = () => {
   return (
     <Box  sx={{mt:30,width:{xs:300,sm:500},bgcolor:"white", zIndex:5, mb:20,ml:{xs:5,sd:8,sm:15,md:70} }}>
       <form onSubmit={handleSubmit}>
-        <H3 textAlign="center" mb={1}>
+        <Typography variant='h3' textAlign="center" mb={1}>
           Pick a new password
-        </H3>
-        <Small
-          mb={4.5}
-          display="block"
-          fontSize="14px"
-          fontWeight="600"
-          color="grey.800"
-          textAlign="center"
+        </Typography>
+        <TextField
+                sx={{
+                  mb:4.5,
+                  display:"block",
+                  fontSize:"14px",
+                  fontWeight:"600",
+                  textAlign:"center"
+                }}
         >
           Reset your password
-        </Small>
+        </TextField>
           <TextField
           sx={{mb:1.5,width:{xs:200,sm:300},ml:{xs:5,sm:14}}}
           name="password"
@@ -76,7 +76,7 @@ const Reset = () => {
           label="Password"
           placeholder="Enter your email address"
           error={!!touched.password && !!errors.password}
-          helperText={touched.password && errors.password}
+          helperText={!!touched.password && !!errors.password}
         />
           <TextField
           sx={{mb:1.5,width:{xs:200,sm:300},ml:{xs:5,sm:14}}}
@@ -90,11 +90,14 @@ const Reset = () => {
           label="Confirm-password"
           placeholder="Enter your email address"
           error={!!touched.confirm_password && !!errors.confirm_password}
-          helperText={touched.confirm_password && errors.confirm_password}
+          helperText={!!touched.confirm_password && !!errors.confirm_password}
         />
-        <FlexBox
+        <Box
           justifyContent="center"
           alignItems="center"
+          sx={{
+            display:"flex"
+          }}
         >
           <Button
             type="submit"
@@ -104,7 +107,7 @@ const Reset = () => {
           >
             Continue
           </Button>
-        </FlexBox>
+        </Box>
       </form>
     </Box>
   );
