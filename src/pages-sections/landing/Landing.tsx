@@ -147,7 +147,7 @@ const Landing = () => {
                                 flexDirection: "column",
                                 justifyContent: "space-between",
                                 alignItems: "flex-start",
-                                width: { xs: "70%", sm: "60%", md: "90%", lg: "95%" },
+                                width: { xs: "70%", sm: "60%", md: "100%", lg: "100%" },
                                 height: "100%",
                                 position: "relative",
                                 // backgroundColor: "green",
@@ -164,8 +164,8 @@ const Landing = () => {
                                     bottom: 5
                                 }}
                             >
-                                An AI-Powered Customized Talent Marketplace and End-to-End Workforce Outsourcing Platform. We match businesses & organizations with Africa’s Quality Talents & Teams specialized in the in-demand fields for the digital economy.
-                                Our areas of Specializations range from technology, creative & media, business, research & data, and Transcription & Translation for both short-term and long-term job opportunities.
+                                An AI-Powered Customized Talent Marketplace and End-to-End Workforce Outsourcing Platform.
+                                We match businesses & organizations with Africa’s Quality Talents & Teams specialized in the in-demand fields for the digital economy mainly  technology, creative & media, business, research & data, and transcription & translations for both short-term and long-term job opportunities.
 
                             </Typography>
                             <Typography
@@ -179,7 +179,7 @@ const Landing = () => {
                                     marginTop: { xs: 4, sm: 4, md: 4, lg: 4 }
                                 }}
                             >
-                                Trained and Vetted Talents & Teams  for you.
+                                Trained and Vetted Talents & Teams for you.
                             </Typography>
 
                         </Box>
@@ -274,55 +274,6 @@ const Landing = () => {
                                 </Link>
                             </Button>
 
-                            {/*<Button*/}
-                            {/*    variant={"outlined"}*/}
-                            {/*    sx={{*/}
-                            {/*        bottom: 5,*/}
-                            {/*        width: 220,*/}
-                            {/*        height: 50,*/}
-                            {/*        borderRadius: 10,*/}
-                            {/*        borderColor: "#fff",*/}
-                            {/*        marginLeft: { xs: 1, sm: 2, md: 6, lg: 6 },*/}
-                            {/*        "&:hover": {*/}
-                            {/*            // backgroundColor: "#fff",*/}
-                            {/*            color: "#2B71F0",*/}
-                            {/*        },*/}
-                            {/*    }}*/}
-                            {/*>*/}
-                            {/*    <Typography*/}
-                            {/*        sx={{*/}
-                            {/*            color: "#fff",*/}
-                            {/*            fontWeight: 600,*/}
-                            {/*            fontSize: { xs: 16, sm: 16, md: 18, lg: 18 },*/}
-                            {/*            lineHeight: 1.2,*/}
-                            {/*            "&:hover": {*/}
-                            {/*                color: "#2B71F0",*/}
-                            {/*            }*/}
-                            {/*        }}*/}
-                            {/*    >*/}
-                            {/*        <Link*/}
-                            {/*            href={"/"}>*/}
-                            {/*            <a*/}
-                            {/*                style={{*/}
-                            {/*                    textDecoration: "none",*/}
-                            {/*                    color: "#fff",*/}
-                            {/*                    fontStyle: "normal",*/}
-                            {/*                    textTransform: "none",*/}
-                            {/*                }}*/}
-                            {/*                >*/}
-                            {/*                <Typography*/}
-                            {/*                    sx={{*/}
-                            {/*                        fontFamily: "Work Sans",*/}
-                            {/*                        fontWeight: 500,*/}
-                            {/*                        fontSize: { xs: 16, sm: 16, md: 18, lg: 18 },*/}
-                            {/*                    }}*/}
-                            {/*                >*/}
-                            {/*                    Apply as a Talent*/}
-                            {/*                </Typography>*/}
-                            {/*            </a>*/}
-                            {/*        </Link>*/}
-                            {/*    </Typography>*/}
-                            {/*</Button>*/}
                         </Box>
                         <Box
                         sx={{
@@ -426,68 +377,19 @@ const Landing = () => {
                                 </Link>
                             </Button>
 
-                            {/*<Button*/}
-                            {/*    variant={"outlined"}*/}
-                            {/*    sx={{*/}
-                            {/*        bottom: 15,*/}
-                            {/*        width: 220,*/}
-                            {/*        height: 50,*/}
-                            {/*        borderRadius: 2,*/}
-                            {/*        position: { xs: "relative", sm: "relative", md: "relative", lg: "relative" },*/}
-                            {/*        borderColor: "#fff",*/}
-                            {/*        left: { xs: 1, sm: 2, md: 300, lg: 300 },*/}
-                            {/*        "&:hover": {*/}
-                            {/*            // backgroundColor: "#fff",*/}
-                            {/*            color: "#2B71F0",*/}
-                            {/*        },*/}
-                            {/*    }}*/}
-                            {/*>*/}
-                            {/*    <Typography*/}
-                            {/*        sx={{*/}
-                            {/*            color: "#fff",*/}
-                            {/*            fontWeight: 400,*/}
-                            {/*            fontSize: { xs: 16, sm: 16, md: 18, lg: 18 },*/}
-                            {/*            lineHeight: 1.2,*/}
-                            {/*            "&:hover": {*/}
-                            {/*                color: "#2B71F0",*/}
-                            {/*            }*/}
-                            {/*        }}*/}
-                            {/*    >*/}
-                            {/*        <Link*/}
-                            {/*            href={"/"}>*/}
-                            {/*            <a*/}
-                            {/*                style={{*/}
-                            {/*                    textDecoration: "none",*/}
-                            {/*                    color: "#fff",*/}
-                            {/*                    fontStyle: "normal",*/}
-                            {/*                    textTransform: "none",*/}
-                            {/*                }}*/}
-                            {/*            >*/}
-                            {/*                <Typography*/}
-                            {/*                    sx={{*/}
-                            {/*                        fontFamily: "Work Sans",*/}
-                            {/*                        fontWeight: 500,*/}
-                            {/*                        fontSize: { xs: 16, sm: 16, md: 18, lg: 18 },*/}
-                            {/*                    }}*/}
-                            {/*                >*/}
-                            {/*                    Send Us An Email*/}
-                            {/*                </Typography>*/}
-                            {/*            </a>*/}
-                            {/*        </Link>*/}
-                            {/*    </Typography>*/}
-                            {/*</Button>*/}
 
                         </Box>
                     </Box>
 
                     <Box
                     sx={{
+                        top: { xs: 0, sm: 6, md: 6, lg: 6 },
                         display: "flex",
                         flexDirection: "column",
                         justifyContent: "center",
-                        alignItems: "center",
-                        width: "100%",
-                        height: "100%",
+                        alignItems: "flex-end",
+                        width: "90%",
+                        height: "90%",
                         position: "relative"
                         // backgroundColor: "green"
                     }}
@@ -497,8 +399,8 @@ const Landing = () => {
                                 display: { xs: "none", sm: "none", md: "flex" },
                                 alignItems: "center",
                                 justifyContent: "center",
-                                width: { xs: "100%", md: "80%", lg: "100%", xl: "100%" },
-                                height: { xs: "100%", md: "80%", lg: "100%", xl: "100%" },
+                                width: { xs: "100%", md: "70%", lg: "80%", xl: "80%" },
+                                height: { xs: "100%", md: "70%", lg: "80%", xl: "80%" },
                             }}
                         >
                             <Image
