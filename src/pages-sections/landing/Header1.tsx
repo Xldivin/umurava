@@ -4,13 +4,13 @@ import { Box, Button, Container, IconButton, Typography, useMediaQuery } from "@
 import { styled, Theme } from "@mui/material/styles";
 import { keyframes } from "@mui/styled-engine";
 import clsx from "clsx";
-// import Image from "components/BazarImage";
-// import { FlexBetween, FlexBox } from "components/flex-box";
-// import Sidenav from "components/sidenav/Sidenav";
 import debounce from "lodash/debounce";
 import Link from "next/link";
 import { Fragment, useCallback, useEffect, useState } from "react";
 import { Link as Scroll } from "react-scroll";
+import ImageListItem from '@mui/material/ImageListItem';
+import Image from 'next/image';
+import Logo from "../../assets/images/white.jpg";
 
 const headerHeight = 72;
 
@@ -70,14 +70,15 @@ const Header = () => {
     return (
         <Fragment>
             <HeaderWrapper>
-                <Box className={clsx({ fixedHeader: isFixed })}
-                sx={{
-                backgroundColor: "#2B71F0",
-                    display: "flex",
-                    alignItems: "flex-end"
-                }
-                }
-                >
+                <Box className={clsx({ fixedHeader: isFixed })}sx={{backgroundColor: "#2B71F0",display: "flex",alignItems: "flex-end"}}>
+                <ImageListItem>
+                            <Image 
+                             src={Logo}
+                             alt="logo"
+                             width="100%"
+                             height="60%"
+                            />
+                        </ImageListItem>
                     <Container>
                         <Box height={headerHeight}
                         sx={{
