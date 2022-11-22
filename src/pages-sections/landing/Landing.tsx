@@ -34,23 +34,6 @@ const LandingWrapper = styled(Box)(({ theme }) => ({
 }));
 
 const Landing = () => {
-    // const theme = createTheme({
-    //     breakpoints:{
-    //         values:{
-    //             xs: 0,
-    //             sd: 400,
-    //             sm: 600,
-    //             md: 900,
-    //             lg: 1300,
-    //             xl: 1536,
-    //         }
-    //     },
-    //     // @ts-ignore
-    //     status: {
-    //         danger: '#e53e3e',
-    //     },
-    // })
-    // @ts-ignore
     return (
         <LandingWrapper
             sx={{
@@ -67,8 +50,7 @@ const Landing = () => {
                     justifyContent: "center",
                     alignItems: "center",
                     width: "100%",
-                    height: { xs: "60vh", sm: "60vh", md: "100vh", lg: "80vh" },
-                    // backgroundColor: "#2B71F0",
+                    height: { xs: "60vh", sm: "60vh", md: "100vh", lg: "100vh" },
                 }}
             >
                 <Box
@@ -169,9 +151,7 @@ const Landing = () => {
                                 display: "flex",
                                 flexDirection: "column",
                                 justifyContent: "space-between",
-                                alignItems: "flex-start",
                                 width: { xs: "70%", sm: "60%", md: "100%", lg: "100%" },
-                                height: "100%",
                                 // backgroundColor: "green",
                                 marginTop: { xs: 4, sm: 6, md: 4, lg: 4 },
                             }}
@@ -195,10 +175,8 @@ const Landing = () => {
                                     color: "#fff",
                                     fontWeight: 600,
                                     fontSize: { xs: 20, sm: 22, md: 20, lg: 20 },
-                                    lineHeight: 1.2,
                                     fontFamily: "Work Sans",
-                                    bottom: 5,
-                                    marginTop: { xs: 4, sm: 4, md: 4, lg: 2 }
+                                    mt: { xs: 4, sm: 4, md: 4, lg: 8 }
                                 }}
                             >
                                 Trained and Vetted Talents & Teams for you.
@@ -212,7 +190,7 @@ const Landing = () => {
                                 alignItems: "flex-start",
                                 width: "80%",
                                 height: "100%",
-                                marginTop: { xs: 6, sm: 6, md: 4, lg: 4 },
+                                marginTop: { xs: 6, sm: 6, md: 4, lg: 0 },
                             }}
                         >
                             <Button
@@ -396,16 +374,7 @@ const Landing = () => {
                         </Box>
                     </Box>
 
-                    <Box
-                        sx={{
-                            display: "flex",
-                            flexDirection: "column",
-                            justifyContent: "center",
-                            alignItems: "flex-end",
-                            width: "90%",
-                            height: "90%",
-                            mt:2
-                        }}
+                    <Box sx={{width: "90%",height: "100%",mt:2}}
                     >
                         <ImageListItem
                             sx={{
