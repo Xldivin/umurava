@@ -69,7 +69,6 @@ const Landing = () => {
                     width: "100%",
                     height: { xs: "60vh", sm: "60vh", md: "100vh", lg: "80vh" },
                     // backgroundColor: "#2B71F0",
-                    position: "relative",
                 }}
             >
                 <Box
@@ -77,8 +76,7 @@ const Landing = () => {
                         display: { md: "flex" },
                         flexDirection: { md: "row", xs: "column", sm: "column" },
                         width: "100%",
-                        height: { md: "80%", xs: "100%", sm: "100%" },
-                        position: { md: "absolute", xs: "relative", sm: "relative" },
+                        height: { md: "80%", xs: "100%", sm: "100vh" },
                         // backgroundColor: "yellow",
                         top: 30,
                         left: 0
@@ -88,10 +86,9 @@ const Landing = () => {
                         sx={{
                             display: "flex",
                             flexDirection: "column",
-                            alignItems: "flex-start",
+                            alignItems: {xs:"center",sd:"center",sm:"center",md:"flex-start"},
                             width: "100%",
                             height: "100%",
-                            position: "relative",
                             // backgroundColor: "red",
                             // left: { md: 100, xs: 80, sm: 80 }
                         }}
@@ -99,13 +96,15 @@ const Landing = () => {
                         <Box>
                             <Typography
                                 sx={{
+                                    position:"relative",
+                                    top:{xs:15,sm:15,md:10},
                                     color: "#fff",
                                     fontWeight: 500,
                                     fontSize: { xs: 24, sm: 24, md: 20, lg: 20 },
                                     textAlign: "center",
                                     lineHeight: 1,
                                     bottom: 5,
-                                    marginTop: { xs: 4, sm: 4, md: 0, lg: 0 },
+                                    marginTop: { xs: 15, sm: 25, md: 0, lg: 8 },
                                     fontFamily: "Work Sans",
                                 }}
                             >
@@ -117,39 +116,53 @@ const Landing = () => {
                                 display: "flex",
                                 flexDirection: "column",
                                 justifyContent: "space-between",
-                                alignItems: "flex-start",
+                                alignItems:"flex-start",
                                 width: "80%",
-                                position: "relative",
                                 marginTop: { xs: 4, sm: 5, md: 4, lg: 4 },
                                 // backgroundColor: "green",
+                                ml:{xs:5,sm:18,md:0}
                             }}
                         >
                             <Typography
                                 variant={"h3"}
                                 sx={{
                                     color: "#fff",
-                                    fontWeight: 500,
-                                    fontSize: { xs: 32, sm: 36, md: 36, lg: 30 },
+                                    fontWeight: 700,
+                                    fontSize: { xs: 32, sm: 36, md: 36, lg: 24 },
+                                    width:"88%",
                                     lineHeight: 1.2,
                                     FontFamily: "Work Sans",
-                                    mb: 2
-                                }}>
-                                “Introducing Talent As a Service”
+                                }}
+                            >
+                                A Customized Talent Marketplace and
+
                             </Typography>
                             <Typography
                                 variant={"h3"}
                                 sx={{
                                     color: "#fff",
                                     fontWeight: 700,
-                                    fontSize: { xs: 32, sm: 36, md: 36, lg: 30 },
+                                    fontSize: { xs: 32, sm: 36, md: 36, lg: 24 },
                                     lineHeight: 1.2,
                                     FontFamily: "Work Sans",
                                 }}
                             >
-                                An AI-Powered Customized Talent Marketplace
-                                and End-to-End Workforce Outsourcing Platform.
+                                End-to-End Workforce Outsourcing Platform,
 
                             </Typography>
+                            <Typography
+                                variant={"h3"}
+                                sx={{
+                                    color: "#fff",
+                                    fontWeight: 700,
+                                    fontSize: { xs: 32, sm: 36, md: 36, lg: 24 },
+                                    lineHeight: 1.2,
+                                    FontFamily: "Work Sans",
+                                }}
+                            >
+                                powered by AI.
+                            </Typography>
+                            
                         </Box>
                         <Box
                             sx={{
@@ -159,7 +172,6 @@ const Landing = () => {
                                 alignItems: "flex-start",
                                 width: { xs: "70%", sm: "60%", md: "100%", lg: "100%" },
                                 height: "100%",
-                                position: "relative",
                                 // backgroundColor: "green",
                                 marginTop: { xs: 4, sm: 6, md: 4, lg: 4 },
                             }}
@@ -186,7 +198,7 @@ const Landing = () => {
                                     lineHeight: 1.2,
                                     fontFamily: "Work Sans",
                                     bottom: 5,
-                                    marginTop: { xs: 4, sm: 4, md: 4, lg: 4 }
+                                    marginTop: { xs: 4, sm: 4, md: 4, lg: 2 }
                                 }}
                             >
                                 Trained and Vetted Talents & Teams for you.
@@ -200,21 +212,16 @@ const Landing = () => {
                                 alignItems: "flex-start",
                                 width: "80%",
                                 height: "100%",
-                                position: "relative",
-                                // backgroundColor: "green",
                                 marginTop: { xs: 6, sm: 6, md: 4, lg: 4 },
                             }}
                         >
                             <Button
-                                variant={"contained"}
                                 sx={{
                                     backgroundColor: "#1CBF73",
                                     color: "#fff",
-
                                     lineHeight: 1.2,
-                                    bottom: 5,
+                                    bottom: {xs:5,sd:-20,sm:20,md:-20,lg:-35},
                                     width: 220,
-                                    // FontFamily: "Work Sans",
                                     height: 50,
                                     borderRadius: 10,
                                     "&:hover": {
@@ -252,7 +259,7 @@ const Landing = () => {
                                     borderRadius: 10,
                                     borderColor: "#fff",
                                     lineHeight: 1.2,
-                                    bottom: 5,
+                                    bottom: {xs:5,sd:-20,sm:20,md:-20,lg:-35},
                                     width: 220,
                                     marginLeft: { xs: 1, sm: 2, md: 6, lg: 6 },
                                     // FontFamily: "Work Sans",
@@ -289,7 +296,6 @@ const Landing = () => {
                             sx={{
                                 display: "flex",
                                 flexDirection: "row",
-                                position: { md: "relative", xs: "relative", sm: "relative" },
                                 alignItems: "flex-start",
                                 // width: "100%",
                                 height: { xs: "100%", sm: "100%", md: 0, lg: 0 },
@@ -353,11 +359,10 @@ const Landing = () => {
                                     borderRadius: 2,
                                     borderColor: "#fff",
                                     lineHeight: 1.2,
-                                    position: { xs: "relative", sm: "relative", md: "relative", lg: "relative" },
-                                    bottom: 3,
+                                    bottom: {xs:-25,sd:-65,sm:5,md:-25,lg:-25},
                                     left: { xs: 1, sm: 2, md: 250, lg: 250 },
                                     width: 220,
-                                    marginLeft: { xs: 8, sm: 30, md: 6, lg: 35 },
+                                    marginLeft: { xs: -2,sd:1, sm: 8, md: 6, lg: 40 },
                                     // FontFamily: "Work Sans",
                                     height: 50,
                                     "&:hover": {
@@ -393,15 +398,13 @@ const Landing = () => {
 
                     <Box
                         sx={{
-                            top: { xs: 0, sm: 6, md: 6, lg: 6 },
                             display: "flex",
                             flexDirection: "column",
                             justifyContent: "center",
                             alignItems: "flex-end",
                             width: "90%",
                             height: "90%",
-                            position: "relative"
-                            // backgroundColor: "green"
+                            mt:2
                         }}
                     >
                         <ImageListItem
@@ -410,7 +413,7 @@ const Landing = () => {
                                 alignItems: "center",
                                 justifyContent: "center",
                                 width: { xs: "100%", md: "70%", lg: "80%", xl: "80%" },
-                                height: { xs: "100%", md: "70%", lg: "80%", xl: "80%" },
+                                height: { xs: "100%", md: "70%", lg: "80%", xl: "80%" }
                             }}
                         >
                             <Image

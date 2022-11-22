@@ -70,15 +70,15 @@ const Header = () => {
     return (
         <Fragment>
             <HeaderWrapper>
-                <Box className={clsx({ fixedHeader: isFixed })}sx={{backgroundColor: "#2B71F0",display: "flex",alignItems: "flex-end"}}>
-                <ImageListItem>
+                <Box sx={{position:"fixed",backgroundColor: "#2B71F0",display: "flex",alignItems: "flex-end",width:"100%",boxShadow: 10,zIndex:2}}>
+                {/* <ImageListItem sx={{ml:5,bottom: -10,}}>
                             <Image 
                              src={Logo}
                              alt="logo"
                              width="100%"
-                             height="60%"
+                             height="80%"
                             />
-                        </ImageListItem>
+                </ImageListItem> */}
                     <Container>
                         <Box height={headerHeight}
                         sx={{
