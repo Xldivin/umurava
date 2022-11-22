@@ -36,18 +36,18 @@ const logos1 = [
     LateriteLogo,
     EducationCollaborative,
     Gdg_Kigali,
+    Tori,
     HiiL_Logo,
-    IGIHE_LOGO,
-    KeplerLogo
+    Viamo_Logo,
 ];
 
 const logos2 = [
     CIBALogo,
-    QuiqpayLogo,
-    Tori,
-    Viamo_Logo,
     WSHLogo,
-    SokoFund
+    KeplerLogo,
+    SokoFund,
+    QuiqpayLogo,
+    IGIHE_LOGO,
 ];
 // use carousel to display logos
 // const responsive = {
@@ -84,9 +84,9 @@ const TrustedBy = () => {
             <TrustedByWrapper>
                 <Container sx={{
                     mt: 3,
-                    position: { xs: "relative", md: "relative" },
-                    height: { xs: "60vh", md: "50vh" },
+                    height: { xs: "165vh",sm:"80vh", md: "65vh" },
                     fontFamily: "Work Sans",
+                    overflowY: "hidden"
                 }}>
                     <Typography component="div" sx={{fontSize: 42,
                         fontWeight: 700, color: "#2B71F0",
@@ -105,7 +105,7 @@ const TrustedBy = () => {
                         }}
                     >
 
-                        Join various businesses and organizations ranging from Startups to Corporates that trust Umurava to hire, outsource, and manage Africa's vetted Talents and teams mainly freelancers, remote talents, services providers and full-time employees.
+                        Join  companies & organizations ranging from Startups to Corporates that trust Umurava to hire, outsource, and manage Africa's vetted Talents & teams: Freelancers, remote workers, services providers and full-time employees.
 
                     </Typography>
                         <Box
@@ -114,7 +114,8 @@ const TrustedBy = () => {
                             justifyContent: "center",
                             alignItems: "center",
                             mt: 4,
-                            mb: 4
+                            mb: -3,
+                            flexDirection:{xs:"column",sd:"column",sm:"row",md:"row",lg:"row"}
                         }}
                         >
                         {logos1.map((logo, index) => (
@@ -136,13 +137,13 @@ const TrustedBy = () => {
                                         justifyContent: "center",
                                         width: "100%",
                                         height: "100%",
+                                        ml:2,
+                                        position:"relative"
                                     }}
                                 >
                                     <Image
                                         src={logo}
                                         alt="Trusted by"
-                                        width="100%"
-                                        height="60%"
                                     />
                                 </ImageListItem>
                             </Box>
@@ -150,10 +151,10 @@ const TrustedBy = () => {
                     </Box>
                     <Box
                         sx={{
-                            display: "flex",
+                            display:{xs:"none",sd:"none",sm:"flex",md:"flex",lg:"flex"},
                             justifyContent: "center",
                             alignItems: "center",
-                            mb: 8
+                            mb: 8,
                         }}
                     >
                         {logos2.map((logo, index) => (
@@ -172,14 +173,14 @@ const TrustedBy = () => {
                                     display: "flex",
                                     alignItems: "center",
                                     justifyContent: "center",
+                                    ml:2,
+                                    width:"100px",
+                                    height:"100px"
                                 }}
                             >
                                 <Image
                                     src={logo}
                                     alt="Trusted by"
-                                    width="100%"
-                                    height="60%"
-                                    // fill
                                 />
                             </ImageListItem>
 
