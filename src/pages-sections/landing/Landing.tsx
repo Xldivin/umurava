@@ -14,7 +14,7 @@ const Landing = () => {
         <Box sx={{ backgroundColor: "#2B71F0", height: { xs: "160vh", sm: "150vh", md: "100%", lg: "100vh" }, overflowY: "hidden",width:"100%",overflowX:"hidden" }}>
             <Header />
             <Box sx={{ display: "flex", flexDirection:{xs:"column",sd:"column",sm:"column",md:"column",lg:"row"},width: "100%", height: { xs: "60vh", sm: "60vh", md: "100%", lg: "100%" },mt:{xs: 5, sm: 5, md: -50, lg: 0},alignItems: { xs: "center", sd: "center", sm: "center", md: "center" },justifyContent:{ xs: "center", sd: "center", sm: "center", md: "center" },}}>
-                    <Box sx={{display: "flex", flexDirection: "column",alignItems: { xs: "center", sd: "center", sm: "center", md: "center" },width:{lg:"30%",xl:"50%"},mt:{xs: 60, sm: 70, md: 70, lg: 0} }}>
+                    <Box sx={{display: "flex", flexDirection: "column",alignItems: { xs: "center", sd: "center", sm: "center", md: "center" },width:{lg:"50%",xl:"50%"},mt:{xs: 60, sm: 70, md: 70, lg: 0} }}>
                         <Box>
                             <Typography sx={{ color: "#001A40", fontWeight: 500, fontSize: { xs: 24, sm: 24, md: 20, lg: 20 }, lineHeight: 1, bottom: 5, fontFamily: "Work Sans" }}>
                                 Umurava 1.0 coming soon....
