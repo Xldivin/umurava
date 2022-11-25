@@ -81,7 +81,7 @@ const TrustedBy = () => {
     // loop through the logos and display them not using carousel
         return (
             // <ThemeProvider theme={theme}>
-            <TrustedByWrapper>
+            <Box>
                 <Container sx={{
                     mt: 3,
                     height: { xs: "165vh",sm:"80vh", md: "65vh" },
@@ -188,7 +188,7 @@ const TrustedBy = () => {
                         ))}
                     </Box>
                     </Container>
-                </TrustedByWrapper>
+                </Box>
             // </ThemeProvider>
             );
 };
