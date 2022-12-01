@@ -61,7 +61,7 @@ const Landing = () => {
 
                         </Box>
                         <Box sx={{ display: "flex", flexDirection: "row", alignItems: "flex-start", height: { xs: "100%", sm: "100%", md: 0, lg: 0 }, marginTop: { xs: 1, sm: 1, md: 1, lg: 1 }, }}>
-                            {/* <Box sx={{width: 15,height: 15,backgroundColor: "#fff",}}>
+                             {/* <Box sx={{width: 15,height: 15,backgroundColor: "#fff",}}>
                             </Box>
                             <Box sx={{width: 40,height: 15,backgroundColor: "#1CBF73",}}></Box>
                             <Box sx={{color: "#fff",marginTop: { xs: -0.3, sm: -0.3, md: -0.7, lg: -0.7 },}}>
